@@ -8,7 +8,6 @@ class Stories(models.Model):
 
     name = models.CharField(max_length=200, default="Anonymous")
     story = models.TextField(default="Story")
-    count = models.IntegerField(default=0)
 
 class Tracks(models.Model):
 
