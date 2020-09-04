@@ -18,7 +18,7 @@ class TrackImage(models.Model):
         db_table = 'track_images'
 
     track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
-    cover = models.ImageField(default="Track Cover")
+    cover = models.ImageField(upload_to="images/", default="Track Cover")
 
 class Tracks(models.Model):
 
