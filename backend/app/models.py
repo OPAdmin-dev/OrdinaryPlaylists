@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 class Stories(models.Model):
 
@@ -7,4 +8,31 @@ class Stories(models.Model):
 
     name = models.CharField(max_length=200, default="Anonymous")
     story = models.TextField(default="Story")
-    cover = models.ImageField(upload_to='images/')
+    count = models.IntegerField(default=0)
+
+class Tracks(models.Model):
+
+    class Meta:
+        db_table = 'tracks'
+
+    CHILL = 'Chill'
+    POP = 'Pop'
+
+    TAGS = [
+        (CHILL, 'CHILL'),
+        (POP  , 'POP')
+    ]
+
+    story = models.ForeignKey(Stories, on_delete=models.CASCADE, related_name="stories")
+    name = models.CharField(max_length=200, default="Track Name")
+    artist = models.CharField(max_length=200, default="Artist Name")
+    description = models.TextField(default="Track Description")
+    youtube_link = models.CharField(max_length=200, default="Youtube URL")
+    tags = ArrayField(models.CharField(max_length=50, choices=TAGS, default=POP), default=list)
+    email = models.EmailField(default="email_address")
+
+    cover = models.CharField(max_length=200, default='Selected Album Art')
+    proposed_covers = ArrayField(models.ImageField(upload_to='images/'), default=list)
+
+
+
