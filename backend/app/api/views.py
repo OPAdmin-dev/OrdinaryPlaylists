@@ -12,5 +12,5 @@ class TrackSet(viewsets.ModelViewSet):
 
 class TrackImageSet(viewsets.ModelViewSet):
     lookup_field = 'track'
-    serializer_class = TrackSerializer
+    serializer_class = TrackImageSerializer
     queryset = TrackImage.objects.all()
