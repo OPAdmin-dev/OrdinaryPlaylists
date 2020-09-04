@@ -35,7 +35,7 @@ export const apiTrackImages = new APICore({
     url: trackImagesURL,
 })
 
-export const apiTrackImages = new APICore({
+export const apiTags = new APICore({
     getAll: true,
     getSingle: true,
     post: true,
