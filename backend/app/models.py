@@ -9,6 +9,14 @@ class Stories(models.Model):
     name = models.CharField(max_length=200, default="Anonymous")
     story = models.TextField(default="Story")
 
+class TrackImage(models.Model):
+
+    class Meta:
+        db_table = 'track_images'
+
+    track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
+    cover = models.ImageField(default="Track Cover")
+
 class Tracks(models.Model):
 
     class Meta:
@@ -29,11 +37,6 @@ class Tracks(models.Model):
     youtube_link = models.CharField(max_length=200, default="Youtube URL")
     tags = ArrayField(models.CharField(max_length=50, choices=TAGS, default=POP), default=list)
     email = models.EmailField(default="email_address")
+    track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
-class TrackImage(models.Model):
 
-    class Meta:
-        db_table = 'track_images'
-
-    track = models.ForeignKey(Tracks, on_delete=models.CASCADE, related_name="tracks")
-    cover = models.ImageField(default="Track Cover")
