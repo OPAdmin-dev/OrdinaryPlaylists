@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.models import Stories, Tracks, TrackImage
+from app.models import Stories, Tracks, TrackImage, Tags
 
 class StorySerializer(serializers.ModelSerializer):
 
@@ -24,4 +24,12 @@ class TrackImageSerializer(serializers.ModelSerializer):
         model = TrackImage
         fields = (
             'id', 'track', 'cover',
+        )
+
+class TagSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Tags
+        fields = (
+            'id', 'tag'
         )
