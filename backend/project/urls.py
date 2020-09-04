@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('api/', include('app.api.urls')),
+    path('photologue/', include('photologue.urls', namespace='photologue')),
 ]

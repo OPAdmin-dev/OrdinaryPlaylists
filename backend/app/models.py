@@ -30,8 +30,10 @@ class Tracks(models.Model):
     tags = ArrayField(models.CharField(max_length=50, choices=TAGS, default=POP), default=list)
     email = models.EmailField(default="email_address")
 
-    cover = models.CharField(max_length=200, default='Selected Album Art')
-    proposed_covers = ArrayField(models.ImageField(upload_to='images/'), default=list)
+class TrackImage(models.Model):
 
+    class Meta:
+        db_table = 'track_images'
 
-
+    track = models.ForeignKey(Tracks, on_delete=models.CASCADE, related_name="tracks")
+    cover = models.ImageField(default="Track Cover")

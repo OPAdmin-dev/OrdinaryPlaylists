@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'app',
     'rest_framework',
+    'photologue',
+    'sortedm2m',
 ]
 
 SITE_ID = 1
