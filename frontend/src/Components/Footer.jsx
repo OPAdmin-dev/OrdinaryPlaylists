@@ -5,7 +5,7 @@ export default function Footer() {
 
     return (
         <footer id="footer">
-            <h1>Connect with us</h1>
+            <h1 style={{paddingTop: "1em"}}>Connect with us</h1>
             <div id="social" className="socialDark">
             <a href="#"><span className="fab fa-facebook"></span></a>
             <a href="#"><span className="fab fa-twitter"></span></a>
