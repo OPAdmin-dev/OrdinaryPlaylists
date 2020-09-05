@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.models import Stories, Tracks, TrackImage, Tags
+from app.models import Stories, Tracks, TrackImage, Tags, Playlists
 
 class StorySerializer(serializers.ModelSerializer):
 
@@ -15,7 +15,7 @@ class TrackSerializer(serializers.ModelSerializer):
         model = Tracks
         fields = (
             'id', 'story', 'name', 'artist', 'description', 
-            'youtube_link', 'tags', 'email', 'track_image'
+            'youtube_link', 'tags', 'email', 'track_image',
         )
 
 class TrackImageSerializer(serializers.ModelSerializer):
@@ -31,5 +31,16 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tags
         fields = (
-            'id', 'tag'
+            'id', 'tag',
+        )
+
+class PlaylistSerializer(serializers.ModelSerializer):
+
+    tracks = TrackSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Playlists
+        fields = (
+            'id', 'name', 'description', 
+            'playlist_image', 'tags', 'tracks', 
         )

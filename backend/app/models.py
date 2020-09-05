@@ -46,3 +46,17 @@ class Tags(models.Model):
 
     def __str__(self):
         return "Tag: {0}".format(self.tag)
+
+class Playlists(models.Model):
+
+    class Meta:
+        db_table = 'playlists'
+
+    name = models.CharField(max_length=200, default="Playlist Name")
+    description = models.TextField(default="Playlist Description")
+    playlist_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name='playlist_image', blank=True, null=True)
+    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list)
+    tracks = models.ManyToManyField(Tracks)
+
+    def __str__(self):
+        return "{0}".format(self.name)
