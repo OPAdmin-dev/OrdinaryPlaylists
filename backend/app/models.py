@@ -30,7 +30,7 @@ class Tracks(models.Model):
     artist = models.CharField(max_length=200, default="Artist Name")
     description = models.TextField(default="Track Description")
     youtube_link = models.CharField(max_length=200, default="Youtube URL")
-    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list)
+    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list, null=True, blank=True)
     email = models.EmailField(default="email_address")
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
@@ -55,7 +55,7 @@ class Playlists(models.Model):
     name = models.CharField(max_length=200, default="Playlist Name")
     description = models.TextField(default="Playlist Description")
     playlist_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name='playlist_image', blank=True, null=True)
-    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list)
+    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list, null=True, blank=True)
     tracks = models.ManyToManyField(Tracks)
 
     def __str__(self):
