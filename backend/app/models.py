@@ -35,7 +35,7 @@ class Tracks(models.Model):
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
     def __str__(self):
-        return "Track inspired by {0}".format(self.story)
+        return "Track composed by {0}".format(self.name)
 
 class Tags(models.Model):
 
