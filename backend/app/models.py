@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.utils.html import mark_safe
 
 class Stories(models.Model):
 
@@ -21,6 +22,9 @@ class TrackImage(models.Model):
 
     track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
     cover = models.ImageField(upload_to="images/", default="Track Cover")
+
+    def current_cover(self):
+        return mark_safe('<img src="%s" width="250" height="350"/>' % self.cover.url)        
 
     def __str__(self):
         return "Proposed cover ({0}) for {1}".format(self.cover, self.track)
