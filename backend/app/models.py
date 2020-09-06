@@ -23,7 +23,7 @@ class TrackImage(models.Model):
     track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
     cover = models.ImageField(upload_to="images/", default="Track Cover")
 
-    def current_cover(self):
+    def cover_image(self):
         return mark_safe('<img src="%s" width="250" height="350"/>' % self.cover.url)        
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Tracks(models.Model):
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
     def __str__(self):
-        return "Track composed by {0}".format(self.name)
+        return "Track composed by {0}".format(self.artist)
 
 class Tags(models.Model):
 
