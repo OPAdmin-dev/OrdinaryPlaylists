@@ -15,7 +15,7 @@ admin.site.register(Stories)
 @admin.register(Tracks)
 class TracksAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('cover',)
+    readonly_fields = ('Image',)
 
 @admin.register(TrackImage)
 class TrackImageAdmin(admin.ModelAdmin):
