@@ -45,6 +45,9 @@ class Tracks(models.Model):
     lyrics = models.TextField(default="Track Lyrics")
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
+    def cover(self):
+        return mark_safe('<img src="%s" width="250" height="350"/>' % self.track_image.cover.url)
+
     def __str__(self):
         return "Track composed by {0}".format(self.artist)
 

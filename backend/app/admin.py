@@ -10,7 +10,12 @@ from .models import (
 )
 
 admin.site.register(Stories)
-admin.site.register(Tracks)
+#admin.site.register(Tracks)
+
+@admin.register(Tracks)
+class TracksAdmin(admin.ModelAdmin):
+
+    readonly_fields = ('cover',)
 
 @admin.register(TrackImage)
 class TrackImageAdmin(admin.ModelAdmin):
