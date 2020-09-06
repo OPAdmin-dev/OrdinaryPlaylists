@@ -15,7 +15,8 @@ class TrackSerializer(serializers.ModelSerializer):
         model = Tracks
         fields = (
             'id', 'story', 'name', 'artist', 'description', 
-            'youtube_link', 'tags', 'email', 'track_image',
+            'youtube_link', 'tags', 'email', 'lyrics',
+            'track_image',
         )
 
 class TrackImageSerializer(serializers.ModelSerializer):

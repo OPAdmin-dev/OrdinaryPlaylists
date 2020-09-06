@@ -32,6 +32,7 @@ class Tracks(models.Model):
     youtube_link = models.CharField(max_length=200, default="Youtube URL")
     tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list, null=True, blank=True)
     email = models.EmailField(default="email_address")
+    lyrics = models.TextField(default="Track Lyrics")
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
 
     def __str__(self):
