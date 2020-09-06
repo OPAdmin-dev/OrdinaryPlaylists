@@ -22,6 +22,9 @@ class TrackImage(models.Model):
     track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
     cover = models.ImageField(upload_to="images/", default="Track Cover")
 
+    def __str__(self):
+        return "Proposed cover ({0}) for {1}".format(self.cover, self.track)
+
 class Tracks(models.Model):
 
     class Meta:
