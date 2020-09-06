@@ -1,6 +1,20 @@
 from rest_framework import viewsets
-from app.models import Stories, Tracks, TrackImage, Tags
-from .serializers import StorySerializer, TrackSerializer, TrackImageSerializer, TagSerializer
+
+from app.models import (
+    Stories, 
+    Tracks, 
+    TrackImage, 
+    Tags, 
+    Playlists
+)
+
+from .serializers import ( 
+    StorySerializer, 
+    TrackSerializer, 
+    TrackImageSerializer, 
+    TagSerializer,
+    PlaylistSerializer
+)
 
 class StorySet(viewsets.ModelViewSet):
     serializer_class = StorySerializer
@@ -18,3 +32,7 @@ class TrackImageSet(viewsets.ModelViewSet):
 class TagSet(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tags.objects.all()
+
+class PlaylistSet(viewsets.ModelViewSet):
+    serializer_class = PlaylistSerializer
+    queryset = Playlists.objects.all()
