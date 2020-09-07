@@ -76,17 +76,6 @@ class TrackSet(viewsets.ModelViewSet):
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             track = self.perform_create(serializer)
-            
-            print(
-                track.story.name, 
-                track.name, 
-                track.artist,
-                track.description,
-                track.youtube_link,
-                track.tags,
-                track.lyrics,
-                track.track_image.cover
-            )
 
             msg_html = render_to_string('TrackSubmit.html', {
                 'story' : track.story.name, 
