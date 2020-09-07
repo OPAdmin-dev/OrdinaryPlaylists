@@ -1,6 +1,6 @@
 //Banner
 .home {
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('../src/Images/RLC_03-min.png') 50% 50% no-repeat fixed;
+	background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%, transparent 50%),url('../src/Images/RLC_03-min.png') 50% 50% no-repeat fixed;
 	background-size:cover;
 	color: #ffffff;
 	height: 100vh;
@@ -11,8 +11,6 @@
 }
 
 //Scroll down Button
-
-
   #section10 {
 	position: absolute;
 	bottom: 20px;
@@ -74,6 +72,75 @@
 .container {
 	padding:50px;
 }
+//Story
+.Story {
+	background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+}
+
+.StoryContainer {
+	padding: 2vw;
+	text-align: center;
+	color: #F4F7F4;
+}
+
+.purple {
+	background: linear-gradient(180deg, rgba(138, 128, 211, 0.1) 0%, #8A80D3 300%);
+}
+@media screen and (max-width: 768px){
+	.StoryContainer {
+		padding: 10vw;
+		text-align: center;
+		color: #F4F7F4;
+	}
+}
+
+@media only screen and (min-width: 768px) { 
+	.Story{
+		display: flex;
+		height: 646px;
+	}
+	.StoryContainer {
+		width: 50%;
+		text-align: left;
+		padding: 7vw;
+	}
+}
+
+#StoryTitle {
+	font-family: Inkpen Scribble;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+}
+
+#StoryParagraph {
+	font-family: GT Cinetype Trial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+#StoryUs {
+	font-family: Roxborough CF;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 45px;
+}
+
+#ParagraphUs {
+	font-family: GT Cinetype Trial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.StoryContainer button{
+	background: #F4F7F4;
+	font-size: 12px;
+	height: 60px;
+	width: 198px;
+	border: none;
+}
 //Footer
 #footer {
     background: #000000;
@@ -84,6 +151,7 @@
 		font-family: Roxborough CF;
 		font-style: italic;
 	}
+	border: solid black;
 }
 
 ul{
@@ -95,7 +163,7 @@ ul{
 	padding: 1em;
 	display: inline-block;
 	a {
-	color: white;
+		color: white;
 	}
 }
 #footerButton{
