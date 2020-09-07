@@ -22,8 +22,10 @@ class TrackImage(models.Model):
         db_table = 'track_images'
         verbose_name_plural = "Track Images"
 
+    contributor = models.CharField(max_length=200, default="Contributor Name")
     track = models.ForeignKey('Tracks', on_delete=models.CASCADE, related_name="tracks")
     cover = models.ImageField(upload_to="images/", default="Track Cover")
+    email = models.EmailField(default="Contributor's Email")
 
     def cover_image(self):
         return mark_safe('<img src="%s" width="250" height="350"/>' % self.cover.url)        

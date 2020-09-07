@@ -24,7 +24,7 @@ class TrackImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrackImage
         fields = (
-            'id', 'track', 'cover',
+            'id', 'track', 'cover', 'contributor', 'email',
         )
 
 class TagSerializer(serializers.ModelSerializer):
