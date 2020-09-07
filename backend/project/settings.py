@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from datetime import timedelta
+import appsecrets
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -140,7 +141,7 @@ EMAIL_HOST_USER = "ordinaryplaylists@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = 'pbkdf2_sha256$180000$eFz7Y8COrytZ$XEQkfzfDuHE2i00LjizGN3TO+FPx0ZrvWMsaFxLHfHQ='
+EMAIL_HOST_PASSWORD = appsecrets.SMTP_PASSWORD
 EMAIL_CONFIRMATION_PERIOD_DAYS = 1
 SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(days=EMAIL_CONFIRMATION_PERIOD_DAYS)
 
