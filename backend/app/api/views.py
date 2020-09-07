@@ -66,8 +66,63 @@ class StorySet(viewsets.ModelViewSet):
         return story
 
 class TrackSet(viewsets.ModelViewSet):
+
     serializer_class = TrackSerializer
     queryset = Tracks.objects.all()
+
+    def create(self, request):
+        
+        try:    
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            track = self.perform_create(serializer)
+            
+            print(
+                track.story.name, 
+                track.name, 
+                track.artist,
+                track.description,
+                track.youtube_link,
+                track.tags,
+                track.lyrics,
+                track.track_image.cover
+            )
+
+            msg_html = render_to_string('TrackSubmit.html', {
+                'story' : track.story.name, 
+                'title' : track.name,
+                'artist': track.artist,
+                'desc' : track.description,
+                'yt_link' : track.youtube_link,
+                'tags' : track.tags,
+                'lyrics' : track.lyrics,
+            })
+
+            subject = 'Thanks for your story submission!'
+            message = 'Hi there %s!\n\nWe want you to know that we appreicate your submission!' % (track.artist)
+            recipients = [track.email]
+            send_mail(
+                subject=subject,
+                message=message,
+                from_email=None,
+                recipient_list=recipients,
+                fail_silently=False,
+                html_message=msg_html
+            )
+            
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, 
+                status=status.HTTP_201_CREATED, 
+                headers=headers
+            )
+        except Http404:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def perform_create(self, serializer):
+        track = serializer.save()
+        return track
+
 
 class TrackImageSet(viewsets.ModelViewSet):
     lookup_field = 'track'
