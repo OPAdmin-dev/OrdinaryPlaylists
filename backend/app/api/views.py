@@ -33,7 +33,7 @@ class StorySet(viewsets.ModelViewSet):
             serializer.is_valid(raise_exception=True)
             story = self.perform_create(serializer)
             
-            msg_html = render_to_string('OPEmail.html', {
+            msg_html = render_to_string('StorySubmit.html', {
                 'story' : story.story, 
                 'name': story.name,
                 'id': story.id
