@@ -9,10 +9,12 @@ class Stories(models.Model):
         verbose_name_plural = "Stories"
 
     name = models.CharField(max_length=200, default="Anonymous")
+    title = models.CharField(max_length=200, default="Story Title")
     story = models.TextField(default="Story")
+    email = models.EmailField(default="User Email Address")
 
     def __str__(self):
-        return "Story by: {0}".format(self.name)
+        return "'{0}' written by '{1}'".format(self.title, self.name)
 
 class TrackImage(models.Model):
 

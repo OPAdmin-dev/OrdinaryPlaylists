@@ -6,7 +6,7 @@ class StorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Stories
         fields = (
-            'id', 'name', 'story',
+            'id', 'name', 'story', 'title', 'email'
         )
 
 class TrackSerializer(serializers.ModelSerializer):
