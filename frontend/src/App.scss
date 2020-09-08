@@ -72,6 +72,98 @@
 .container {
 	padding:50px;
 }
+//StoryShared
+.StoryShared {
+	text-align: center;
+	color: #F4F7F4;
+	height: 585px;
+	background: center center  linear-gradient( #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+	background-size: cover;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100vw;
+}
+
+.SharedCount {
+	#Title {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 35px;
+		color: #8A80D3;
+	}
+	#Count {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 72px;
+	}
+	#Text {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+	}
+}
+.SharedContainer {
+	button {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: #1F1F1F;
+		width: 198px;
+		height: 60px;
+		background:  rgba(244,247,244,0.65);
+		border: none;
+	}
+}
+@media only screen and (min-width: 768px) { 
+	.StoryShared {
+		height: 633px;
+		display: flex;
+	}
+	.SharedCount {
+		width: 50%;
+		background: #1F1F1F;
+		padding: 2vw;
+		#Title {
+			font-size: 45px;
+			margin-top: 180px;
+			margin-left: 15vw;
+		}
+		#Count {
+			font-size: 6vw;
+			letter-spacing: 0.1em;
+			margin-left: 15vw;
+
+		}
+		#Text {
+			font-size: 16px;
+			margin-left: 15vw;
+		
+		}
+		text-align: left;
+	}
+
+	.SharedContainer {
+		width: 50%;
+		padding: 2vw;
+		background: center center  linear-gradient( #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+		background-size: cover;
+		p { 
+			font-family: Inkpen Scribble;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 45px;
+			line-height: 131%;
+			margin-top: 180px;
+		}
+	}
+}
+
+
+
 //Story
 .Story {
 	background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
