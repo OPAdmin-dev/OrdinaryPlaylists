@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Story() {
     return(
-        
         <div className="Story">
         <div className="StoryContainer">
             <p id="StoryTitle">Everyone has a chapter they don’t read out loud.</p>
