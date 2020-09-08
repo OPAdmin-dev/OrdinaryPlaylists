@@ -6,7 +6,7 @@ class StorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Stories
         fields = (
-            'id', 'name', 'story',
+            'id', 'name', 'story', 'title', 'email'
         )
 
 class TrackSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class TrackImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrackImage
         fields = (
-            'id', 'track', 'cover',
+            'id', 'track', 'cover', 'contributor', 'email',
         )
 
 class TagSerializer(serializers.ModelSerializer):
