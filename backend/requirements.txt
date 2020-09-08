@@ -1,3 +1,4 @@
+djangorestframework-jwt==1.11.0
 django-photologue==3.12
 pyOpenSSL==19.1.0
 django-extensions==3.0.3
