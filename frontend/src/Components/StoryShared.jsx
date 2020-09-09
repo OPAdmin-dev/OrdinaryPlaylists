@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 import StoryForm from '../Forms/StoryForm';
 import CountUp from 'react-countup';
+import apiStories from '../services/utilities/API';
 
 export default function StoryShared() {
 
     const [add, setAdd] = useState(false);
     const [loading, updateLoading] = useState(false);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        apiStories.getAll()
+            .then(res => {
+                setCount(res.data.length);
+            })
+    })
 
     const addStory = () => {
         setAdd(true);
@@ -22,9 +31,9 @@ export default function StoryShared() {
             <p id="Title">Stories Shared</p>
                 <div id="Count">
                     <CountUp
-                    start={0}
-                    end={1000000}
-                    duration={2.5}
+                        start={0}
+                        end={count}
+                        duration={2.5}
                     />
                     </div>
                     <p id="Text">and counting...</p>
