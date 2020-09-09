@@ -11,16 +11,18 @@ export default function Banner() {
         color: "#8A80D3"}
     return(
 
+        
         <div className="home">
             <div className="container">
                 <p style={release}>NEW RELEASE</p>
                 <h1>Any Picture With You</h1>
                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec placerat ante. Sed interdum fringilla justo, eget tincidunt purus...”</p>
                 <p>by Joie Tan & Nurush Osman</p>
-                <section id="section10">
-                    <a href="#thanks"><span></span></a>
-                </section>
+                
            </div>
+           <section id="section10">
+                    <a href="#thanks"><span></span></a>
+            </section>
         </div>
             
     )
