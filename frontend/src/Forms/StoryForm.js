@@ -60,7 +60,7 @@ export default function StoryForm(props) {
                         validateStatus={errors.name && "error"}
                         help={errors.name && errors.name.message}
                     >
-                        <Input placeholder="Please enter your name (or leave blank to post anonymously" name="name" />
+                        <Input placeholder="Please enter your name (or leave blank to post anonymously)" name="name" />
                     </Form.Item>
                 }   
             />
