@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from 'antd';
+import StoryForm from '../Forms/StoryForm';
 
 export default function Footer() {
+    
     let date =  new Date().getFullYear();
+
+    const [add, setAdd] = useState(false);
+    const [loading, updateLoading] = useState(false);
+
+    const addStory = () => {
+        setAdd(true);
+      }
+
+    const closeModal = () => {
+        setAdd(false);
+    }
 
     return (
         <footer id="footer">
@@ -22,10 +36,21 @@ export default function Footer() {
                 </li>
             </ul>
             <br/>
-            <button id="footerButton">
-            SUBMIT YOUR STORY
+            <button 
+             id="footerButton"
+             onClick={addStory} 
+            >
+                SUBMIT YOUR STORY
             </button>
-            
+            <Modal
+                title="Add Story"
+                visible={add}
+                onCancel={closeModal}
+                footer={[]}
+                destroyOnClose={true}
+            >
+                <StoryForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
+            </Modal>
             <p id="copyrights">© Ordinary Playlists {date}</p>
         </footer>
     )

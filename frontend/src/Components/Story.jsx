@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Modal } from 'antd';
+import StoryForm from '../Forms/StoryForm';
 
 export default function Story() {
+
+    const [add, setAdd] = useState(false);
+    const [loading, updateLoading] = useState(false);
+
+    const addStory = () => {
+        setAdd(true);
+      }
+
+    const closeModal = () => {
+        setAdd(false);
+    }
+
     return(
         <div className="Story">
         <div className="StoryContainer">
@@ -8,7 +22,9 @@ export default function Story() {
             <p id="StoryParagraph">What’s yours?</p>
             <button style={{
                 backgroundColor: "rgba(244,247,244 .65)",
-            }}>SUBMIT YOUR STORY</button>
+            }}
+            onClick={addStory}
+            >SUBMIT YOUR STORY</button>
         </div>
         <div className="StoryContainer purple">
             <p id="StoryUs">Our Story</p>
@@ -18,7 +34,17 @@ export default function Story() {
                 marginTop: "30px",
                 backgroundColor: "rgba(31,31,31, .65)",
                 color: "white"
-            }}>READ MORE</button>
+            }}
+            >READ MORE</button>
+            <Modal
+                title="Add Story"
+                visible={add}
+                onCancel={closeModal}
+                footer={[]}
+                destroyOnClose={true}
+            >
+                <StoryForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
+            </Modal>
             </div>
         </div>
     )

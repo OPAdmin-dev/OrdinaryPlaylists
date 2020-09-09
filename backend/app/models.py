@@ -8,10 +8,10 @@ class Stories(models.Model):
         db_table = 'stories'
         verbose_name_plural = "Stories"
 
-    name = models.CharField(max_length=200, default="Anonymous")
+    name = models.CharField(max_length=200, default="Anonymous", blank=True)
     title = models.CharField(max_length=200, default="Story Title")
     story = models.TextField(default="Story")
-    email = models.EmailField(default="User Email Address")
+    email = models.EmailField(default="test@test.com")
 
     def __str__(self):
         return "'{0}' written by '{1}'".format(self.title, self.name)
