@@ -1,6 +1,10 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
 //Banner
 .home {
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('../src/Images/RLC_03-min.png') 50% 50% no-repeat fixed;
+	background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%, transparent 50%),url('../src/Images/RLC_03-min.png') 50% 50% no-repeat fixed;
 	background-size:cover;
 	color: #ffffff;
 	height: 100vh;
@@ -11,8 +15,6 @@
 }
 
 //Scroll down Button
-
-
   #section10 {
 	position: absolute;
 	bottom: 20px;
@@ -74,6 +76,356 @@
 .container {
 	padding:50px;
 }
+//Story Viewer
+.StoryV {
+	height: 800px;
+	background: #1F1F1F;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	h1 {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 65px;
+		line-height: 131%;
+		color: #8A80D3;
+	}
+}
+.MainCarousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#card {
+	height: 559px;
+	width: 328px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(138, 128, 211, 0.5) 100%), #F4F7F4;
+	text-align: left;
+	border-radius: 10px;
+	padding: 5vh;
+		button {
+			width: 200px;
+			height: 60px;
+			background: transparent;
+			border: 2px solid black;
+			cursor: pointer;
+			transition: 0.3s linear;
+	    }
+
+	.fa-info-circle {
+		color: #8A80D3 !important;
+	}
+	#serial {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 140%;
+		color: #343434;
+		opacity: 0.9;
+	}
+	#title {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 26px;
+		line-height: 109%;
+		color: #1F1F1F;
+		opacity: 0.9;
+	}
+	#author {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 109%;
+		color: #1F1F1F;
+	}
+	#story {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 140%;
+		color: #1F1F1F;
+		opacity: 0.9;
+	}
+	#disclaimer {
+		font-family: GT Cinetype Trial;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 109%;
+		display: flex;
+		align-items: center;
+		color: #1F1F1F;
+		display: none;
+	}
+}
+@media screen and (min-width: 768px){
+	.round {
+		position: absolute;
+		border: 2px solid #fff;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+	}
+
+	#cta{
+		width:100%; cursor: pointer; position: absolute;
+	}
+
+	#cta .arrow{left: 30%;}
+	.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+	.secondary{margin-left: 8px;}
+	.next {
+		background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+	}
+
+	@keyframes bounceAlpha {
+	0% {opacity: 1; transform: translateX(0px) scale(1);}
+	25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+	26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+	55% {opacity: 1; transform: translateX(0px) scale(1);}
+	}
+
+	.bounceAlpha {
+		animation-name: bounceAlpha;
+		animation-duration:1.4s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+	}
+
+	.arrow.primary.bounceAlpha {
+		animation-name: bounceAlpha;
+		animation-duration:1.4s;
+		animation-delay:0.2s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+	}
+
+	.round:hover .arrow{
+		animation-name: bounceAlpha;
+		animation-duration:1.4s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+	}
+	.round:hover .arrow.primary{
+		animation-name: bounceAlpha;
+		animation-duration:1.4s;
+		animation-delay:0.2s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+	}
+
+	.leftCon {
+		display: flex;
+		height: 10vh;
+		align-items: center;
+		justify-content: center;
+		transform: rotate(-180deg);
+	}
+
+	.rightCon {
+		display: flex;
+		height: 10vh;
+		align-items: center;
+		justify-content: center;
+	}
+	//Story Carousel
+	#LBlock {
+		height: 393px;
+		width: 239.59px;
+		background: linear-gradient(90deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.71) 20%, #F4F7F4 100%);
+		border-radius: 10px;
+	}
+	#RBlock {
+		height: 393px;
+		width: 239.59px;
+		background: linear-gradient(-90deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.71) 20%, #F4F7F4 100%);
+		border-radius: 10px;
+	}
+	#card {
+		height: 550px;
+		width: 493px;
+	}
+}
+
+//StoryShared
+.StoryShared {
+	text-align: center;
+	color: #F4F7F4;
+	height: 585px;
+	background: center center  linear-gradient( #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	@media screen and (max-width: 768px){
+		flex-direction: column;
+		width: 100vw;
+	}
+}
+
+.SharedCount {
+	#Title {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 35px;
+		color: #8A80D3;
+	}
+	#Count {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 72px;
+	}
+	#Text {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+	}
+}
+.SharedContainer {
+	button {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: #1F1F1F;
+		width: 198px;
+		height: 60px;
+		background:  rgba(244,247,244,0.65);
+		border: none;
+	}
+}
+@media only screen and (max-width: 768px) { 
+	#LBlock {
+		height: 464px;
+		width: 40px;
+		background: linear-gradient(90deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.71) 20%, #F4F7F4 100%);
+		border-radius: 10px;
+	}
+	#RBlock {
+		height: 464px;
+		width: 40px;
+		background: linear-gradient(-90deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.71) 20%, #F4F7F4 100%);
+		border-radius: 10px;
+	}
+}
+@media only screen and (min-width: 768px) { 
+	.StoryShared {
+		height: 633px;
+		display: flex;
+	}
+	.SharedCount {
+		width: 50%;
+		background: #1F1F1F;
+		#Title {
+			font-size: 45px;
+			margin-top: 180px;
+		}
+		#Count {
+			font-size: 6vw;
+			letter-spacing: 0.1em;
+
+		}
+		#Text {
+			font-size: 16px;
+		}
+	}
+
+	.SharedContainer {
+		width: 50%;
+		background: center center  linear-gradient( #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+		background-size: cover;
+		p { 
+			font-family: Inkpen Scribble;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 45px;
+			line-height: 131%;
+			margin-top: 180px;
+		}
+	}
+}
+
+
+
+//Story
+.Story {
+	background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.63) 100%),url('../src/Images/book-min.jpeg');
+}
+
+.StoryContainer {
+	padding: 2vw;
+	text-align: center;
+	color: #F4F7F4;
+}
+
+.purple {
+	background: linear-gradient(180deg, rgba(138, 128, 211, 0.1) 0%, #8A80D3 300%);
+}
+@media screen and (max-width: 768px){
+	.StoryContainer {
+		padding: 10vw;
+		text-align: center;
+		color: #F4F7F4;
+	}
+}
+
+@media only screen and (min-width: 768px) { 
+	.Story{
+		display: flex;
+		height: 646px;
+	}
+	.StoryContainer {
+		width: 50%;
+		text-align: left;
+		padding: 7vw;
+	}
+}
+
+#StoryTitle {
+	font-family: Inkpen Scribble;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+}
+
+#StoryParagraph {
+	font-family: GT Cinetype Trial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+#StoryUs {
+	font-family: Roxborough CF;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 45px;
+}
+
+#ParagraphUs {
+	font-family: GT Cinetype Trial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.StoryContainer button{
+	background: #F4F7F4;
+	font-size: 12px;
+	height: 60px;
+	width: 198px;
+	border: none;
+}
 //Footer
 #footer {
     background: #000000;
@@ -84,6 +436,7 @@
 		font-family: Roxborough CF;
 		font-style: italic;
 	}
+	border: solid black;
 }
 
 ul{
@@ -95,7 +448,7 @@ ul{
 	padding: 1em;
 	display: inline-block;
 	a {
-	color: white;
+		color: white;
 	}
 }
 #footerButton{
