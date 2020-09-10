@@ -19,7 +19,7 @@ export default function StoryCarousel() {
                 <p id="serial">#1 <i className="fas fa-info-circle"></i></p>
                 <p id="title">A dollar that costs 53 years of wedded bliss</p>
                 <p id="author">by Gilbert Zhuo</p>
-                <p id="story">One summer day in 1967, we headed to the courthouse for a marriage license. My husband-to-be, Steve, asked the clerk for a fishing license. She advised him a fishing license costs $1.50 and a marriage license costs $2.50. With some thought and a smile, he chose the marriage license, and so our life together, later filled with two children, began. Whenever we had a disagreement, I would remind my husband that he could have saved money had he chosen a fishing license, and it would have expired in a year. The extra dollar costs him 53 years of wedded bliss.</p>
+                <p id="story">Good afternoon, and thank you for joining us on today's conference call.</p>
             <div>
                 <button><i class="fa fa-share-alt" aria-hidden="true"></i> SHARE</button>
                 
