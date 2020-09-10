@@ -1,6 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState } from 'react';
+import { Modal } from 'antd';
+import StoryForm from '../Forms/StoryForm';
 
 export default function Hamburger() {
+
+    const [add, setAdd] = useState(false);
+    const [loading, updateLoading] = useState(false);
+
+    const addStory = () => {
+        setAdd(true);
+      }
+
+    const closeModal = () => {
+        setAdd(false);
+    }
 
     const Desktop = [
         {
@@ -72,7 +85,22 @@ export default function Hamburger() {
                             <li key={index}><a href={menu.url}>{menu.title}</a></li>
                         )
                     })}
-                    <li><button>SUBMIT YOUR STORY</button></li>
+                    <li>
+                        <button
+                            onClick={addStory}    
+                        >
+                            SUBMIT YOUR STORY
+                        </button>
+                    </li>
+                    <Modal
+                        title="Add Story"
+                        visible={add}
+                        onCancel={closeModal}
+                        footer={[]}
+                        destroyOnClose={true}
+                    >
+                        <StoryForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
+                    </Modal>
                 </ul>
             </div>
         </div>
