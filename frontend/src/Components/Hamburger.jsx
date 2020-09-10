@@ -49,10 +49,11 @@ export default function Hamburger() {
     }
     const [ menuActive, setMenuState ] = useState(false);
     
-    if (menuActive) {
-        let s = document.getElementById('nav-icon')
-        s.classList.add('open');
-    } 
+    // if (menuActive) {
+    //     let s = document.getElementById('nav-icon')
+    //     s.classList.add('open');
+    // } 
+
     return (
         <div className="NavBar">
             <header className="logo">
@@ -77,7 +78,7 @@ export default function Hamburger() {
                     </svg>
                    
             </header>
-            <div id="nav-icon" onClick={() => setMenuState(!menuActive)}>
+            <div id={menuActive ? "nav-icon.open" : "nav-icon"} onClick={() => setMenuState(!menuActive)}>
                 <span></span>
                 <span></span>
                 <span></span>
