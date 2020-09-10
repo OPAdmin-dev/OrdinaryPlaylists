@@ -11,7 +11,7 @@ module.exports = {
                 '@modal-header-bg': '#8A80D3',
                 '@modal-heading-color': '#FFFFFF',
                 '@primary-color': '#8A80D3',
-                '@border-color-base' : '#000000'
+                '@border-color-base' : '#000000',
             },
             javascriptEnabled: true,
           },
