@@ -22,10 +22,8 @@ export default function Story() {
             <p id="StoryParagraph">What’s yours?</p>
             <button style={{
               backgroundColor: "rgba(244,247,244)",
-              color: "#1F1F1F"}}>SUBMIT YOUR STORY</button>
-            }}
-            onClick={addStory}
-            >SUBMIT YOUR STORY</button>
+              color: "#1F1F1F"}}
+            onClick={addStory}>SUBMIT YOUR STORY</button>
         </div>
         <div className="StoryContainer purple">
             <p id="StoryUs">Our Story</p>

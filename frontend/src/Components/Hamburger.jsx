@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Hamburger() {
 
@@ -40,8 +40,19 @@ export default function Hamburger() {
         url: '#', 
         cName: 'nav-links'
     }]
-        
+    const size = useWindowSize();
+    var Console = undefined;
+    if (size.width < 768) {
+        Console = Mobile;
+    } else {
+        Console = Desktop;
+    }
+    const [ menuActive, setMenuState ] = useState(false);
     
+    if (menuActive) {
+        let s = document.getElementById('nav-icon')
+        s.classList.add('open');
+    } 
     return (
         <div className="NavBar">
             <header className="logo">
@@ -64,19 +75,70 @@ export default function Hamburger() {
                     <path d="M272.481 124.248C270.266 124.42 268.056 123.855 266.192 122.64C264.762 121.497 263.775 119.887 263.4 118.089C262.893 115.559 262.648 112.984 262.669 110.403V93.7788L257.41 93.8878V89.5818H260.283H262.614V81.76H263.97C264.444 81.76 264.905 81.76 265.325 81.76C265.745 81.76 266.314 81.76 266.789 81.76C267.263 81.76 267.724 81.76 268.144 81.76V89.8271C270.421 89.8271 272.21 89.8271 273.565 89.8271H276.601C277.618 89.8271 278.621 89.8271 279.637 89.8271C279.637 89.9361 279.637 90.0451 279.637 90.1814C279.631 90.2994 279.631 90.4176 279.637 90.5356C279.617 90.7805 279.617 91.0266 279.637 91.2715V93.043C279.637 93.261 279.637 93.4654 279.637 93.6698C279.637 93.8742 279.637 94.0514 279.637 94.2421L268.307 94.0786C268.307 95.8501 268.307 97.7578 268.307 99.7746C268.307 101.791 268.307 103.863 268.307 105.907V112.12C268.214 114.136 268.537 116.15 269.255 118.034C269.582 118.728 270.115 119.302 270.78 119.678C271.445 120.053 272.21 120.213 272.969 120.133C274.077 120.135 275.183 120.044 276.276 119.86C277.304 119.679 278.319 119.424 279.312 119.097V121.114C279.312 121.55 279.244 121.973 279.23 122.395C279.203 122.785 279.203 123.177 279.23 123.567C277.022 124.102 274.751 124.331 272.481 124.248Z" fill="#F4F7F4"/>
                     <path d="M297.635 124.413C294.138 124.59 290.682 123.582 287.822 121.551C285.306 119.541 283.593 116.687 282.998 113.511L288.256 113.021C288.907 115.127 290.173 116.988 291.888 118.362C293.761 119.669 296.009 120.321 298.285 120.216C300.702 120.244 303.099 119.78 305.333 118.853C305.796 118.082 306.143 117.246 306.363 116.373C306.61 115.458 306.738 114.514 306.743 113.566C306.788 112.511 306.472 111.472 305.848 110.622C305.069 109.717 304.041 109.062 302.894 108.742C301.057 108.188 299.167 107.832 297.255 107.679C294.555 107.402 291.897 106.798 289.34 105.88C287.704 105.353 286.278 104.312 285.274 102.91C284.467 101.495 284.072 99.8794 284.136 98.2493C284.109 96.4411 284.724 94.6825 285.871 93.2891C287.156 91.7625 288.821 90.6057 290.696 89.937C292.959 89.0974 295.358 88.6907 297.77 88.7378C300.312 88.6909 302.837 89.1542 305.198 90.1005C307.192 90.9153 308.913 92.2864 310.158 94.0522C311.515 96.0996 312.395 98.4286 312.733 100.866L307.474 101.465C307.095 99.0428 305.966 96.802 304.249 95.0606C302.313 93.572 299.903 92.8451 297.472 93.0166C296.362 93.0154 295.254 93.125 294.165 93.3436C293.242 93.5203 292.335 93.7756 291.455 94.1067C290.898 94.7832 290.475 95.5602 290.208 96.396C289.922 97.2761 289.776 98.1957 289.774 99.1214C289.729 100.144 289.983 101.158 290.506 102.038C291.202 102.923 292.146 103.578 293.217 103.918C295.125 104.578 297.096 105.034 299.099 105.281C301.703 105.444 304.274 105.957 306.743 106.807C308.397 107.342 309.853 108.368 310.917 109.75C311.84 111.093 312.315 112.697 312.272 114.329C312.312 116.277 311.669 118.178 310.456 119.698C309.101 121.301 307.341 122.507 305.36 123.186C302.881 124.064 300.263 124.48 297.635 124.413Z" fill="#F4F7F4"/>
                     </svg>
+                   
             </header>
-            <div className="Menu">
-                <ul>
-                    {Desktop.map((menu,index)=>{
-                        return(
-                            <li key={index}><a href={menu.url}>{menu.title}</a></li>
-                        )
-                    })}
-                    <li><button>SUBMIT YOUR STORY</button></li>
-                </ul>
+            <div id="nav-icon" onClick={() => setMenuState(!menuActive)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div className={`overlay ${menuActive?"": "menuD"}`}>
+                <div className={`Menu ${menuActive?"": "menuD"}`}>
+                    <ul>
+                        {
+                            Console.map((menu,index)=>{
+                            return(
+                                <li key={index}><a href={menu.url}>{menu.title}</a></li>
+                            )
+                        })}
+                        <li><button>SUBMIT YOUR STORY</button></li>
+                        <div className="Social">
+                <h1 style={{color:"white"}}>Connect with us</h1>
+                <div id="social" className="socialDark">
+                <a href="#"><span className="fab fa-facebook"></span></a>
+                <a href="#"><span className="fab fa-twitter"></span></a>
+                <a href="#"><span className="fab fa-instagram"></span></a>
+                <a href="#"><span className="fab fa-youtube"></span></a>
+                </div>
+                </div>
+                    </ul>
+                 
+                </div>
+                
             </div>
         </div>
     )
 
+
 }
 
+
+
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+    });
+  
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+        });
+      }
+      
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+  
+    return windowSize;
+  }
