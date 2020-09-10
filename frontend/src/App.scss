@@ -53,11 +53,6 @@ html, body {
 	background-size:cover;
 	color: #ffffff;
 	height: 100vh;
-	h1 {
-		font-family: Roxborough CF;
-		font-style: italic;
-	}
-	
 }
 
 //Scroll down Button
@@ -123,6 +118,39 @@ html, body {
 	position: absolute;
 	bottom: 40vh;
 	padding:50px;
+	#title {
+		height: 17px;
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 109%;
+		color: #8A80D3;
+	}
+	h1 {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 45px;
+		line-height: 131%;
+		color: #F4F7F4;
+	}
+	#paragraph {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: #F4F7F4;
+	}
+	#author {
+		font-family: GT Cinetype Trial;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 131%;
+		color: #F4F7F4;
+	}
+	
 
 }
 //Story Viewer
