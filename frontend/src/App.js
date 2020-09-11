@@ -6,6 +6,7 @@ import StoryViewer from "./Components/StoryViewer"
 import StoryShared from "./Components/StoryShared"
 import Story from "./Components/Story"
 import Footer from "./Components/Footer"
+import MasterForm from './Forms/StoryForm/MasterForm';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <StoryShared/>
       <Story/>
       <Footer/>
+      <MasterForm/>
     </div>
   );
 }

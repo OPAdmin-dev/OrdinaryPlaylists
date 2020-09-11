@@ -48,8 +48,6 @@ export default function Hamburger() {
         Console = Desktop;
     }
     const [ menuActive, setMenuState ] = useState(false);
-    let s = undefined;
-  
 
     return (
         <div className="NavBar">
@@ -75,6 +73,7 @@ export default function Hamburger() {
                     </svg>
                    
             </header>
+
             <div className={`nav-icon ${menuActive?"open": ""}`} onClick={() => setMenuState(!menuActive)}>
                 <span></span>
                 <span></span>
