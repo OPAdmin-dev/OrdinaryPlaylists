@@ -48,11 +48,9 @@ export default function Hamburger() {
         Console = Desktop;
     }
     const [ menuActive, setMenuState ] = useState(false);
-    
-    if (menuActive) {
-        let s = document.getElementById('nav-icon')
-        s.classList.add('open');
-    } 
+    let s = undefined;
+  
+
     return (
         <div className="NavBar">
             <header className="logo">
@@ -77,7 +75,7 @@ export default function Hamburger() {
                     </svg>
                    
             </header>
-            <div id="nav-icon" onClick={() => setMenuState(!menuActive)}>
+            <div className={`nav-icon ${menuActive?"open": ""}`} onClick={() => setMenuState(!menuActive)}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -91,7 +89,7 @@ export default function Hamburger() {
                                 <li key={index}><a href={menu.url}>{menu.title}</a></li>
                             )
                         })}
-                        <li><button>SUBMIT YOUR STORY</button></li>
+                        <button>SUBMIT YOUR STORY</button>
                         <div className="Social">
                 <h1 style={{color:"white"}}>Connect with us</h1>
                 <div id="social" className="socialDark">
