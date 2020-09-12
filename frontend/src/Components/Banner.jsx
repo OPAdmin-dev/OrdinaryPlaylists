@@ -2,8 +2,6 @@ import React from 'react';
 
 export default function Banner() {
     return(
-
-        
         <div className="home">
             <div className="container">
                 <p id="title">NEW RELEASE</p>
