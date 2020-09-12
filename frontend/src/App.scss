@@ -72,7 +72,7 @@ html, body {
 		}
 		button {
 			height: 61px;
-			width: 75vw;
+			width: 55vw;
 			background: rgba(138,128,211,0.5);
 			font-family: GT Cinetype Trial;
 			font-style: normal;
@@ -762,4 +762,232 @@ ul{
 			opacity: 1;
 		}
 	}
+}
+
+// Form
+.form {
+	width: 100%;
+	height: 100vh;
+	background: #1F1F1F;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	#nav-button {
+		display: flex;
+		vertical-align: middle;
+		left: 5vw;
+		bottom: 5vh;
+		position: absolute;
+		
+		.top {
+			display: inline-block;
+			width: 4em;
+			height: 4em;
+			border: 0.2em solid #333;
+			border-radius: 50%;
+			margin-right: 0.75em;
+		}
+		#b {
+			padding-right: 1em;
+		}
+		
+		.top:after {
+			content: '';
+			display: inline-block;
+			margin-top: 1.4em;
+			width: 1.4em;
+			height: 1.4em;
+			border-top: 0.2em solid #333;
+			border-right: 0.2em solid #333;
+			-moz-transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		
+		.bottom {
+			display: inline-block;
+			width: 4em;
+			height: 4em;
+			border: 0.2em solid #333;
+			border-radius: 50%;
+			margin-left: 0.75em;
+		}
+		
+		.bottom:after {
+			content: '';
+			display: inline-block;
+			margin-top: 0.6em;
+			width: 1.4em;
+			height: 1.4em;
+			border-top: 0.2em solid #333;
+			border-right: 0.2em solid #333;
+			-moz-transform: rotate(135deg);
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+		a {
+			display: inline-block;
+			border-radius: 50%;
+			text-align: center;
+		  }
+		  
+		  a:hover .top, a:hover .bottom{
+			border: 0.2em solid #ffffff;
+		  }
+		  
+ 		 a:hover .top:after, a:hover .bottom:after{
+			border-top: 0.2em solid #ffffff;
+			border-right: 0.2em solid #ffffff;
+		  }
+	}
+	button {
+		height: 61px;
+		width: 261px;
+		background: #8A80D3;
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 109%;
+		text-transform: uppercase;
+		color: #FFFFFF;
+		border: none;
+	}
+}
+.Story_1 {
+	#question {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 109%;
+		text-transform: uppercase;
+		color: #8A80D3;
+	}
+	#header {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 131%;
+		color: #F4F7F4;
+	}
+	#title {
+		width: 80vw;
+		height: 55px;
+		background: transparent;
+		border: 1px solid #747474;
+		box-sizing: border-box;
+		color: white;
+	}
+
+	#description {
+	width: 80vw;
+	height: 246px;
+	border: 1px solid #747474;
+	background: transparent;
+	color: white;
+	text-align: top;
+	}
+}
+
+.Story_2 {
+	width: 80vw;
+	#question {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 109%;
+		text-transform: uppercase;
+		color: #8A80D3;
+	}
+	#header {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 45px;
+		line-height: 131%;
+		color: #F4F7F4;
+	}
+	#moodCollection {
+		display: flex;
+		justify-content: space-around;
+		padding-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.mood {
+		width: 153px;
+		height: 57px;
+		border: 1px solid #ffff;
+		border-radius: 10px;
+		line-height: 109%;
+		display: flex;
+		align-items: center;
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		justify-content: center;
+	}
+	
+}
+
+.Story_3 {
+	
+	width: 80vw;
+	#question {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 109%;
+		text-transform: uppercase;
+		color: #8A80D3;
+	}
+	#header {
+		font-family: Roxborough CF;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 45px;
+		line-height: 131%;	
+		color: #F4F7F4;
+	}
+	#pen {
+		width: 80vw;
+		height: 55px;
+		background: transparent;
+		border: 1px solid #747474;
+		box-sizing: border-box;
+		color: white;
+	}
+	#location {
+		width: 80vw;
+		height: 55px;
+		background: transparent;
+		border: 1px solid #747474;
+		box-sizing: border-box;
+		color: white;
+	}
+	#email {
+		width: 80vw;
+		height: 55px;
+		background: transparent;
+		border: 1px solid #747474;
+		box-sizing: border-box;
+		color: white;
+	}
+	p {
+		font-family: GT Cinetype Trial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 140%;
+		width: 80vw;
+		color: #747474;
+	}
+
+	
 }

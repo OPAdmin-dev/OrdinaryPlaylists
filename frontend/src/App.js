@@ -13,11 +13,11 @@ function App() {
     <div className="App">
       <Hamburger/>
       <Banner/>
+      <MasterForm/>
       <StoryViewer/>
       <StoryShared/>
       <Story/>
       <Footer/>
-      <MasterForm/>
     </div>
   );
 }

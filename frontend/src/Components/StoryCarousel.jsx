@@ -21,7 +21,7 @@ export default function StoryCarousel() {
                 <p id="author">by Gilbert Zhuo</p>
                 <p id="story">Good afternoon, and thank you for joining us on today's conference call.</p>
             <div>
-                <button><i class="fa fa-share-alt" aria-hidden="true"></i> SHARE</button>
+                <button><i className="fa fa-share-alt" aria-hidden="true"></i> SHARE</button>
                 
                     <p id="disclaimer">*copied to clipboard</p>
                 </div>

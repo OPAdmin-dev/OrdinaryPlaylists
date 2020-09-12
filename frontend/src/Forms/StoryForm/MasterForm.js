@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Button, Form, Input } from 'antd';
 
-import ChildFormA from './ChildFormA';
-import ChildFormB from './ChildFormB';
+import Story_1 from './Story_1';
+import Story_2 from './Story_2';
+import Story_3 from './Story_3';
 
 
 export default function MasterForm() {
@@ -18,9 +19,6 @@ export default function MasterForm() {
     const [story, setStory] = useState();
 
     const handleOk = () => {
-
-        // Use need to post data to API from here and we gucci
-
         console.log(name);
         console.log(title);
         console.log(email);
@@ -28,29 +26,39 @@ export default function MasterForm() {
     };
 
     return (
-        <div>
+        <div className="form">
             <form onSubmit={handleSubmit(handleOk)}>
-                {level == 0 ? <ChildFormA 
+                {level == 0 ? <Story_1
                     name={name}
                     title={title}
                     setName={setName}
                     setTitle={setTitle}
                 /> : null}
-                {level == 1 ? <ChildFormB 
+                {level == 1 ? <Story_2
                     email={email}
                     story={story}
                     setEmail={setEmail}
                     setStory={setStory}
                 /> : null} 
-                {level == 1 ? <Button 
-                    type="primary" 
-                    htmlType="submit" 
-                    onClick={handleOk}>Submit
-                </Button> : null}
+               
+                {level == 2 ? <Story_3/> : null}
+                {level == 2 ? <button>SUBMIT</button>: null}
+              
             </form>
-            {level != 1 ? <Button type="primary" onClick={() => setLevel(level + 1)}>Next</Button> : null}
-            <Button type="primary" onClick={() => setLevel(level - 1)}>Previous</Button>   
-            <p>Level: {level}</p>
+            <div id="nav-button">
+                <div id="b">
+                    <a onClick={() => setLevel(level - 1)}>
+                    <span className="bottom"></span>
+                    </a>
+                </div>
+                <div id="b">
+                    {level != 2 ? 
+                    <a onClick={() => setLevel(level + 1)}>
+                    <span className="top"></span>
+                    </a>
+                    :null}
+                </div>
+            </div>
         </div>
     )
 }
