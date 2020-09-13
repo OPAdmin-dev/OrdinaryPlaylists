@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Form, Input } from 'antd';
 
-export default function ChildFormA(props) {
+export default function Story_3(props) {
 
     const { errors, control } = useForm({});
 
