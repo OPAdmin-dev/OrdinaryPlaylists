@@ -12,6 +12,7 @@ module.exports = {
                 '@modal-heading-color': '#FFFFFF',
                 '@primary-color': '#8A80D3',
                 '@border-color-base' : '#000000',
+                '@layout-footer-padding': '0px'
             },
             javascriptEnabled: true,
           },

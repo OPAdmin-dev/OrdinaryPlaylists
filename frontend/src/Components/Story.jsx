@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
-import StoryForm from '../Forms/StoryForm';
+import MasterForm from '../Forms/StoryForm/MasterForm';
 
 export default function Story() {
 
@@ -37,13 +37,14 @@ export default function Story() {
             }}
             >READ MORE</button>
             <Modal
-                title="Add Story"
+                width="100%"
+                height= "130%"
                 visible={add}
                 onCancel={closeModal}
                 footer={[]}
                 destroyOnClose={true}
             >
-                <StoryForm closeModal={closeModal} add={add} loading={loading} updateLoading={updateLoading}/>
+                <MasterForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
             </Modal>
             </div>
         </div>
