@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.scss';
+import './App.less';
+
 import Hamburger from "./Components/Hamburger"
 import Banner from "./Components/Banner"
 import StoryViewer from "./Components/StoryViewer"
