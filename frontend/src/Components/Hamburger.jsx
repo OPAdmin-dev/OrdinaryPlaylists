@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
-import StoryForm from '../Forms/StoryForm';
 
 export default function Hamburger() {
 

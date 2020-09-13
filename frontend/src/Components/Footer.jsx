@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
-import StoryForm from '../Forms/StoryForm';
+import MasterForm from '../Forms/StoryForm/MasterForm';
 
 export default function Footer() {
     
@@ -43,13 +43,14 @@ export default function Footer() {
                 SUBMIT YOUR STORY
             </button>
             <Modal
-                title="Add Story"
+                width="100%"
+                height= "130%"
                 visible={add}
                 onCancel={closeModal}
                 footer={[]}
                 destroyOnClose={true}
             >
-                <StoryForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
+                <MasterForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
             </Modal>
             <p id="copyrights">© Ordinary Playlists {date}</p>
         </footer>

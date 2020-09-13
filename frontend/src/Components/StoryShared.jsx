@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
-import StoryForm from '../Forms/StoryForm';
+import MasterForm from '../Forms/StoryForm/MasterForm';
 import CountUp from 'react-countup';
 import apiStories from '../services/utilities/API';
 
@@ -47,13 +47,14 @@ export default function StoryShared() {
                 </button>
             </div>
             <Modal
-                title="Add Story"
+                width="100%"
+                height= "130%"
                 visible={add}
                 onCancel={closeModal}
                 footer={[]}
                 destroyOnClose={true}
             >
-                <StoryForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
+                <MasterForm closeModal={closeModal} add={add}  loading={loading} updateLoading={updateLoading}/>
             </Modal>
         </div>
     )
