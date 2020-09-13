@@ -1,6 +1,20 @@
+import React, {useState } from 'react';
+import { Modal } from 'antd';
+import StoryForm from '../Forms/StoryForm';
 import React, { useState, useEffect } from 'react';
 
 export default function Hamburger() {
+
+    const [add, setAdd] = useState(false);
+    const [loading, updateLoading] = useState(false);
+
+    const addStory = () => {
+        setAdd(true);
+      }
+
+    const closeModal = () => {
+        setAdd(false);
+    }
 
     const Desktop = [
         {
@@ -73,7 +87,6 @@ export default function Hamburger() {
                     </svg>
                    
             </header>
-
             <div className={`nav-icon ${menuActive?"open": ""}`} onClick={() => setMenuState(!menuActive)}>
                 <span></span>
                 <span></span>
@@ -101,7 +114,6 @@ export default function Hamburger() {
                     </ul>
                  
                 </div>
-                
             </div>
         </div>
     )
