@@ -12,6 +12,8 @@ class Stories(models.Model):
     title = models.CharField(max_length=200, default="Story Title")
     story = models.TextField(default="Story")
     email = models.EmailField(default="test@test.com")
+    location = models.CharField(max_length=200, default="Story Location")
+    tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list, null=True, blank=True)
 
     def __str__(self):
         return "'{0}' written by '{1}'".format(self.title, self.name)
