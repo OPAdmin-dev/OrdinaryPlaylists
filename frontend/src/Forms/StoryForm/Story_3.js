@@ -6,12 +6,16 @@ export default function Story_3(props) {
 
     const { errors, control } = useForm({});
 
-    const handleNameChange = (e) => {
-        props.setName(e.target.value);
+    const handleEmailChange = (e) => {
+        props.setEmail(e.target.value);
     }
 
-    const handleTitleChange = (e) => {
-        props.setTitle(e.target.value);
+    const handleLocationChange = (e) => {
+        props.setLocation(e.target.value);
+    }
+
+    const handleNameChange = (e) => {
+        props.setName(e.target.value);
     }
 
     return (
@@ -26,10 +30,10 @@ export default function Story_3(props) {
                 as={
                     <Form.Item
                         name="pen"
-                        validateStatus={errors.pen && "error"}
-                        help={errors.pen && errors.pen.message}
+                        validateStatus={errors.name && "error"}
+                        help={errors.name && errors.name.message}
                     >
-                        <Input defaultValue={props.pen} placeholder="Pen name" name="pen" onChange={(pen) => handleTitleChange(pen)}/>
+                        <Input defaultValue={props.name} placeholder="Pen name" name="pen" onChange={(pen) => handleNameChange(pen)}/>
                     </Form.Item>
                 }   
             />  
@@ -44,7 +48,7 @@ export default function Story_3(props) {
                         validateStatus={errors.location && "error"}
                         help={errors.location && errors.location.message}
                     >
-                        <Input defaultValue={props.location} placeholder="Time or location" name="location" onChange={(location) => handleTitleChange(location)}/>
+                        <Input defaultValue={props.location} placeholder="Time or location" name="location" onChange={(location) => handleLocationChange(location)}/>
                     </Form.Item>
                 }   
             />  
@@ -59,7 +63,7 @@ export default function Story_3(props) {
                         validateStatus={errors.email && "error"}
                         help={errors.email && errors.email.message}
                     >
-                        <Input defaultValue={props.email} placeholder="Your email, for verification purposes*" name="email" onChange={(email) => handleTitleChange(email)}/>
+                        <Input defaultValue={props.email} placeholder="Your email, for verification purposes*" name="email" onChange={(email) => handleEmailChange(email)}/>
                     </Form.Item>
                 }   
             />  
