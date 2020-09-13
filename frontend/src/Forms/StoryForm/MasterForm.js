@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { message } from 'antd';
-
-import Story_1 from './Story_1';
-import Story_2 from './Story_2';
-import Story_3 from './Story_3';
 import Collection from '../../Data/Collection';
 
-import { Button, Form, Input } from 'antd';
 import Story_1 from './Story_1';
 import Story_2 from './Story_2';
 import Story_3 from './Story_3';
@@ -51,7 +46,7 @@ export default function MasterForm() {
         } else {
             message.loading({ content: 'Processing...', key });
             setTimeout(() => {
-                message.warning({ content: 'Oops! Looks like you haven\'t filled out the form entirely! Please fill in all required fields!', key, duration: 2 });
+                message.warning({ content: 'Oops! Looks like you haven\'t filled out the form entirely! Please fill in all required fields!', key, duration: 7 });
             }, 1000);
         }
     };
@@ -87,7 +82,7 @@ export default function MasterForm() {
     return (
         <div className="form">
                 <form onSubmit={handleSubmit(handleOk)}>
-               { (level == 0)?
+                {(level == 0)?
                 (<div className="mainForm">
                 
                     <p id="question">Q1</p>
@@ -107,11 +102,9 @@ export default function MasterForm() {
                     </div>
                 </div>
                 </div>):null
-               }
-               {(level == 1  && choice == 2)? <Music_1/>:null}
-
+                }
+                {(level == 1  && choice == 2)? <Music_1/>:null}
                 {(level == 1 && choice == 1)? <Story_1
-                    name={name}
                     title={title}
                     story={story}
                     setTitle={setTitle}
@@ -119,12 +112,18 @@ export default function MasterForm() {
                 /> : null}
                 {(level == 2  && choice == 2)? <Music_2/>:null}
                 {(level == 2  && choice == 1) ? <Story_2
-                    email={email}
-                    setEmail={setEmail}
-                    setStory={setStory}
+                    tags={tags}
+                    setTags={setTags}
                 /> : null} 
                 {(level == 3 && choice == 2) ? <Music_3/> : null}
-                {(level == 3  && choice == 1)? <Story_3/> : null}
+                {(level == 3  && choice == 1)? <Story_3
+                    name={name}
+                    setName={setName}
+                    location={location}
+                    setLocation={setLocation}
+                    email={email}
+                    setEmail={setEmail}
+                /> : null}
                 {(level == 4 && choice == 2)? <Music_4/> : null}
             </form>
             <div id="nav-button">
@@ -141,7 +140,7 @@ export default function MasterForm() {
                     <a onClick={() => setLevel(level + 1)}>
                     <span className="top"></span>
                     </a>
-                    :(level !=0)?<button>SUBMIT</button>:null}
+                    :(level !=0)?<button onClick={handleOk}>SUBMIT</button>:null}
                 </div>
             </div>
         </div>
