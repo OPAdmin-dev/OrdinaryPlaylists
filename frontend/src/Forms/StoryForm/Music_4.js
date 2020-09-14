@@ -6,12 +6,20 @@ export default function Music_4(props) {
 
     const { errors, control } = useForm({});
 
-    const handleNameChange = (e) => {
-        props.setName(e.target.value);
+    const handleArtistNameChange = (e) => {
+        props.setArtistName(e.target.value);
     }
 
-    const handleTitleChange = (e) => {
-        props.setTitle(e.target.value);
+    const handleArtistEmailChange = (e) => {
+        props.setArtistEmail(e.target.value);
+    }
+
+    const handleSocialHandleChange = (e) => {
+        props.setSocialHandle(e.target.value);
+    }
+
+    const handleTrackDescChange = (e) => {
+        props.setTrackDesc(e.target.value);
     }
 
     return (
@@ -29,7 +37,7 @@ export default function Music_4(props) {
                         validateStatus={errors.stageName && "error"}
                         help={errors.songTitle && errors.stageName.message}
                     >
-                        <Input defaultValue={props.stageName} placeholder="Your stage name*" name="stageName" onChange={(stageName) => handleTitleChange(stageName)}/>
+                        <Input defaultValue={props.artist_name} placeholder="Your stage name*" name="stageName" onChange={(stageName) => handleArtistNameChange(stageName)}/>
                     </Form.Item>
                 }   
             />  
@@ -44,7 +52,7 @@ export default function Music_4(props) {
                         validateStatus={errors.email && "error"}
                         help={errors.email && errors.email.message}
                     >
-                        <Input defaultValue={props.email} placeholder="Your email, for verification purposes*" name="email" onChange={(email) => handleTitleChange(email)}/>
+                        <Input defaultValue={props.artist_email} placeholder="Your email, for verification purposes*" name="email" onChange={(email) => handleArtistEmailChange(email)}/>
                     </Form.Item>
                 }   
             />  
@@ -59,7 +67,7 @@ export default function Music_4(props) {
                         validateStatus={errors.instagram && "error"}
                         help={errors.instagram && errors.instagram.message}
                     >
-                        <Input defaultValue={props.instagram} placeholder="Your Instagram handle" name="instagram" onChange={(instagram) => handleTitleChange(instagram)}/>
+                        <Input defaultValue={props.social_handle} placeholder="Your Instagram handle" name="instagram" onChange={(instagram) => handleSocialHandleChange(instagram)}/>
                     </Form.Item>
                 }   
             />  
@@ -73,7 +81,7 @@ export default function Music_4(props) {
                         validateStatus={errors.notes && "error"}
                         help={errors.notes && errors.notes.message}
                     >
-                    <Input.TextArea defaultValue={props.notes} placeholder="Any additional note to your listeners" name="notes" onChange={(notes) => handleNameChange(notes)}/>
+                        <Input.TextArea defaultValue={props.track_desc} placeholder="Any additional note to your listeners" name="notes" onChange={(notes) => handleTrackDescChange(notes)}/>
                     </Form.Item>
                 }   
             />

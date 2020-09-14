@@ -1,38 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { Form, Input } from 'antd';
-import Card from '../../Images/Card.png'
+import { Form, Input, AutoComplete, Button } from 'antd';
+import Card from '../../Images/Card.png';
+
+import { apiStories } from '../../services/utilities/API';
+
 export default function Music_1(props) {
 
-    const { errors, control } = useForm({});
+    const [stories, setStories] = useState();
 
-    const handleNameChange = (e) => {
-        props.setName(e.target.value);
-    }
+    useEffect(() => {
+        apiStories.getAll()
+            .then(res => {
+                setStories(res.data.map(story => {
+                    return {'value' : `Story ID: ${story.id}`}
+                }))
+            })
+    }, [])
 
-    const handleTitleChange = (e) => {
-        props.setTitle(e.target.value);
-    }
+    const onSelect = (data) => {
+        var slug = data.substring(data.indexOf(':') + 1); 
+        slug = parseInt(slug.trim());
+        props.setStoryID(slug);
+    };
 
     return (
         <div className="Music_1">
             <p id="question">Q2</p>
             <p id="header">Which story is this song inspired by? </p>
-            <Controller 
-                name="serial"
-                defaultValue=''
-                control={control}
-                rules={{ required: "This field is required" }}
-                as={
-                    <Form.Item
-                        name="serial"
-                        validateStatus={errors.serial && "error"}
-                        help={errors.serial && errors.serial.message}
-                    >
-                        <Input defaultValue={props.serial} placeholder="Enter serial code or hyperlink of the story" name="serial" onChange={(serial) => handleTitleChange(serial)}/>
-                    </Form.Item>
-                }   
-            />  
+            <AutoComplete
+                style={{
+                    width: 500
+                }}
+                options={stories}
+                placeholder="Search for story by title..."
+                filterOption={
+                    (inputValue, option) => option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                }
+                onSelect={onSelect}
+            />
             <div id="info">
             <img src={Card} 
             height="252.79px"

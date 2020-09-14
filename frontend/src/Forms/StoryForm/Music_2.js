@@ -6,12 +6,16 @@ export default function Music_2(props) {
 
     const { errors, control } = useForm({});
 
-    const handleNameChange = (e) => {
-        props.setName(e.target.value);
+    const handleTitleChange = (e) => {
+        props.setSongTitle(e.target.value);
     }
 
-    const handleTitleChange = (e) => {
-        props.setTitle(e.target.value);
+    const handleLinkChange = (e) => {
+        props.setSongLink(e.target.value);
+    }
+
+    const handleLyricsChange = (e) => {
+        props.setSongLyrics(e.target.value);
     }
 
     return (
@@ -29,7 +33,7 @@ export default function Music_2(props) {
                         validateStatus={errors.songTitle && "error"}
                         help={errors.songTitle && errors.songTitle.message}
                     >
-                        <Input defaultValue={props.songTitle} placeholder="Song title*" name="songTitle" onChange={(songTitle) => handleTitleChange(songTitle)}/>
+                        <Input defaultValue={props.song_title} placeholder="Song title*" name="songTitle" onChange={(songTitle) => handleTitleChange(songTitle)}/>
                     </Form.Item>
                 }   
             />  
@@ -44,7 +48,7 @@ export default function Music_2(props) {
                         validateStatus={errors.link && "error"}
                         help={errors.link && errors.link.message}
                     >
-                        <Input defaultValue={props.link} placeholder="Your song link (Spotify/YouTube/Soundcloud)" name="link" onChange={(link) => handleTitleChange(link)}/>
+                        <Input defaultValue={props.song_link} placeholder="Your song link (Spotify/YouTube/Soundcloud)" name="link" onChange={(link) => handleLinkChange(link)}/>
                     </Form.Item>
                 }   
             />  
@@ -58,7 +62,7 @@ export default function Music_2(props) {
                         validateStatus={errors.lyrics && "error"}
                         help={errors.lyrics && errors.lyrics.message}
                     >
-                    <Input.TextArea defaultValue={props.lyrics} placeholder="Song lyrics" name="description" onChange={(lyrics) => handleNameChange(lyrics)}/>
+                    <Input.TextArea defaultValue={props.song_lyrics} placeholder="Song lyrics" name="description" onChange={(lyrics) => handleLyricsChange(lyrics)}/>
                     </Form.Item>
                 }   
             />

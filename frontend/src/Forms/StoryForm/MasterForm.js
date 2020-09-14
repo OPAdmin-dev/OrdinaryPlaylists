@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { message } from 'antd';
 import Collection from '../../Data/Collection';
@@ -13,17 +13,17 @@ import Music_4 from './Music_4';
 import notepad from "../../Images/note.svg"
 import music from "../../Images/music.svg"
 
-
-import { apiStories } from '../../services/utilities/API';
+import { apiStories, apiTracks } from '../../services/utilities/API';
 
 const key = 'updatable';
 
 export default function MasterForm() {
 
+    const [submission, setSubmission] = useState(0);
     const { handleSubmit }  = useForm({});
-
+    
     const [level, setLevel] = useState(0);
-  
+    
     const [name, setName]   = useState(null);
     const [location, setLocation]= useState(null);
     const [title, setTitle] = useState(null);
@@ -32,11 +32,22 @@ export default function MasterForm() {
     const [tags, setTags] = useState(Collection);
     const [choice, setChoice] = useState(0);
 
-    const storyFormSubmitMessage = (status) => {
+    const [storyID, setStoryID] = useState(null);
+    const [song_title, setSongTitle] = useState(null);
+    const [song_link, setSongLink] = useState(null);
+    const [song_lyrics, setSongLyrics] = useState(null);
+    const [song_tags, setSongTags] = useState(Collection);
+    const [artist_name, setArtistName] = useState(null);
+    const [artist_email, setArtistEmail] = useState(null);
+    const [track_desc, setTrackDesc] = useState(null);
+    const [social_handle, setSocialHandle]= useState(null);
+
+    const formSubmitMessage = (status , type) => {
         if(status == true){
             message.loading({ content: 'Processing...', key });
             setTimeout(() => {
-                message.success({ content: 'Story created successfully!', key, duration: 2 });
+                message.success({ content: `${type} created successfully!`, key, duration: 2 });
+                setSubmission(submission + 1);
             }, 1000);
         } else if(status == false) {
             message.loading({ content: 'Processing...', key });
@@ -52,30 +63,57 @@ export default function MasterForm() {
     };
 
     const handleOk = () => {
-        if(name && location && title && email && story && tags) {
-            const selected_tags = tags.filter(tag => {
-                if(tag.click) {
-                    return tag;
-                }
-            }).map(tag => {
-                return tag.name;
-            })
-            apiStories.post({
-                name: (name.length > 0) ? name : "Anonymous",
-                story: story,
-                tags: selected_tags,
-                title: title,
-                email: email,
-                location: location,
-            }).then(res => {
-                console.log(res);
-                storyFormSubmitMessage(true);
-            }).catch(err => {
-                console.log(err);
-                storyFormSubmitMessage(false);
-            })
-        } else {
-            storyFormSubmitMessage(undefined);
+        if(choice === 1) {
+            if(name && location && title && email && story && tags) {
+                const selected_tags = tags.filter(tag => {
+                    if(tag.click) {
+                        return tag;
+                    }
+                }).map(tag => {
+                    return tag.name;
+                })
+                apiStories.post({
+                    name: (name.length > 0) ? name : "Anonymous",
+                    story: story,
+                    tags: selected_tags,
+                    title: title,
+                    email: email,
+                    location: location,
+                }).then(res => {
+                    formSubmitMessage(true, 'Story');
+                }).catch(err => {
+                    formSubmitMessage(false, 'Story');
+                })
+            } else {
+                formSubmitMessage(undefined, 'Story');
+            }
+        } else if(choice == 2) {
+            if(storyID && song_title && song_tags && artist_name && artist_email) {
+                const selected_tags = song_tags.filter(tag => {
+                    if(tag.click) {
+                        return tag;
+                    }
+                }).map(tag => {
+                    return tag.name;
+                })
+                apiTracks.post({
+                    "story": storyID,
+                    "name": song_title,
+                    "artist": artist_name,
+                    "description": track_desc,
+                    "youtube_link": song_link,
+                    "tags": selected_tags,
+                    "email": artist_email,
+                    "lyrics": song_lyrics,
+                    "social_handle": social_handle,
+                }).then(res => {
+                    formSubmitMessage(true, 'Track');
+                }).catch(err => {
+                    formSubmitMessage(false, 'Track');
+                })
+            } else {
+                formSubmitMessage(undefined, 'Track');
+            }
         }
     };
 
@@ -103,19 +141,31 @@ export default function MasterForm() {
                 </div>
                 </div>):null
                 }
-                {(level == 1  && choice == 2)? <Music_1/>:null}
+                {(level == 1  && choice == 2)? <Music_1
+                    setStoryID={setStoryID}
+                />:null}
                 {(level == 1 && choice == 1)? <Story_1
                     title={title}
                     story={story}
                     setTitle={setTitle}
                     setStory={setStory}
                 /> : null}
-                {(level == 2  && choice == 2)? <Music_2/>:null}
+                {(level == 2  && choice == 2)? <Music_2
+                    song_title={song_title}
+                    setSongTitle={setSongTitle}
+                    song_link={song_link}
+                    setSongLink={setSongLink}
+                    song_lyrics={song_lyrics}
+                    setSongLyrics={setSongLyrics}
+                />:null}
                 {(level == 2  && choice == 1) ? <Story_2
                     tags={tags}
                     setTags={setTags}
                 /> : null} 
-                {(level == 3 && choice == 2) ? <Music_3/> : null}
+                {(level == 3 && choice == 2) ? <Music_3
+                    song_tags={song_tags}
+                    setSongTags={setSongTags}
+                /> : null}
                 {(level == 3  && choice == 1)? <Story_3
                     name={name}
                     setName={setName}
@@ -124,7 +174,16 @@ export default function MasterForm() {
                     email={email}
                     setEmail={setEmail}
                 /> : null}
-                {(level == 4 && choice == 2)? <Music_4/> : null}
+                {(level == 4 && choice == 2)? <Music_4
+                    artist_name={artist_name}
+                    setArtistName={setArtistName}
+                    artist_email={artist_email}
+                    setArtistEmail={setArtistEmail}
+                    track_desc={track_desc}
+                    setTrackDesc={setTrackDesc}
+                    social_handle={social_handle}
+                    setSocialHandle={setSocialHandle}
+                /> : null}
             </form>
             <div id="nav-button">
                 <div id="b">
