@@ -44,12 +44,13 @@ class Tracks(models.Model):
     story = models.ForeignKey(Stories, on_delete=models.CASCADE, related_name="stories")
     name = models.CharField(max_length=200, default="Track Name")
     artist = models.CharField(max_length=200, default="Artist Name")
-    description = models.TextField(default="Track Description")
-    youtube_link = models.CharField(max_length=200, default="Youtube URL")
+    description = models.TextField(default="Track Description", blank=True, null=True)
+    youtube_link = models.CharField(max_length=200, default="Youtube URL", blank=True, null=True)
     tags = ArrayField(models.CharField(max_length=200, default="Tags"), default=list, null=True, blank=True)
     email = models.EmailField(default="email_address")
-    lyrics = models.TextField(default="Track Lyrics")
+    lyrics = models.TextField(default="Track Lyrics", blank=True, null=True)
     track_image = models.ForeignKey(TrackImage, on_delete=models.CASCADE, related_name="track_image", blank=True, null=True)
+    social_handle = models.CharField(max_length=200, default="Artist Social Handle Link", blank=True, null=True)
 
     def Image(self):
         return mark_safe('<img src="%s" width="250" height="350"/>' % self.track_image.cover.url)
