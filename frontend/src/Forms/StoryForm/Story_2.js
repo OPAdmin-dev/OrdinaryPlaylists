@@ -1,5 +1,4 @@
 import React from 'react';
-import collection from '../../Data/Collection'
 
 
 export default function Story_2(props) {
@@ -27,8 +26,8 @@ export default function Story_2(props) {
           {category.map((mood) => (
             <div
               className="mood"
-              style={{color: (mood.click==false)?mood.color:"white",
-              background: (mood.click==false)?"":mood.color}}
+              style={{color: (mood.click===false)?mood.color:"white",
+              background: (mood.click===false)?"":mood.color}}
               onClick={() => props.setTags(toggleClick(mood.name))}
               key={mood.name}
             >

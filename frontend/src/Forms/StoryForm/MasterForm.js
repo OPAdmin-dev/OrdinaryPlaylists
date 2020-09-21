@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { message } from 'antd';
 import Collection from '../../Data/Collection';
@@ -43,13 +43,13 @@ export default function MasterForm() {
     const [social_handle, setSocialHandle]= useState(null);
 
     const formSubmitMessage = (status , type) => {
-        if(status == true){
+        if(status === true){
             message.loading({ content: 'Processing...', key });
             setTimeout(() => {
                 message.success({ content: `${type} created successfully!`, key, duration: 2 });
                 setSubmission(submission + 1);
             }, 1000);
-        } else if(status == false) {
+        } else if(status === false) {
             message.loading({ content: 'Processing...', key });
             setTimeout(() => {
                 message.error({ content: 'Oops! An error occured! Please try again!', key, duration: 2 });
@@ -87,7 +87,7 @@ export default function MasterForm() {
             } else {
                 formSubmitMessage(undefined, 'Story');
             }
-        } else if(choice == 2) {
+        } else if(choice === 2) {
             if(storyID && song_title && song_tags && artist_name && artist_email) {
                 const selected_tags = song_tags.filter(tag => {
                     if(tag.click) {
@@ -120,7 +120,7 @@ export default function MasterForm() {
     return (
         <div className="form">
                 <form onSubmit={handleSubmit(handleOk)}>
-                {(level == 0)?
+                {(level === 0)?
                 (<div className="mainForm">
                 
                     <p id="question">Q1</p>
@@ -141,16 +141,16 @@ export default function MasterForm() {
                 </div>
                 </div>):null
                 }
-                {(level == 1  && choice == 2)? <Music_1
+                {(level === 1  && choice === 2)? <Music_1
                     setStoryID={setStoryID}
                 />:null}
-                {(level == 1 && choice == 1)? <Story_1
+                {(level === 1 && choice === 1)? <Story_1
                     title={title}
                     story={story}
                     setTitle={setTitle}
                     setStory={setStory}
                 /> : null}
-                {(level == 2  && choice == 2)? <Music_2
+                {(level === 2  && choice === 2)? <Music_2
                     song_title={song_title}
                     setSongTitle={setSongTitle}
                     song_link={song_link}
@@ -158,15 +158,15 @@ export default function MasterForm() {
                     song_lyrics={song_lyrics}
                     setSongLyrics={setSongLyrics}
                 />:null}
-                {(level == 2  && choice == 1) ? <Story_2
+                {(level === 2  && choice === 1) ? <Story_2
                     tags={tags}
                     setTags={setTags}
                 /> : null} 
-                {(level == 3 && choice == 2) ? <Music_3
+                {(level === 3 && choice === 2) ? <Music_3
                     song_tags={song_tags}
                     setSongTags={setSongTags}
                 /> : null}
-                {(level == 3  && choice == 1)? <Story_3
+                {(level === 3  && choice === 1)? <Story_3
                     name={name}
                     setName={setName}
                     location={location}
@@ -174,7 +174,7 @@ export default function MasterForm() {
                     email={email}
                     setEmail={setEmail}
                 /> : null}
-                {(level == 4 && choice == 2)? <Music_4
+                {(level === 4 && choice === 2)? <Music_4
                     artist_name={artist_name}
                     setArtistName={setArtistName}
                     artist_email={artist_email}
@@ -187,19 +187,19 @@ export default function MasterForm() {
             </form>
             <div id="nav-button">
                 <div id="b">
-                    {level != 0 ?
+                    {level !== 0 ?
                     <a onClick={() => setLevel(level - 1)}>
                     <span className="bottom"></span>
                     </a>
                      :null}
                 </div>
                 <div id="b">
-                    {(level !=0 && ((level != 3 && choice == 1)
-                    || (level != 4 && choice == 2)))? 
+                    {(level !== 0 && ((level !== 3 && choice === 1)
+                    || (level !== 4 && choice === 2)))? 
                     <a onClick={() => setLevel(level + 1)}>
                     <span className="top"></span>
                     </a>
-                    :(level !=0)?<button onClick={handleOk}>SUBMIT</button>:null}
+                    :(level !== 0)?<button onClick={handleOk}>SUBMIT</button>:null}
                 </div>
             </div>
         </div>
