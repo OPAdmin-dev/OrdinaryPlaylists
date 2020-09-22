@@ -14,7 +14,7 @@ export default function StoryShared() {
     apiStories.getAll().then((res) => {
       setCount(res.data.length);
     });
-  });
+  }, []);
 
   useEffect(() => {
     apiSpotify.getAll().then((res) => {
@@ -22,7 +22,7 @@ export default function StoryShared() {
         console.log(playlist);
       });
     });
-  });
+  }, []);
 
   const addStory = () => {
     setAdd(true);
