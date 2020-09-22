@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import MasterForm from "../Forms/StoryForm/MasterForm";
 import CountUp from "react-countup";
-import { apiStories } from "../services/utilities/API";
-import { apiSpotify } from "../services/utilities/API";
+import { apiStories, apiSpotify } from "../services/utilities/API";
 
 export default function StoryShared() {
   const [add, setAdd] = useState(false);
