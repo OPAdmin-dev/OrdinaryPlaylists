@@ -1,3 +1,17 @@
+from .serializers import (
+    StorySerializer,
+    TrackSerializer,
+    TrackImageSerializer,
+    TagSerializer,
+    PlaylistSerializer
+)
+from app.models import (
+    Stories,
+    Tracks,
+    TrackImage,
+    Tags,
+    Playlists
+)
 from rest_framework import viewsets, generics
 from rest_framework import status
 from rest_framework.response import Response
@@ -5,21 +19,6 @@ from django.http import Http404
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-from app.models import (
-    Stories, 
-    Tracks, 
-    TrackImage, 
-    Tags, 
-    Playlists
-)
-
-from .serializers import ( 
-    StorySerializer, 
-    TrackSerializer, 
-    TrackImageSerializer, 
-    TagSerializer,
-    PlaylistSerializer
-)
 
 class StorySet(viewsets.ModelViewSet):
 
@@ -27,14 +26,14 @@ class StorySet(viewsets.ModelViewSet):
     queryset = Stories.objects.all()
 
     def create(self, request):
-        
-        try:    
+
+        try:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             story = self.perform_create(serializer)
-            
+
             msg_html = render_to_string('StorySubmit.html', {
-                'story' : story.story, 
+                'story': story.story,
                 'name': story.name,
                 'id': story.id
             })
@@ -51,11 +50,11 @@ class StorySet(viewsets.ModelViewSet):
                 fail_silently=False,
                 html_message=msg_html
             )
-            
+
             headers = self.get_success_headers(serializer.data)
             return Response(
-                serializer.data, 
-                status=status.HTTP_201_CREATED, 
+                serializer.data,
+                status=status.HTTP_201_CREATED,
                 headers=headers
             )
         except Http404:
@@ -65,30 +64,32 @@ class StorySet(viewsets.ModelViewSet):
         story = serializer.save()
         return story
 
+
 class TrackSet(viewsets.ModelViewSet):
 
     serializer_class = TrackSerializer
     queryset = Tracks.objects.all()
 
     def create(self, request):
-        
-        try:    
+
+        try:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             track = self.perform_create(serializer)
 
             msg_html = render_to_string('TrackSubmit.html', {
-                'story' : track.story.name, 
-                'title' : track.name,
+                'story': track.story.name,
+                'title': track.name,
                 'artist': track.artist,
-                'desc' : track.description,
-                'yt_link' : track.youtube_link,
-                'tags' : track.tags,
-                'lyrics' : track.lyrics,
+                'desc': track.description,
+                'yt_link': track.youtube_link,
+                'tags': track.tags,
+                'lyrics': track.lyrics,
             })
 
             subject = 'Thanks for your Track Submission!'
-            message = 'Hi there %s!\n\nWe want you to know that we appreicate your submission!' % (track.artist)
+            message = 'Hi there %s!\n\nWe want you to know that we appreicate your submission!' % (
+                track.artist)
             recipients = [track.email]
             send_mail(
                 subject=subject,
@@ -98,11 +99,11 @@ class TrackSet(viewsets.ModelViewSet):
                 fail_silently=False,
                 html_message=msg_html
             )
-            
+
             headers = self.get_success_headers(serializer.data)
             return Response(
-                serializer.data, 
-                status=status.HTTP_201_CREATED, 
+                serializer.data,
+                status=status.HTTP_201_CREATED,
                 headers=headers
             )
         except Http404:
@@ -114,27 +115,28 @@ class TrackSet(viewsets.ModelViewSet):
 
 
 class TrackImageSet(viewsets.ModelViewSet):
-    
+
     lookup_field = 'track'
     serializer_class = TrackImageSerializer
     queryset = TrackImage.objects.all()
 
     def create(self, request):
-        
-        try:    
+
+        try:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             image = self.perform_create(serializer)
 
             msg_html = render_to_string('CoverSubmit.html', {
-                'track' : image.track.name, 
-                'location' : image.cover.url,
-                'track_artist' : image.track.artist,
-                'contributor' : image.contributor
+                'track': image.track.name,
+                'location': image.cover.url,
+                'track_artist': image.track.artist,
+                'contributor': image.contributor
             })
 
             subject = 'Thanks for your Album Art submission!'
-            message = 'Hi there %s!\n\nWe want you to know that we appreicate your submission!' % (image.contributor)
+            message = 'Hi there %s!\n\nWe want you to know that we appreicate your submission!' % (
+                image.contributor)
             recipients = [image.email]
             send_mail(
                 subject=subject,
@@ -144,11 +146,11 @@ class TrackImageSet(viewsets.ModelViewSet):
                 fail_silently=False,
                 html_message=msg_html
             )
-            
+
             headers = self.get_success_headers(serializer.data)
             return Response(
-                serializer.data, 
-                status=status.HTTP_201_CREATED, 
+                serializer.data,
+                status=status.HTTP_201_CREATED,
                 headers=headers
             )
         except Http404:
@@ -158,9 +160,11 @@ class TrackImageSet(viewsets.ModelViewSet):
         image = serializer.save()
         return image
 
+
 class TagSet(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tags.objects.all()
+
 
 class PlaylistSet(viewsets.ModelViewSet):
     serializer_class = PlaylistSerializer
