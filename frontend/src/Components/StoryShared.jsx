@@ -3,7 +3,7 @@ import { Modal } from "antd";
 import MasterForm from "../Forms/StoryForm/MasterForm";
 import CountUp from "react-countup";
 import { apiStories } from "../services/utilities/API";
-//import { apiSpotify } from "../services/utilities/API";
+import { apiSpotify } from "../services/utilities/API";
 
 export default function StoryShared() {
   const [add, setAdd] = useState(false);
@@ -16,11 +16,13 @@ export default function StoryShared() {
     });
   });
 
-  //   useEffect(() => {
-  //     apiSpotify.getAll().then((res) => {
-  //       console.log(res.data);
-  //     });
-  //   });
+  useEffect(() => {
+    apiSpotify.getAll().then((res) => {
+      res.data.map((playlist) => {
+        console.log(playlist);
+      });
+    });
+  });
 
   const addStory = () => {
     setAdd(true);
