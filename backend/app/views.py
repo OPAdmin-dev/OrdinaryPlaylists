@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from spotify_api import fetchPlaylistData
+from app.services.spotify_api import fetchPlaylistData
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework import status
