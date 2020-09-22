@@ -159,6 +159,10 @@ class TrackImageSet(viewsets.ModelViewSet):
                 html_message=msg_html
             )
 
+            admin_message = "Heads up! {0} just submitted a cover for the track titled '{1}' (Track ID: {2}). The song was composed by artist '{3}'".format(
+                image.contributor, image.track.name, image.track.id, image.track.artist)
+            runBot(admin_message)
+
             headers = self.get_success_headers(serializer.data)
             return Response(
                 serializer.data,
