@@ -17,6 +17,7 @@ def fetchPlaylistData():
         mod_playlist['id'] = playlist['id']
         mod_playlist['name'] = playlist['name']
         mod_playlist['cover'] = playlist['images'][0]['url']
+        mod_playlist['description'] = playlist['description']
         mod_playlist['tracks'] = []
         tracks = sp.playlist_items(playlist['id'])['items']
         for track in tracks:
@@ -35,3 +36,7 @@ def fetchPlaylistData():
             mod_playlist['tracks'].append(track_object)
         playlist_mod.append(mod_playlist)
     return playlist_mod
+
+
+if __name__ == "__main__":
+    fetchPlaylistData()
