@@ -1289,6 +1289,7 @@ ul li {
     }
     .playlist {
         display: flex;
+        justify-content: space-evenly;
         overflow-x: auto;
         overflow-y: hidden;
         height: 100%;

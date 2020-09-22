@@ -1286,12 +1286,15 @@ ul li {
     .item {
         height: 20vw;
         width: 20vw;
+        display: flex;
+        justify-content: space-between;
     }
     .playlist {
+        height: 30vw;
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
-        height: 100%;
+        // white-space: pre;
     }
     .playlist::-webkit-scrollbar {
         display: none;

@@ -1288,10 +1288,10 @@ ul li {
         width: 20vw;
     }
     .playlist {
-        display: flex;
+        height: 30vw;
         overflow-x: auto;
         overflow-y: hidden;
-        height: 100%;
+        white-space: nowrap;
     }
     .playlist::-webkit-scrollbar {
         display: none;
