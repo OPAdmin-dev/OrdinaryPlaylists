@@ -6,6 +6,7 @@ const trackImagesURL = "track_images";
 const tagsURL = "tags";
 const playlistsURL = "playlists";
 const spotifyFetch = "spotify";
+const promptsURL = "prompts";
 
 export const apiStories = new APICore({
   getAll: true, // getAll    (url)
@@ -60,6 +61,11 @@ export const apiPlaylists = new APICore({
 export const apiSpotify = new APICore({
   getAll: true, // getAll    (url)
   url: spotifyFetch,
+});
+
+export const apiPrompts = new APICore({
+  getAll: true, // getAll    (url)
+  url: promptsURL,
 });
 
 export default apiStories;

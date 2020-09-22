@@ -3,14 +3,16 @@ from .serializers import (
     TrackSerializer,
     TrackImageSerializer,
     TagSerializer,
-    PlaylistSerializer
+    PlaylistSerializer,
+    PromptsSerializer
 )
 from app.models import (
     Stories,
     Tracks,
     TrackImage,
     Tags,
-    Playlists
+    Playlists,
+    Prompts
 )
 from rest_framework import viewsets, generics
 from rest_framework import status
@@ -169,3 +171,8 @@ class TagSet(viewsets.ModelViewSet):
 class PlaylistSet(viewsets.ModelViewSet):
     serializer_class = PlaylistSerializer
     queryset = Playlists.objects.all()
+
+
+class PromptSet(viewsets.ModelViewSet):
+    serializer_class = PromptsSerializer
+    queryset = Prompts.objects.all()
