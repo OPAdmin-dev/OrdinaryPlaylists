@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from project import settings
+from scripts.OPBot import runBot
 from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
@@ -25,6 +26,6 @@ urlpatterns = [
     path('api/', include('app.api.urls')),
     path('token-auth/', obtain_jwt_token),
     path('core/', include('core.urls'))
-] 
+]
 
-urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

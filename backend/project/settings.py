@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django_extensions',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -163,6 +164,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = appsecrets.SMTP_PASSWORD
 EMAIL_CONFIRMATION_PERIOD_DAYS = 1
-SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(days=EMAIL_CONFIRMATION_PERIOD_DAYS)
+SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(
+    days=EMAIL_CONFIRMATION_PERIOD_DAYS)
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS END ---------- ###
