@@ -1289,6 +1289,8 @@ ul li {
     }
     .playlist {
         display: flex;
+        justify-content: space-evenly;
+        white-space: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
         height: 100%;

@@ -1288,8 +1288,7 @@ ul li {
         width: 20vw;
     }
     .playlist {
-        display: flex;
-        overflow-x: auto;
+        display: flex overflow-x: auto;
         overflow-y: hidden;
         height: 100%;
     }

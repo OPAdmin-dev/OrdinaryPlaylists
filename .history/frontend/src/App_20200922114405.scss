@@ -1287,11 +1287,14 @@ ul li {
         height: 20vw;
         width: 20vw;
     }
-    .playlist {
-        display: flex;
+    .A {
         overflow-x: auto;
         overflow-y: hidden;
+    }
+    .playlist {
         height: 100%;
+        display: flex;
+        justify-content: space-evenly;
     }
     .playlist::-webkit-scrollbar {
         display: none;
