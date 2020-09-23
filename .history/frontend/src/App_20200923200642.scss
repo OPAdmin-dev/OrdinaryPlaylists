@@ -1,4 +1,4 @@
-    html,
+        html,
     body {
         margin: 0;
         padding: 0;
@@ -874,491 +874,473 @@
         height: 55px;
         color: white;
         border: 1px solid #747474;
-    }
-    
-    .Story_1 {
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
+        .Story_1 {
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #title {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #description {
+                width: 80vw;
+                height: 246px;
+                border: 1px solid #747474;
+                background: transparent;
+                color: white;
+                text-align: top;
+            }
         }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 28px;
-            line-height: 131%;
-            color: #f4f7f4;
-            padding-top: 3vh;
-        }
-        #title {
+        .Story_2 {
             width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #moodCollection {
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: 10px;
+                cursor: pointer;
+            }
+            .mood {
+                width: 153px;
+                height: 57px;
+                border: 1px solid #ffff;
+                border-radius: 10px;
+                line-height: 109%;
+                display: flex;
+                align-items: center;
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                justify-content: center;
+            }
         }
-        #description {
+        .Story_3 {
             width: 80vw;
-            height: 246px;
-            border: 1px solid #747474;
-            background: transparent;
-            color: white;
-            text-align: top;
-        }
-    }
-    
-    .Story_2 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #moodCollection {
-            display: flex;
-            justify-content: space-around;
-            padding-bottom: 10px;
-            cursor: pointer;
-        }
-        .mood {
-            width: 153px;
-            height: 57px;
-            border: 1px solid #ffff;
-            border-radius: 10px;
-            line-height: 109%;
-            display: flex;
-            align-items: center;
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            justify-content: center;
-        }
-    }
-    
-    .Story_3 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #pen {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #location {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #email {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        p {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 140%;
-            width: 80vw;
-            color: #747474;
-        }
-    }
-    
-    .Music_1 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #serial {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #info {
-            padding-top: 5vh;
-            display: flex;
-            justify-content: flex-start;
-            position: relative;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #pen {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #location {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #email {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
             p {
                 font-family: GT Cinetype Trial;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 14px;
+                font-size: 16px;
                 line-height: 140%;
-                display: flex;
-                align-items: flex-end;
+                width: 80vw;
                 color: #747474;
             }
-            a {
+        }
+        .Music_1 {
+            width: 80vw;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #serial {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #info {
+                display: flex;
+                justify-content: flex-start;
+                position: relative;
+                p {
+                    font-family: GT Cinetype Trial;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 140%;
+                    display: flex;
+                    align-items: flex-end;
+                    color: #747474;
+                }
+                a {
+                    font-family: GT Cinetype Trial;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: #8a80d3;
+                }
+            }
+        }
+        .Music_2 {
+            width: 80vw;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #songTitle {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #link {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #lyrics {
+                width: 80vw;
+                height: 246px;
+                border: 1px solid #747474;
+                background: transparent;
+                color: white;
+                text-align: top;
+            }
+        }
+        .Music_3 {
+            width: 80vw;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #moodCollection {
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: 10px;
+                cursor: pointer;
+            }
+            .mood {
+                width: 153px;
+                height: 57px;
+                border: 1px solid #ffff;
+                border-radius: 10px;
+                line-height: 109%;
+                display: flex;
+                align-items: center;
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                justify-content: center;
+            }
+        }
+        .Music_4 {
+            width: 80vw;
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+            }
+            #stageName,
+            #email,
+            #instagram {
+                width: 80vw;
+                height: 55px;
+                background: transparent;
+                border: 1px solid #747474;
+                box-sizing: border-box;
+                color: white;
+            }
+            #notes {
+                width: 80vw;
+                height: 150px;
+                border: 1px solid #747474;
+                background: transparent;
+                color: white;
+                text-align: top;
+            }
+        }
+        .mainForm {
+            width: 80vw;
+            #options {
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #Story {
+                height: 61px;
+                width: 195px;
+                background: transparent;
+                border: 1px solid #747474;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 109%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                text-transform: uppercase;
+                color: #f4f7f4;
+                position: relative;
+                cursor: pointer;
+                img {
+                    position: absolute;
+                    left: 45px;
+                }
+            }
+            #Story:hover {
+                background: #8a80d3;
+            }
+            #Music {
+                height: 61px;
+                width: 195px;
+                background: transparent;
+                border: 1px solid #747474;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 109%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                text-transform: uppercase;
+                color: #f4f7f4;
+                cursor: pointer;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: 45px;
+                }
+            }
+            #Music:hover {
+                background: #8a80d3;
+            }
+            #question {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 109%;
+                text-transform: uppercase;
+                color: #8a80d3;
+            }
+            #header {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 45px;
+                line-height: 131%;
+                color: #f4f7f4;
+                font-family: GT Cinetype Trial;
+            }
+        }
+        .ant-modal-close-x {
+            color: #ffffff;
+        }
+        .ant-modal-body {
+            padding: 0 !important;
+            border: 0 !important;
+        }
+        .ant-model-body-webkit-scrollbar {
+            display: none;
+        }
+        .ant-modal-footer {
+            border: 0 !important;
+            padding: 0 !important;
+        }
+        #carousel {
+            background: #1f1f1f;
+            height: 800px;
+            padding: 5em;
+            h1 {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 65px;
+                line-height: 131%;
+                text-align: center;
+                color: #8a80d3;
+            }
+            .item {
+                height: 20vw;
+                width: 20vw;
+            }
+            .playlist {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                height: 100%;
+            }
+            .playlist::-webkit-scrollbar {
+                display: none;
+            }
+            img {
+                padding-bottom: 10px;
+                height: 18vw;
+                width: 18vw;
+            }
+            #type {
+                font-family: GT Cinetype Trial;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 13px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #8a80d3;
+            }
+            #title {
+                font-family: GT Cinetype Trial;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 109%;
+                color: #f4f7f4;
+            }
+            #description {
                 font-family: GT Cinetype Trial;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 14px;
+                font-size: 16px;
                 line-height: 140%;
+                color: #f4f7f4;
+            }
+        }
+        #Mood {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1f1f1f;
+            height: 800px;
+            h1 {
+                font-family: Roxborough CF;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 65px;
+                line-height: 131%;
                 color: #8a80d3;
             }
         }
-    }
-    
-    .Music_2 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #songTitle {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #link {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #lyrics {
-            width: 80vw;
-            height: 246px;
-            border: 1px solid #747474;
-            background: transparent;
-            color: white;
-            text-align: top;
-        }
-    }
-    
-    .Music_3 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #moodCollection {
-            display: flex;
-            justify-content: space-around;
-            padding-bottom: 10px;
-            cursor: pointer;
-        }
-        .mood {
-            width: 153px;
-            height: 57px;
-            border: 1px solid #ffff;
-            border-radius: 10px;
-            line-height: 109%;
-            display: flex;
-            align-items: center;
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            justify-content: center;
-        }
-    }
-    
-    .Music_4 {
-        width: 80vw;
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-        }
-        #stageName,
-        #email,
-        #instagram {
-            width: 80vw;
-            height: 55px;
-            background: transparent;
-            border: 1px solid #747474;
-            box-sizing: border-box;
-            color: white;
-        }
-        #notes {
-            width: 80vw;
-            height: 150px;
-            border: 1px solid #747474;
-            background: transparent;
-            color: white;
-            text-align: top;
-        }
-    }
-    
-    .mainForm {
-        width: 80vw;
-        #options {
-            display: flex;
-            justify-content: space-evenly;
-        }
-        #Story {
-            height: 61px;
-            width: 195px;
-            background: transparent;
-            border: 1px solid #747474;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 109%;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            text-transform: uppercase;
-            color: #f4f7f4;
-            position: relative;
-            cursor: pointer;
-            img {
-                position: absolute;
-                left: 45px;
+        @media screen and (max-width: 768px) {
+            #Mood {
+                h1 {
+                    font-size: 35px;
+                }
             }
         }
-        #Story:hover {
-            background: #8a80d3;
-        }
-        #Music {
-            height: 61px;
-            width: 195px;
-            background: transparent;
-            border: 1px solid #747474;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 109%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            text-transform: uppercase;
-            color: #f4f7f4;
-            cursor: pointer;
-            position: relative;
-            img {
-                position: absolute;
-                left: 45px;
-            }
-        }
-        #Music:hover {
-            background: #8a80d3;
-        }
-        #question {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 109%;
-            text-transform: uppercase;
-            color: #8a80d3;
-        }
-        #header {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 45px;
-            line-height: 131%;
-            color: #f4f7f4;
-            font-family: GT Cinetype Trial;
-        }
-    }
-    
-    .ant-modal-close-x {
-        color: #ffffff;
-    }
-    
-    .ant-modal-body {
-        padding: 0 !important;
-        border: 0 !important;
-    }
-    
-    .ant-model-body-webkit-scrollbar {
-        display: none;
-    }
-    
-    .ant-modal-footer {
-        border: 0 !important;
-        padding: 0 !important;
-    }
-    
-    #carousel {
-        background: #1f1f1f;
-        height: 800px;
-        padding: 5em;
-        h1 {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 65px;
-            line-height: 131%;
-            text-align: center;
-            color: #8a80d3;
-        }
-        .item {
-            height: 20vw;
-            width: 20vw;
-        }
-        .playlist {
-            display: flex;
-            overflow-x: auto;
-            overflow-y: hidden;
-            height: 100%;
-        }
-        .playlist::-webkit-scrollbar {
-            display: none;
-        }
-        img {
-            padding-bottom: 10px;
-            height: 18vw;
-            width: 18vw;
-        }
-        #type {
-            font-family: GT Cinetype Trial;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 13px;
-            letter-spacing: 0em;
-            text-align: left;
-            color: #8a80d3;
-        }
-        #title {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 109%;
-            color: #f4f7f4;
-        }
-        #description {
-            font-family: GT Cinetype Trial;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 140%;
-            color: #f4f7f4;
-        }
-    }
-    
-    #Mood {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #1f1f1f;
-        height: 800px;
-        h1 {
-            font-family: Roxborough CF;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 65px;
-            line-height: 131%;
-            color: #8a80d3;
-        }
-    }
-    
-    @media screen and (max-width: 768px) {
-        #Mood {
-            h1 {
-                font-size: 35px;
-            }
-        }
-    }

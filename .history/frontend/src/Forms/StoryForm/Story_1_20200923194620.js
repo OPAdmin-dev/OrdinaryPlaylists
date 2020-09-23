@@ -36,14 +36,14 @@ export default function Story_1(props) {
       <p id="question">Q2</p>
       <p id="header">Pick one prompt you feel for most.</p>
       <Controller
-        name="title"
+        name="title2"
         defaultValue=""
         control={control}
         rules={{ required: "This field is required" }}
         as={
           <AutoComplete
             style={{
-              width: "80vw",
+              width: 500,
             }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."

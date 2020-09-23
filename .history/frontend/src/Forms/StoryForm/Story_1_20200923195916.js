@@ -42,9 +42,6 @@ export default function Story_1(props) {
         rules={{ required: "This field is required" }}
         as={
           <AutoComplete
-            style={{
-              width: "80vw",
-            }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."
             filterOption={(inputValue, option) =>

@@ -43,7 +43,7 @@ export default function Story_1(props) {
         as={
           <AutoComplete
             style={{
-              width: "80vw",
+              width: 500,
             }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."

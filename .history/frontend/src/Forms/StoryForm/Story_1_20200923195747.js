@@ -44,6 +44,9 @@ export default function Story_1(props) {
           <AutoComplete
             style={{
               width: "80vw",
+              height: "55px",
+              border: "1px solid #747474",
+              boxSizing: "border-box",
             }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."

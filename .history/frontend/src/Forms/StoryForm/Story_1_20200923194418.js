@@ -43,7 +43,7 @@ export default function Story_1(props) {
         as={
           <AutoComplete
             style={{
-              width: "80vw",
+              width: 500,
             }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."
@@ -77,21 +77,21 @@ export default function Story_1(props) {
         }
       />
       <Controller
-        name="title"
+        name="title2"
         defaultValue=""
         control={control}
         rules={{ required: "This field is required" }}
         as={
           <Form.Item
-            name="title"
+            name="title2"
             validateStatus={errors.title && "error"}
             help={errors.title && errors.title.message}
           >
             <Input
               defaultValue={props.title}
               placeholder="If you had to name this chapter in your life..."
-              name="title"
-              onChange={(title) => handleTitleChange(title)}
+              name="title2"
+              onChange={(title2) => handleTitleChange(title2)}
             />
           </Form.Item>
         }

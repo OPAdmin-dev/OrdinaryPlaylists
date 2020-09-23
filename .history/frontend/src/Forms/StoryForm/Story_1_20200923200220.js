@@ -43,6 +43,7 @@ export default function Story_1(props) {
         as={
           <AutoComplete
             style={{
+              height: "55px",
               width: "80vw",
             }}
             options={prompts}

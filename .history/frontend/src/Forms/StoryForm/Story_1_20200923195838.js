@@ -39,11 +39,20 @@ export default function Story_1(props) {
         name="title"
         defaultValue=""
         control={control}
+        style={{
+          width: "80vw",
+          height: "55px",
+          border: "1px solid #747474",
+          boxSizing: "border-box",
+        }}
         rules={{ required: "This field is required" }}
         as={
           <AutoComplete
             style={{
               width: "80vw",
+              height: "55px",
+              border: "1px solid #747474",
+              boxSizing: "border-box",
             }}
             options={prompts}
             placeholder="Select prompt or search by keyword..."
