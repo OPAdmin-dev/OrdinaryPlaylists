@@ -22,12 +22,6 @@ class OrdinaryPlaylistsBot():
             requests.get(url)
 
 
-def make_reply(incoming_msg, outgoing_msg):
-    if incoming_msg is not None:
-        reply = outgoing_msg
-    return reply
-
-
 def runBot(outgoing_message):
     update_id = None
     bot = OrdinaryPlaylistsBot()
@@ -41,5 +35,4 @@ def runBot(outgoing_message):
             except:
                 incoming_message = None
         from_ = item["message"]["from"]["id"]
-        reply = make_reply(incoming_message, outgoing_message)
-        bot.send_message(reply, from_)
+        bot.send_message(outgoing_message, from_)

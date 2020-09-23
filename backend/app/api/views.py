@@ -55,7 +55,7 @@ class StorySet(viewsets.ModelViewSet):
             )
 
             # admin_message = "Heads up! {0} just submitted a story titled '{1}'. Serial Code ID: {2}".format(
-            #    story.name, story.title, story.id)
+            #     story.name, story.title, story.id)
             # runBot(admin_message)
 
             headers = self.get_success_headers(serializer.data)
@@ -107,9 +107,8 @@ class TrackSet(viewsets.ModelViewSet):
                 html_message=msg_html
             )
 
-            # admin_message = "Heads up! {0} just submitted a track titled '{1}' (Track ID: {2}). The song was\
-            #    inspired by the story '{3}' (Story ID: {4})".format(
-            #    track.artist, track.name, track.id, track.story.title, track.story.id)
+            # admin_message = "Heads up! {0} just submitted a track titled '{1}' (Track ID: {2}). The song was inspired by the story '{3}' (Story ID: {4})".format(
+            #     track.artist, track.name, track.id, track.story.title, track.story.id)
             # runBot(admin_message)
 
             headers = self.get_success_headers(serializer.data)
@@ -160,7 +159,7 @@ class TrackImageSet(viewsets.ModelViewSet):
             )
 
             # admin_message = "Heads up! {0} just submitted a cover for the track titled '{1}' (Track ID: {2}). The song was composed by artist '{3}'".format(
-            #    image.contributor, image.track.name, image.track.id, image.track.artist)
+            #     image.contributor, image.track.name, image.track.id, image.track.artist)
             # runBot(admin_message)
 
             headers = self.get_success_headers(serializer.data)
