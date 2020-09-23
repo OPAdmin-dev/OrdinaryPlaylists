@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import MasterForm from "../Forms/StoryForm/MasterForm";
 import CountUp from "react-countup";
-import { apiStories, apiSpotify } from "../services/utilities/API";
+import { apiStories } from "../services/utilities/API";
 
 export default function StoryShared() {
   const [add, setAdd] = useState(false);
@@ -12,14 +12,6 @@ export default function StoryShared() {
   useEffect(() => {
     apiStories.getAll().then((res) => {
       setCount(res.data.length);
-    });
-  }, []);
-
-  useEffect(() => {
-    apiSpotify.getAll().then((res) => {
-      res.data.map((playlist) => {
-        console.log(playlist);
-      });
     });
   }, []);
 

@@ -1,61 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { apiSpotify } from "../services/utilities/API";
 
 export default function NewRelease() {
-  const music = [
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-    {
-      image:
-        "http://tana.themeton.com/music/wp-content/uploads/sites/4/2016/09/music-album-06.jpg",
-      title: "We don’t talk anymore",
-      description: "Reminiscence of what used to be our daily conversations",
-      clicked: false,
-    },
-  ];
+  const [playlists, setPlaylists] = useState([]);
+
+  useEffect(() => {
+    apiSpotify.getAll().then((res) => {
+      console.log(res.data);
+      setPlaylists(res.data);
+    });
+  }, []);
+
   return (
     <div id="carousel">
       <h1>New Releases</h1>
       <div className="playlist">
-        {music.map((m, index) => (
+        {playlists.map((p, index) => (
           <div>
             <div className="item" key={index}>
-              <img src={m.image} />
+              <img src={p.cover} />
               <p id="type">PLAYLIST</p>
-              <p id="title">{m.title}</p>
-              <p id="description">{m.description}</p>
+              <p id="title">{p.name}</p>
+              <p id="description">
+                {p.description ? p.description : "Playlist Description"}
+              </p>
             </div>
             <div style={{ padding: "10px" }}></div>
           </div>
