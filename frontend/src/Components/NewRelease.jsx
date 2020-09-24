@@ -13,21 +13,23 @@ export default function NewRelease() {
 
   return (
     <div id="carousel">
-      <h1>New Releases</h1>
+      <h1>Concept Playlists</h1>
       <div className="playlist">
-        {playlists.map((p, index) => (
-          <div>
-            <div className="item" key={index}>
-              <img src={p.cover} />
-              <p id="type">PLAYLIST</p>
-              <p id="title">{p.name}</p>
-              <p id="description">
-                {p.description ? p.description : "Playlist Description"}
-              </p>
+        {playlists.map((p, index) =>
+          p.name !== "New Releases" ? (
+            <div>
+              <div className="item" key={index}>
+                <img src={p.cover} />
+                <p id="type">PLAYLIST</p>
+                <p id="title">{p.name}</p>
+                <p id="description">
+                  {p.description ? p.description : "Playlist Description"}
+                </p>
+              </div>
+              <div style={{ padding: "10px" }}></div>
             </div>
-            <div style={{ padding: "10px" }}></div>
-          </div>
-        ))}
+          ) : null
+        )}
       </div>
     </div>
   );
