@@ -3,41 +3,52 @@ import { apiSpotify } from "../services/utilities/API";
 import { Spin } from "antd";
 
 export default function NewRelease() {
-  const [playlists, setPlaylists] = useState([]);
+  const [newTrackReleases, setNewReleases] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     apiSpotify.getAll().then((res) => {
-      setPlaylists(res.data);
+      setNewReleases(
+        res.data
+          .filter((p) => {
+            if (p.name == "New Releases") {
+              return p;
+            }
+          })
+          .map((p) => {
+            return p.tracks;
+          })
+      );
       setLoading(false);
     });
   }, []);
 
   return (
     <div id="carousel">
-      <h1>Concept Playlists</h1>
+      <h1>New Releases</h1>
       <div className="playlist">
         {loading ? (
           <Spin />
         ) : (
-          playlists.map((p, index) =>
-            p.name !== "New Releases" ? (
-              <div>
-                <div className="item" key={index}>
-                  <img src={p.cover} />
-                  <p id="type">PLAYLIST</p>
-                  <p id="title">{p.name}</p>
-                  <p id="description">
-                    {p.description ? p.description : "Playlist Description"}
-                  </p>
-                </div>
-                <div style={{ padding: "10px" }}></div>
+          newTrackReleases[0].map((t, index) => (
+            <div>
+              <div className="item" key={index}>
+                <a href={t.preview_url ? t.preview_url : "#"} target="_blank">
+                  <img src={t.track_cover} />
+                </a>
+                <p id="type">TRACK</p>
+                <p id="title">{t.track_name}</p>
+                <p id="artist">{t.track_artist}</p>
+                <p id="release">{t.track_release}</p>
+                <a href={t.track_url} target="_blank">
+                  <p>Click here to listen on Spotify!</p>
+                </a>
               </div>
-            ) : null
-          )
+              <div style={{ padding: "10px" }}></div>
+            </div>
+          ))
         )}
       </div>
-      )
     </div>
   );
 }
