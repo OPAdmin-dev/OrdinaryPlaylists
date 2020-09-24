@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { apiSpotify } from "../services/utilities/API";
 
-export default function NewRelease() {
+export default function Playlist() {
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
@@ -13,17 +13,17 @@ export default function NewRelease() {
 
   return (
     <div id="carousel">
-      <h1>New Releases</h1>
-      <div className="songList">
+      <h1>Concept Playlists</h1>
+      <div className="playlist">
         {playlists.map((p, index) =>
           p.name !== "New Releases" ? (
             <div>
               <div className="item" key={index}>
                 <img src={p.cover} />
-                <p id="type">SONG</p>
+                <p id="type">PLAYLIST</p>
                 <p id="title">{p.name}</p>
                 <p id="description">
-                  {p.description ? p.description : "New Release"}
+                  {p.description ? p.description : "Playlist Description"}
                 </p>
               </div>
               <div style={{ padding: "10px" }}></div>

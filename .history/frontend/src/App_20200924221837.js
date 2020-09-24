@@ -21,7 +21,6 @@ function App() {
       <Banner />
       <ReactJkMusicPlayer />
       <NewRelease />
-      <Playlist />
       <StoryViewer />
       <Mood />
       <StoryShared />
