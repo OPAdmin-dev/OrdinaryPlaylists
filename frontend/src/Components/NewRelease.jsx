@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { apiSpotify } from "../services/utilities/API";
-import { Spin } from "antd";
+import { Spin, Button } from "antd";
 
 export default function NewRelease() {
   const [newTrackReleases, setNewReleases] = useState([]);
@@ -8,17 +8,16 @@ export default function NewRelease() {
 
   useEffect(() => {
     apiSpotify.getAll().then((res) => {
-      setNewReleases(
-        res.data
-          .filter((p) => {
-            if (p.name == "New Releases") {
-              return p;
-            }
-          })
-          .map((p) => {
-            return p.tracks;
-          })
-      );
+      var newReleases = res.data
+        .filter((p) => {
+          if (p.name == "New Releases") {
+            return p;
+          }
+        })
+        .map((p) => {
+          return p.tracks;
+        });
+      setNewReleases(newReleases);
       setLoading(false);
     });
   }, []);
@@ -49,6 +48,7 @@ export default function NewRelease() {
           ))
         )}
       </div>
+      )
     </div>
   );
 }
