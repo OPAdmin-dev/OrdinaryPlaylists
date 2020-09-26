@@ -1,11 +1,12 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-
-USERNAME = '41f8mvwz7buuc7brs3cdrtu4v'
-SPOTIFY_CLIENT_ID = '3e84076ec823461e83f37bd88851580b'
-SPOTIFY_APP_SECRET = 'b8f2ebd842794b8d859614cde22bd209'
-SPOTIFY_REDIRECT_URI = 'http://localhost:8080/'
-SCOPE = 'user-library-read'
+from appsecrets import (
+    USERNAME,
+    SPOTIFY_CLIENT_ID,
+    SPOTIFY_APP_SECRET,
+    SPOTIFY_REDIRECT_URI,
+    SCOPE
+)
 
 
 def fetchPlaylistData():
@@ -45,7 +46,6 @@ def fetchPlaylistData():
                     }
                     mod_playlist['tracks'].append(track_object)
                 playlist_mod.append(mod_playlist)
-            print(playlist_mod)
             return playlist_mod
     except:
         return None
