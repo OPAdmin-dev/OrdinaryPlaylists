@@ -54,7 +54,6 @@ function App() {
         showDownload={false}
         remove={false}
         glassBg
-        quietUpdate={true}
         mode="full"
       />
       <NewRelease selectTrack={selectTrack} />
