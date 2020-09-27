@@ -25,7 +25,7 @@ export default function NewRelease() {
   return (
     <div className="carousel">
       <h1>New Releases</h1>
-      <div className="songList">
+      <div className="playlist">
         {loading ? (
           <Spin />
         ) : (
@@ -37,16 +37,17 @@ export default function NewRelease() {
                 </a>
                 <p id="type">TRACK</p>
                 <p id="title">{t.track_name}</p>
-                <p id="artist">{t.track_artist}</p>
-                <a href={t.track_url} target="_blank">
+                {/* <p id="artist">{t.track_artist}</p>
+                <p id="release">{t.track_release}</p> */}
+                {/* <a href={t.track_url} target="_blank">
                   <p>Click here to listen on Spotify!</p>
-                </a>
+                </a> */}
               </div>
               <div style={{ padding: "10px" }}></div>
             </div>
           ))
         )}
-      </div>
+      
     </div>
   );
 }

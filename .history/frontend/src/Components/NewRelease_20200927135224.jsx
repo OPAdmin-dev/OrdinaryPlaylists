@@ -38,6 +38,7 @@ export default function NewRelease() {
                 <p id="type">TRACK</p>
                 <p id="title">{t.track_name}</p>
                 <p id="artist">{t.track_artist}</p>
+                <p id="release">{t.track_release}</p>
                 <a href={t.track_url} target="_blank">
                   <p>Click here to listen on Spotify!</p>
                 </a>
