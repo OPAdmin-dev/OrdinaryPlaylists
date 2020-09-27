@@ -16,8 +16,10 @@ import "react-jinke-music-player/assets/index.css";
 
 function App() {
   const [playlist, setPlaylist] = useState([]);
+  const [track, setTrack] = useState();
 
   const selectPlaylist = (PL) => {
+    setTrack();
     var playlistmod = PL["tracks"].map((track) => {
       return {
         name: track.track_name,
@@ -28,12 +30,27 @@ function App() {
     setPlaylist(playlistmod);
   };
 
+  const selectTrack = (T) => {
+    setPlaylist([]);
+    setTrack([
+      {
+        name: T.track_name,
+        musicSrc: T.preview_url,
+        singer: T.track_artist,
+      },
+    ]);
+  };
+
   return (
     <div className="App">
       <Hamburger />
       <Banner />
-      <ReactJkMusicPlayer audioLists={playlist} defaultVolume={100} />
-      <NewRelease />
+      <ReactJkMusicPlayer
+        audioLists={track || playlist}
+        defaultVolume={100}
+        clearPriorAudioLists
+      />
+      <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
       <StoryViewer />
       <Mood />
