@@ -23,6 +23,7 @@ def fetchPlaylistData():
             playlist_mod = []
             for playlist in playlists:
                 mod_playlist = {}
+                mod_playlist['playlist_url'] = playlist['external_urls']['spotify']
                 mod_playlist['id'] = playlist['id']
                 mod_playlist['name'] = playlist['name']
                 mod_playlist['cover'] = playlist['images'][0]['url']

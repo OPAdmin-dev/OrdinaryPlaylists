@@ -19,7 +19,9 @@ export default function Playlist() {
           p.name !== "New Releases" ? (
             <div>
               <div className="item" key={index}>
-                <img src={p.cover} />
+                <a href={p.playlist_url}>
+                  <img src={p.cover} />
+                </a>
                 <p id="type">PLAYLIST</p>
                 <p id="title">{p.name}</p>
                 <p id="description">
