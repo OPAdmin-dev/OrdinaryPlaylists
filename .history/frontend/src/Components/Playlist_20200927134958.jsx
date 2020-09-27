@@ -14,7 +14,7 @@ export default function Playlist() {
   return (
     <div className="carousel">
       <h1>Concept Playlists</h1>
-      <div className="playList">
+      <div className="songList">
         {playlists.map((p, index) =>
           p.name !== "New Releases" ? (
             <div>
