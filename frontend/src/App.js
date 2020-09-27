@@ -25,6 +25,7 @@ function App() {
         name: track.track_name,
         musicSrc: track.preview_url,
         singer: track.track_artist,
+        cover: track.track_cover,
       };
     });
     setPlaylist(playlistmod);
@@ -37,6 +38,7 @@ function App() {
         name: T.track_name,
         musicSrc: T.preview_url,
         singer: T.track_artist,
+        cover: T.track_cover,
       },
     ]);
   };
@@ -49,6 +51,11 @@ function App() {
         audioLists={track || playlist}
         defaultVolume={100}
         clearPriorAudioLists
+        showDownload={false}
+        remove={false}
+        glassBg
+        quietUpdate={true}
+        mode="full"
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
