@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import "./App.less";
 
@@ -15,13 +15,26 @@ import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 
 function App() {
+  const [playlist, setPlaylist] = useState([]);
+
+  const selectPlaylist = (PL) => {
+    var playlistmod = PL["tracks"].map((track) => {
+      return {
+        name: track.track_name,
+        musicSrc: track.preview_url,
+        singer: track.track_artist,
+      };
+    });
+    setPlaylist(playlistmod);
+  };
+
   return (
     <div className="App">
       <Hamburger />
       <Banner />
-      <ReactJkMusicPlayer />
+      <ReactJkMusicPlayer audioLists={playlist} defaultVolume={100} />
       <NewRelease />
-      <Playlist />
+      <Playlist selectPlaylist={selectPlaylist} />
       <StoryViewer />
       <Mood />
       <StoryShared />
