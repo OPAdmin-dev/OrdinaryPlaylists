@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 /backend/appsecrets.py
+/backend/.cache-41f8mvwz7buuc7brs3cdrtu4v
