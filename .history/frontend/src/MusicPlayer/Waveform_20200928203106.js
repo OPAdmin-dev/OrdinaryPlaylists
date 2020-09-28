@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WaveSurfer from "wavesurfer.js";
-import { WaveformContainer, Wave, PlayButton } from "./waveform.styled";
+import { WaveformContianer, Wave, PlayButton } from "./waveform.styled";
 
 class Waveform extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Waveform extends Component {
       backend: "WebAudio",
       height: 80,
       progressColor: "#2D5BFF",
-      responsive: true,
+      responsive: false,
       waveColor: "#EFEFEF",
       cursorColor: "transparent",
     });
@@ -44,12 +44,12 @@ class Waveform extends Component {
 
   render() {
     return (
-      <WaveformContainer>
+      <WaveformContianer>
         <PlayButton onClick={this.handlePlay}>
           {!this.state.playing ? "Play" : "Pause"}
         </PlayButton>
         <Wave id="waveform" />
-      </WaveformContainer>
+      </WaveformContianer>
     );
   }
 }

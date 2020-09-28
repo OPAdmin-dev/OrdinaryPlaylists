@@ -1,30 +1,33 @@
 import styled from "styled-components";
 
-export const WaveformContainer = styled.div`
+export const WaveformContianer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: 100px;
   width: 100%;
   background: transparent;
 `;
 
 export const Wave = styled.div`
-  width: 95%;
-  height: 11vh;
+  width: 100%;
+  height: 90px;
 `;
 
 export const PlayButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vh;
-  height: 10vh;
-  background: rgba(138, 128, 211, 0.5);
+  width: 60px;
+  height: 60px;
+  background: #efefef;
   border-radius: 50%;
   border: none;
   outline: none;
   cursor: pointer;
   padding-bottom: 3px;
+  &:hover {
+    background: #ddd;
+  }
 `;

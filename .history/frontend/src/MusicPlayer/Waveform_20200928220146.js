@@ -22,6 +22,7 @@ class Waveform extends Component {
       responsive: true,
       waveColor: "#EFEFEF",
       cursorColor: "transparent",
+      overflow: "hidden";
     });
   }
 

@@ -1401,4 +1401,6 @@ ul li {
     text-align: center;
     bottom: 10vh;
     width: 80vw;
+    overflow-y: hidden; // hide vertical
+    overflow-x: hidden; // hide horizontal
 }

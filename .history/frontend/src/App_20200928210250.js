@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Hamburger />
-      <Banner track={track} />
+      <Banner props={track} />
       <ReactJkMusicPlayer
         audioLists={track || playlist}
         defaultVolume={100}

@@ -13,15 +13,12 @@ export default function Banner(props) {
         </p>
         <p id="author">by Joie Tan & Nurush Osman</p>
       </div>
-
+      <Waveform track={props.track} />
       <section id="section10">
         <a href="#thanks">
           <span></span>
         </a>
       </section>
-      <div className="waveform">
-        <Waveform track={props.track} />
-      </div>
     </div>
   );
 }
