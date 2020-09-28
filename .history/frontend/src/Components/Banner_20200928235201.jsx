@@ -20,6 +20,14 @@ export default function Banner(props) {
         ) : (
           ""
         )}
+        {/* <p id="paragraph">
+        <p id="title">NEW RELEASE</p>
+        
+        {/* <p id="paragraph">
+          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
+          placerat ante. Sed interdum fringilla justo, eget tincidunt purus...”
+        </p> */}
+        {props.track ? <p>By {props.track.singer}</p> : ""}
       </div>
 
       <section id="section10">

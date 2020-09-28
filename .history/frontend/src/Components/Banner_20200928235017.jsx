@@ -5,21 +5,13 @@ export default function Banner(props) {
   return (
     <div className="home">
       <div className="container">
-        {props.track ? (
-          <div>
-            <p id="title">NEW RELEASE</p>
-            <h1>
-              {props.track.name}
-              {/* <p id="paragraph">
+        <p id="title">NEW RELEASE</p>
+        {props.track ? <h1>props.track.name</h1> : ""}
+        {/* <p id="paragraph">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
           placerat ante. Sed interdum fringilla justo, eget tincidunt purus...”
         </p> */}
-            </h1>
-            {props.track ? <p>By {props.track.singer}</p> : ""}
-          </div>
-        ) : (
-          ""
-        )}
+        {props.track ? <p>By props.track.singer</p> : ""}
       </div>
 
       <section id="section10">
