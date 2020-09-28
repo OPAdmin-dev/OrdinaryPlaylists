@@ -5,13 +5,6 @@ body {
     max-width: 100%;
 }
 
-@font-face {
-    font-family: "GT Cinetype Trial";
-    src: url(./Fonts/GT-Cinetype-Regular-Trial.otf) format("otf");
-    font-family: "Roxborough CF";
-    src: url("./Fonts/RoxboroughCF-Regular.woff2") format("woff2");
-}
-
 //Hamburger
 .NavBar {
     button {
@@ -283,6 +276,7 @@ body {
     #title {
         height: 17px;
         font-family: GT Cinetype Trial;
+        //src: url(./Fonts/GT-Cinetype-Bold-Trial.otf);
         font-style: normal;
         font-weight: bold;
         font-size: 12px;
