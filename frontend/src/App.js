@@ -20,7 +20,6 @@ function App() {
   const [track, setTrack] = useState();
 
   const selectPlaylist = (PL) => {
-    setTrack();
     var playlistmod = PL["tracks"].map((track) => {
       return {
         name: track.track_name,
@@ -33,7 +32,6 @@ function App() {
   };
 
   const selectTrack = (T) => {
-    setPlaylist([]);
     setTrack({
       name: T.track_name,
       musicSrc: T.preview_url,
