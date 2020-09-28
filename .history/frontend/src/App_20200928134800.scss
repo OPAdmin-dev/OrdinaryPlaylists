@@ -6,13 +6,9 @@ body {
 }
 
 @font-face {
-    font-family: "Roxborough CF";
-    src: url("./Fonts/RoxboroughCF-Regular.woff") format("woff");
-}
-
-@font-face {
     font-family: "GT Cinetype Trial";
-    src: url("./Fonts/GT-Cinetype-Light-Trial.woff2") format("woff");
+    src: url(./Fonts/GT-Cineype-Regular-Trial.otf) font-family: "Roxborough CF";
+    src: url("./Fonts/RoxboroughCF-Regular.woff2") format("woff2");
 }
 
 //Hamburger

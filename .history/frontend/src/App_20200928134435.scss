@@ -6,13 +6,10 @@ body {
 }
 
 @font-face {
-    font-family: "Roxborough CF";
-    src: url("./Fonts/RoxboroughCF-Regular.woff") format("woff");
-}
-
-@font-face {
     font-family: "GT Cinetype Trial";
-    src: url("./Fonts/GT-Cinetype-Light-Trial.woff2") format("woff");
+    src: url(./Fonts/GT-Cinetype-Regular-Trial.otf) format("otf");
+    font-family: "Roxborough CF";
+    src: url("./Fonts/RoxboroughCF-Regular.woff2") format("woff2");
 }
 
 //Hamburger
@@ -1339,32 +1336,6 @@ ul li {
         letter-spacing: 0em;
         text-align: left;
         color: #8a80d3;
-    }
-    #title {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 109%;
-        color: #f4f7f4;
-    }
-    #artist {
-        font-family: GT Cinetype Trial;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #f4f7f4;
-    }
-    #description {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 140%;
-        color: #f4f7f4;
     }
 }
 
