@@ -13,6 +13,7 @@ import Story from "./Components/Story";
 import Footer from "./Components/Footer";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
+import Waveform from "./MusicPlayer/Waveform";
 
 function App() {
   const [playlist, setPlaylist] = useState([]);
@@ -33,21 +34,20 @@ function App() {
 
   const selectTrack = (T) => {
     setPlaylist([]);
-    setTrack([
-      {
-        name: T.track_name,
-        musicSrc: T.preview_url,
-        singer: T.track_artist,
-        cover: T.track_cover,
-      },
-    ]);
+    setTrack({
+      name: T.track_name,
+      musicSrc: T.preview_url,
+      singer: T.track_artist,
+      cover: T.track_cover,
+    });
   };
 
   return (
     <div className="App">
       <Hamburger />
       <Banner />
-      <ReactJkMusicPlayer
+      <Waveform track={track} />
+      {/* <ReactJkMusicPlayer
         audioLists={track || playlist}
         defaultVolume={100}
         clearPriorAudioLists
@@ -55,7 +55,7 @@ function App() {
         remove={false}
         glassBg
         mode="full"
-      />
+      /> */}
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
       <StoryViewer />
