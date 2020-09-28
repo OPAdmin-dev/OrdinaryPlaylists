@@ -1,7 +1,7 @@
 import React from "react";
-import Waveform from "../MusicPlayer/Waveform";
+import Waveform from "./MusicPlayer/Waveform";
 
-export default function Banner(props) {
+export default function Banner() {
   return (
     <div className="home">
       <div className="container">
@@ -13,15 +13,12 @@ export default function Banner(props) {
         </p>
         <p id="author">by Joie Tan & Nurush Osman</p>
       </div>
-
+      {/* <Waveform track={track} /> */}
       <section id="section10">
         <a href="#thanks">
           <span></span>
         </a>
       </section>
-      <div className="waveform">
-        <Waveform track={props.track} />
-      </div>
     </div>
   );
 }

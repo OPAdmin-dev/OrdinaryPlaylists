@@ -11,7 +11,7 @@ export const WaveformContainer = styled.div`
 `;
 
 export const Wave = styled.div`
-  width: 95%;
+  width: 100%;
   height: 11vh;
 `;
 

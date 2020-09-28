@@ -19,7 +19,7 @@ export default function Banner(props) {
           <span></span>
         </a>
       </section>
-      <div className="waveform">
+      <div>
         <Waveform track={props.track} />
       </div>
     </div>
