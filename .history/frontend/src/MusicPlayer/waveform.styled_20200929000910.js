@@ -12,7 +12,7 @@ export const WaveformContainer = styled.div`
 `;
 
 export const Wave = styled.div`
-  width: 100%;
+  width: 80%;
   height: 13vh;
   overflow: hidden;
 `;
