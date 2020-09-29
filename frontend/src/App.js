@@ -15,42 +15,101 @@ import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 
 function App() {
-  const [playlist, setPlaylist] = useState([]);
+  const [playlistMap, setPlaylistMap] = useState([]);
+  const [trackPlaylist, setTrackPlaylist] = useState([]);
   const [track, setTrack] = useState();
+  const [action, setAction] = useState("");
+  const [player, setPlayer] = useState();
+  const [trackIndex, setTrackIndex] = useState(0);
 
   const selectPlaylist = (PL) => {
-    var playlistmod = PL["tracks"].map((track) => {
-      return {
-        name: track.track_name,
-        musicSrc: track.preview_url,
-        singer: track.track_artist,
-        cover: track.track_cover,
+    setTrack(null);
+    setTrackIndex(0);
+    var index = -1;
+    var playlistMap = PL["tracks"].reduce(function (map, obj) {
+      index = index + 1;
+      map[index] = {
+        name: obj.track_name,
+        musicSrc: obj.preview_url,
+        singer: obj.track_artist,
+        cover: obj.track_cover,
       };
-    });
-    setPlaylist(playlistmod);
+      return map;
+    }, {});
+    var temp_arr = [];
+    for (const [key, val] of Object.entries(playlistMap)) {
+      temp_arr.push(playlistMap[key]);
+    }
+    setPlaylistMap(playlistMap);
+    setTrackPlaylist(temp_arr);
   };
 
   const selectTrack = (T) => {
-    setTrack({
-      name: T.track_name,
-      musicSrc: T.preview_url,
-      singer: T.track_artist,
-      cover: T.track_cover,
-    });
+    setTrack([
+      {
+        name: T.track_name,
+        musicSrc: T.preview_url,
+        singer: T.track_artist,
+        cover: T.track_cover,
+      },
+    ]);
+    setAction("play");
+  };
+
+  const playTrack = () => {
+    setAction("play");
+  };
+
+  const pauseTrack = () => {
+    setAction("pause");
+  };
+
+  const reloadTrack = () => {
+    setAction("reload");
+  };
+
+  const endTrack = () => {
+    setAction("end");
+  };
+
+  const changeTrack = (index) => {
+    setTrackIndex(index);
+  };
+
+  const getPlayerInstance = (instance) => {
+    setPlayer(instance);
   };
 
   return (
     <div className="App">
       <Hamburger />
-      <Banner track={track} />
+      <Banner
+        track={track}
+        playlist={playlistMap}
+        action={action}
+        setAction={setAction}
+        player={player}
+        trackIndex={trackIndex}
+        setTrackIndex={setTrackIndex}
+      />
       <ReactJkMusicPlayer
-        audioLists={track || playlist}
+        audioLists={track || trackPlaylist}
         defaultVolume={100}
         clearPriorAudioLists
         showDownload={false}
         remove={false}
         glassBg
         mode="full"
+        onAudioPlay={playTrack}
+        onAudioPause={pauseTrack}
+        onAudioReload={reloadTrack}
+        onAudioEnded={endTrack}
+        onPlayIndexChange={(index) => changeTrack(index)}
+        showThemeSwitch={false}
+        showMediaSession={true}
+        seeked={false}
+        drag={false}
+        getAudioInstance={(instance) => getPlayerInstance(instance)}
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />

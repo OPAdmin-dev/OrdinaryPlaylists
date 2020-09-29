@@ -5,10 +5,6 @@ import { WaveformContainer, Wave, PlayButton } from "./waveform.styled";
 class Waveform extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playing: false,
-      url: null,
-    };
   }
 
   componentDidMount() {
@@ -16,7 +12,7 @@ class Waveform extends Component {
       barWidth: 3,
       cursorWidth: 1,
       container: "#waveform",
-      backend: "WebAudio",
+      backend: "MediaElement",
       height: "100",
       progressColor: "#8a80d3",
       responsive: true,
@@ -26,28 +22,55 @@ class Waveform extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    const { track } = this.props;
-    if (nextProps.track !== track) {
-      this.setState({
-        playing: false,
-      });
+    const { track, action } = this.props;
+    if (track && JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
       this.waveform.load(track.musicSrc);
+      this.waveform.setVolume(0);
+      this.waveform.play();
+    } else {
+      if (track) {
+        if (action === "pause") {
+          this.waveform.pause();
+        }
+        if (action === "play") {
+          this.waveform.play();
+        }
+        if (action === "reload") {
+          this.waveform.load(track.musicSrc);
+          this.waveform.setVolume(0);
+          this.waveform.play();
+        }
+        if (action === "end") {
+          this.waveform.load(track.musicSrc);
+          this.waveform.setVolume(0);
+        }
+      }
     }
   }
 
   handlePlay = () => {
-    this.setState({
-      playing: !this.state.playing,
-    });
-    this.waveform.playPause();
+    if (this.props.action === "play") {
+      this.props.setAction("pause");
+      this.props.player.pause();
+    }
+    if (this.props.action === "pause") {
+      this.props.setAction("play");
+      this.props.player.play();
+    }
+    if (this.props.action === "end") {
+      this.props.setAction("play");
+      this.props.player.currentTime = 0;
+    }
   };
 
   render() {
     return (
       <WaveformContainer>
-        <PlayButton onClick={this.handlePlay}>
-          {!this.state.playing ? "Play" : "Pause"}
-        </PlayButton>
+        {this.props.track ? (
+          <PlayButton onClick={this.handlePlay}>
+            {this.props.action === "play" ? "Pause" : "Play"}
+          </PlayButton>
+        ) : null}
         <Wave id="waveform" />
       </WaveformContainer>
     );
