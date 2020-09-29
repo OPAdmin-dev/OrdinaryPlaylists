@@ -2,23 +2,30 @@ import React from "react";
 import Waveform from "../MusicPlayer/Waveform";
 
 export default function Banner(props) {
+  console.log(props.playlist);
   return (
     <div className="home">
       <div className="container">
         {props.track ? (
           <div>
             <p id="title">NEW RELEASE</p>
-            <h1>
-              {props.track[0].name}
-              {/* <p id="paragraph">
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
-          placerat ante. Sed interdum fringilla justo, eget tincidunt purus...”
-        </p> */}
-            </h1>
+            <h1>{props.track[0].name}</h1>
             {props.track ? <p>By {props.track[0].singer}</p> : ""}
           </div>
         ) : (
-          ""
+          <div>
+            <p id="title">NEW RELEASE</p>
+            <h1>
+              {props.playlist[props.trackIndex]
+                ? props.playlist[props.trackIndex].name
+                : "Test Track"}
+            </h1>
+            {props.playlist[props.trackIndex] ? (
+              <p>By {props.playlist[props.trackIndex].singer}</p>
+            ) : (
+              "Test Artist"
+            )}
+          </div>
         )}
       </div>
 
@@ -29,9 +36,12 @@ export default function Banner(props) {
       </section>
       <div className="waveform">
         <Waveform
-          track={props.track ? props.track[0] : null}
-          playing={props.playing}
-          setPlaying={props.setPlaying}
+          track={
+            props.track ? props.track[0] : props.playlist[props.trackIndex]
+          }
+          selectTrack={props.selectTrack}
+          action={props.action}
+          setAction={props.setAction}
           player={props.player}
         />
       </div>

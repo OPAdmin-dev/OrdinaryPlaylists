@@ -22,24 +22,44 @@ class Waveform extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    const { track, playing } = this.props;
-    if (JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
+    const { track, action } = this.props;
+    if (track && JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
       this.waveform.load(track.musicSrc);
       this.waveform.setVolume(0);
-      this.waveform.playPause();
+      this.waveform.play();
     } else {
-      if (nextProps.playing !== playing) {
-        this.waveform.playPause();
+      if (track) {
+        if (action === "pause") {
+          this.waveform.pause();
+        }
+        if (action === "play") {
+          this.waveform.play();
+        }
+        if (action === "reload") {
+          this.waveform.load(track.musicSrc);
+          this.waveform.setVolume(0);
+          this.waveform.play();
+        }
+        if (action === "end") {
+          this.waveform.load(track.musicSrc);
+          this.waveform.setVolume(0);
+        }
       }
     }
   }
 
   handlePlay = () => {
-    this.props.setPlaying(!this.props.playing);
-    if (this.props.playing) {
+    if (this.props.action === "play") {
+      this.props.setAction("pause");
       this.props.player.pause();
-    } else {
+    }
+    if (this.props.action === "pause") {
+      this.props.setAction("play");
       this.props.player.play();
+    }
+    if (this.props.action === "end") {
+      this.props.setAction("play");
+      this.props.player.currentTime = 0;
     }
   };
 
@@ -48,7 +68,7 @@ class Waveform extends Component {
       <WaveformContainer>
         {this.props.track ? (
           <PlayButton onClick={this.handlePlay}>
-            {!this.props.playing ? "Play" : "Pause"}
+            {this.props.action === "play" ? "Pause" : "Play"}
           </PlayButton>
         ) : null}
         <Wave id="waveform" />
