@@ -9,13 +9,13 @@ export default function Banner(props) {
           <div>
             <p id="title">NEW RELEASE</p>
             <h1>
-              {props.track.name}
+              {props.track[0].name}
               {/* <p id="paragraph">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
           placerat ante. Sed interdum fringilla justo, eget tincidunt purus...”
         </p> */}
             </h1>
-            {props.track ? <p>By {props.track.singer}</p> : ""}
+            {props.track ? <p>By {props.track[0].singer}</p> : ""}
           </div>
         ) : (
           ""
@@ -28,7 +28,12 @@ export default function Banner(props) {
         </a>
       </section>
       <div className="waveform">
-        <Waveform track={props.track} />
+        <Waveform
+          track={props.track ? props.track[0] : null}
+          playing={props.playing}
+          setPlaying={props.setPlaying}
+          player={props.player}
+        />
       </div>
     </div>
   );

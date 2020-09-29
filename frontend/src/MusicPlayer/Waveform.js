@@ -5,10 +5,6 @@ import { WaveformContainer, Wave, PlayButton } from "./waveform.styled";
 class Waveform extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playing: false,
-      url: null,
-    };
   }
 
   componentDidMount() {
@@ -16,7 +12,7 @@ class Waveform extends Component {
       barWidth: 3,
       cursorWidth: 1,
       container: "#waveform",
-      backend: "WebAudio",
+      backend: "MediaElement",
       height: "100",
       progressColor: "#8a80d3",
       responsive: true,
@@ -26,28 +22,35 @@ class Waveform extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    const { track } = this.props;
-    if (nextProps.track !== track) {
-      this.setState({
-        playing: false,
-      });
+    const { track, playing } = this.props;
+    if (JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
       this.waveform.load(track.musicSrc);
+      this.waveform.setVolume(0);
+      this.waveform.playPause();
+    } else {
+      if (nextProps.playing !== playing) {
+        this.waveform.playPause();
+      }
     }
   }
 
   handlePlay = () => {
-    this.setState({
-      playing: !this.state.playing,
-    });
-    this.waveform.playPause();
+    this.props.setPlaying(!this.props.playing);
+    if (this.props.playing) {
+      this.props.player.pause();
+    } else {
+      this.props.player.play();
+    }
   };
 
   render() {
     return (
       <WaveformContainer>
-        <PlayButton onClick={this.handlePlay}>
-          {!this.state.playing ? "Play" : "Pause"}
-        </PlayButton>
+        {this.props.track ? (
+          <PlayButton onClick={this.handlePlay}>
+            {!this.props.playing ? "Play" : "Pause"}
+          </PlayButton>
+        ) : null}
         <Wave id="waveform" />
       </WaveformContainer>
     );
