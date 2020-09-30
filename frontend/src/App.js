@@ -70,10 +70,6 @@ function App() {
     setAction("reload");
   };
 
-  const endTrack = () => {
-    setAction("end");
-  };
-
   const changeTrack = (index) => {
     setTrackIndex(index);
   };
@@ -106,12 +102,12 @@ function App() {
         onAudioPlay={playTrack}
         onAudioPause={pauseTrack}
         onAudioReload={reloadTrack}
-        onAudioEnded={endTrack}
         onPlayIndexChange={(index) => changeTrack(index)}
         showThemeSwitch={false}
         showMediaSession={true}
         seeked={false}
         drag={false}
+        responsive={true}
         getAudioInstance={(instance) => getPlayerInstance(instance)}
       />
       <NewRelease selectTrack={selectTrack} />

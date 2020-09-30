@@ -18,34 +18,27 @@ class Waveform extends Component {
       responsive: true,
       waveColor: "#EFEFEF",
       cursorColor: "transparent",
+      responsive: true,
+      interact: false,
+      normalize: true,
     });
   }
 
-  componentDidUpdate(nextProps) {
-    const { track, action } = this.props;
-    if (track && JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
-      console.log("This happened");
+  componentDidUpdate(prevProps) {
+    const { track, trackIndex, action } = this.props;
+    console.log(action);
+    if (track && JSON.stringify(track) !== JSON.stringify(prevProps.track)) {
       this.waveform.load(track.musicSrc);
       this.waveform.setVolume(0);
       this.waveform.play();
     } else {
-      if (track) {
-        if (action === "pause") {
-          this.waveform.pause();
-        }
-        if (action === "play") {
-          this.waveform.play();
-        }
-        if (action === "reload") {
-          this.waveform.load(track.musicSrc);
-          this.waveform.setVolume(0);
-          this.waveform.play();
-        }
-        if (action === "end") {
-          console.log("CDU end");
-          this.waveform.load(track.musicSrc);
-          this.waveform.setVolume(0);
-        }
+      if (action === "reload") {
+        this.waveform.load(track.musicSrc);
+        this.waveform.setVolume(0);
+      } else if (this.props.player.paused == true) {
+        this.waveform.pause();
+      } else if (this.props.player.paused == false) {
+        this.waveform.play();
       }
     }
   }
@@ -54,14 +47,12 @@ class Waveform extends Component {
     if (this.props.action === "play") {
       this.props.setAction("pause");
       this.props.player.pause();
+      this.waveform.pause();
     }
     if (this.props.action === "pause") {
       this.props.setAction("play");
       this.props.player.play();
-    }
-    if (this.props.action === "end") {
-      this.props.setAction("play");
-      this.props.player.currentTime = 0;
+      this.waveform.play();
     }
   };
 

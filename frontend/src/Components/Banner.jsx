@@ -2,7 +2,6 @@ import React from "react";
 import Waveform from "../MusicPlayer/Waveform";
 
 export default function Banner(props) {
-  console.log(props.trackIndex);
   return (
     <div className="home">
       <div className="container">
@@ -47,6 +46,7 @@ export default function Banner(props) {
           action={props.action}
           setAction={props.setAction}
           player={props.player}
+          trackIndex={props.trackIndex}
         />
       </div>
     </div>
