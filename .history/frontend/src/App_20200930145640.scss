@@ -1303,15 +1303,6 @@ ul li {
         text-align: center;
         color: #8a80d3;
     }
-    .heading {
-        font-size: 65px;
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        line-height: 131%;
-        color: #8a80d3;
-        text-align: center;
-    }
     .item {
         height: 20vw;
         width: 20vw;
@@ -1334,11 +1325,11 @@ ul li {
     .songList::-webkit-scrollbar {
         display: none;
     }
-    img {
-        padding-bottom: 10px;
-        height: 18vw;
-        width: 18vw;
-    }
+    // img {
+    //     padding-bottom: 10px;
+    //     height: 18vw;
+    //     width: 18vw;
+    // }
     #type {
         font-family: GT Cinetype Trial;
         font-size: 12px;
@@ -1379,16 +1370,9 @@ ul li {
 
 @media screen and (max-width: 768px) {
     .carousel {
-        height: 80vh;
-        padding: 5vw;
-        .heading {
-            font-size: 35px;
-            font-weight: 500;
-            line-height: 131%;
-        }
+        padding: 5px;
         .item {
-            height: 100vw;
-            width: 35vw;
+            height: 35vw;
         }
         img {
             height: 30vw;

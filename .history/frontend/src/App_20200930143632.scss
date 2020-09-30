@@ -1303,15 +1303,6 @@ ul li {
         text-align: center;
         color: #8a80d3;
     }
-    .heading {
-        font-size: 65px;
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        line-height: 131%;
-        color: #8a80d3;
-        text-align: center;
-    }
     .item {
         height: 20vw;
         width: 20vw;
@@ -1379,36 +1370,29 @@ ul li {
 
 @media screen and (max-width: 768px) {
     .carousel {
-        height: 80vh;
-        padding: 5vw;
-        .heading {
-            font-size: 35px;
-            font-weight: 500;
-            line-height: 131%;
-        }
         .item {
-            height: 100vw;
-            width: 35vw;
+            height: 40vw;
         }
         img {
+            padding-bottom: 10px;
             height: 30vw;
             width: 30vw;
         }
         #type {
-            font-size: 8px;
+            font-size: 12px;
             text-align: left;
             color: #8a80d3;
         }
         #title {
-            font-size: 12px;
+            font-size: 14px;
             color: #f4f7f4;
         }
         #artist {
-            font-size: 12px;
+            font-size: 14px;
             color: #f4f7f4;
         }
         #description {
-            font-size: 10px;
+            font-size: 12px;
             color: #f4f7f4;
         }
     }

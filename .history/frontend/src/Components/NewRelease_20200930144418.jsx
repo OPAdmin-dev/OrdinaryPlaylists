@@ -25,7 +25,7 @@ export default function NewRelease(props) {
 
   return (
     <div className="carousel">
-      <p className="heading">New Releases</p>
+      <h1>New Releases</h1>
       <div className="songList">
         {loading ? (
           <Spin />
@@ -43,7 +43,7 @@ export default function NewRelease(props) {
                   <p>Click here to listen on Spotify!</p>
                 </a>
               </div>
-              <div style={{ padding: "100px" }}></div>
+              <div style={{ padding: "10px" }}></div>
             </div>
           ))
         )}

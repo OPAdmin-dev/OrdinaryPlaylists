@@ -1303,15 +1303,6 @@ ul li {
         text-align: center;
         color: #8a80d3;
     }
-    .heading {
-        font-size: 65px;
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        line-height: 131%;
-        color: #8a80d3;
-        text-align: center;
-    }
     .item {
         height: 20vw;
         width: 20vw;
@@ -1383,8 +1374,11 @@ ul li {
         padding: 5vw;
         .heading {
             font-size: 35px;
+            font-family: Roxborough CF;
+            font-style: italic;
             font-weight: 500;
             line-height: 131%;
+            color: #8a80d3;
         }
         .item {
             height: 100vw;

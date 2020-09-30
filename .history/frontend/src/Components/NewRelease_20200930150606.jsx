@@ -25,7 +25,7 @@ export default function NewRelease(props) {
 
   return (
     <div className="carousel">
-      <p className="heading">New Releases</p>
+      <h1 className="heading">New Releases</h1>
       <div className="songList">
         {loading ? (
           <Spin />
