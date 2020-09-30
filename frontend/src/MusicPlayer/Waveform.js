@@ -24,6 +24,7 @@ class Waveform extends Component {
   componentDidUpdate(nextProps) {
     const { track, action } = this.props;
     if (track && JSON.stringify(nextProps.track) !== JSON.stringify(track)) {
+      console.log("This happened");
       this.waveform.load(track.musicSrc);
       this.waveform.setVolume(0);
       this.waveform.play();
@@ -41,6 +42,7 @@ class Waveform extends Component {
           this.waveform.play();
         }
         if (action === "end") {
+          console.log("CDU end");
           this.waveform.load(track.musicSrc);
           this.waveform.setVolume(0);
         }

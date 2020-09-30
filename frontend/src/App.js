@@ -17,6 +17,7 @@ import "react-jinke-music-player/assets/index.css";
 function App() {
   const [playlistMap, setPlaylistMap] = useState([]);
   const [trackPlaylist, setTrackPlaylist] = useState([]);
+  const [playlistName, setPlaylistName] = useState(null);
   const [track, setTrack] = useState();
   const [action, setAction] = useState("");
   const [player, setPlayer] = useState();
@@ -42,6 +43,7 @@ function App() {
     }
     setPlaylistMap(playlistMap);
     setTrackPlaylist(temp_arr);
+    setPlaylistName(PL["name"]);
   };
 
   const selectTrack = (T) => {
@@ -86,6 +88,7 @@ function App() {
       <Banner
         track={track}
         playlist={playlistMap}
+        playlistName={playlistName}
         action={action}
         setAction={setAction}
         player={player}

@@ -31,21 +31,23 @@ def fetchPlaylistData():
                 mod_playlist['tracks'] = []
                 tracks = sp.playlist_items(playlist['id'])['items']
                 for track in tracks:
-                    track_name = track['track']['name']
-                    track_artist = track['track']['artists'][0]['name']
-                    track_url = track['track']['external_urls']['spotify']
-                    track_cover = track['track']['album']['images'][0]['url']
-                    track_release = track['track']['album']['release_date']
-                    track_preview = track['track']['preview_url']
-                    track_object = {
-                        'track_name': track_name,
-                        'track_artist': track_artist,
-                        'track_url': track_url,
-                        'track_cover': track_cover,
-                        'track_release': track_release,
-                        'preview_url': track_preview
-                    }
-                    mod_playlist['tracks'].append(track_object)
+                    # Only add tracks that have a valid preview URL
+                    if(track['track']['preview_url']):
+                        track_name = track['track']['name']
+                        track_artist = track['track']['artists'][0]['name']
+                        track_url = track['track']['external_urls']['spotify']
+                        track_cover = track['track']['album']['images'][0]['url']
+                        track_release = track['track']['album']['release_date']
+                        track_preview = track['track']['preview_url']
+                        track_object = {
+                            'track_name': track_name,
+                            'track_artist': track_artist,
+                            'track_url': track_url,
+                            'track_cover': track_cover,
+                            'track_release': track_release,
+                            'preview_url': track_preview
+                        }
+                        mod_playlist['tracks'].append(track_object)
                 playlist_mod.append(mod_playlist)
             return playlist_mod
     except:
