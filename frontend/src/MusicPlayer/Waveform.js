@@ -25,8 +25,7 @@ class Waveform extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { track, trackIndex, action } = this.props;
-    console.log(action);
+    const { track, action } = this.props;
     if (track && JSON.stringify(track) !== JSON.stringify(prevProps.track)) {
       this.waveform.load(track.musicSrc);
       this.waveform.setVolume(0);
