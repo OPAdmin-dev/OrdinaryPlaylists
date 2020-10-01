@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import WaveSurfer from "wavesurfer.js";
 import { WaveformContainer, Wave, PlayButton } from "./waveform.styled";
+import Item from "antd/lib/list/Item";
+import { Button } from "antd";
 
 class Waveform extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      URI: "Test URI",
+    };
   }
 
   componentDidMount() {
@@ -27,6 +32,7 @@ class Waveform extends Component {
   componentDidUpdate(prevProps) {
     const { track, action } = this.props;
     if (track && JSON.stringify(track) !== JSON.stringify(prevProps.track)) {
+      this.setState({ URI: this.props.track.URI });
       this.waveform.load(track.musicSrc);
       this.waveform.setVolume(0);
       this.waveform.play();
@@ -57,14 +63,16 @@ class Waveform extends Component {
 
   render() {
     return (
-      <WaveformContainer>
-        {this.props.track ? (
-          <PlayButton onClick={this.handlePlay}>
-            {this.props.action === "play" ? "Pause" : "Play"}
-          </PlayButton>
-        ) : null}
-        <Wave id="waveform" />
-      </WaveformContainer>
+      <div>
+        <WaveformContainer>
+          {this.props.track ? (
+            <PlayButton onClick={this.handlePlay}>
+              {this.props.action === "play" ? "Pause" : "Play"}
+            </PlayButton>
+          ) : null}
+          <Wave id="waveform" />
+        </WaveformContainer>
+      </div>
     );
   }
 }

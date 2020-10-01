@@ -34,7 +34,7 @@ export default function Story_1(props) {
   return (
     <div className="Story_1">
       <p id="question">Q2</p>
-      <p id="header">Pick one prompt you feel for most.</p>
+      <p id="header">Pick one prompt you feel for most.*</p>
       <Controller
         name="title"
         defaultValue=""
@@ -56,7 +56,7 @@ export default function Story_1(props) {
           />
         }
       />
-      <p id="header">Tell us that story in 100 words or less.</p>
+      <p id="header">Tell us that story in 100 words or less.*</p>
       <Controller
         name="description"
         defaultValue=""

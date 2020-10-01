@@ -14,14 +14,17 @@ import Footer from "./Components/Footer";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 
+import { Button } from "antd";
+
 function App() {
   const [playlistMap, setPlaylistMap] = useState([]);
   const [trackPlaylist, setTrackPlaylist] = useState([]);
   const [playlistName, setPlaylistName] = useState(null);
   const [track, setTrack] = useState();
-  const [action, setAction] = useState("");
+  const [action, setAction] = useState("setup");
   const [player, setPlayer] = useState();
   const [trackIndex, setTrackIndex] = useState(0);
+  const [SDKPlayer, setSDKPlayer] = useState();
 
   const selectPlaylist = (PL) => {
     setTrack(null);
@@ -34,6 +37,7 @@ function App() {
         musicSrc: obj.preview_url,
         singer: obj.track_artist,
         cover: obj.track_cover,
+        uri: obj.track_url,
       };
       return map;
     }, {});
@@ -47,12 +51,15 @@ function App() {
   };
 
   const selectTrack = (T) => {
+    const player = window.onSpotifyWebPlaybackSDKReady(T.track_url, "play");
+    console.log(player);
     setTrack([
       {
         name: T.track_name,
         musicSrc: T.preview_url,
         singer: T.track_artist,
         cover: T.track_cover,
+        uri: T.track_url,
       },
     ]);
     setAction("play");
@@ -62,8 +69,9 @@ function App() {
     setAction("play");
   };
 
-  const pauseTrack = () => {
+  const pauseTrack = (T) => {
     setAction("pause");
+    window.onSpotifyWebPlaybackSDKReady(T.track_url, "pause");
   };
 
   const reloadTrack = () => {
@@ -91,6 +99,7 @@ function App() {
         trackIndex={trackIndex}
         setTrackIndex={setTrackIndex}
       />
+      <Button onClick={() => pauseTrack(track)}>Pause</Button>
       <ReactJkMusicPlayer
         audioLists={track || trackPlaylist}
         defaultVolume={100}
@@ -100,7 +109,7 @@ function App() {
         glassBg
         mode="full"
         onAudioPlay={playTrack}
-        onAudioPause={pauseTrack}
+        // onAudioPause={pauseTrack}
         onAudioReload={reloadTrack}
         onPlayIndexChange={(index) => changeTrack(index)}
         showThemeSwitch={false}

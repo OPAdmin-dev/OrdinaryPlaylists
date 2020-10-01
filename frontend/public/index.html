@@ -15,7 +15,10 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"
+    ></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -29,6 +32,52 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = (URI, action) => {
+        const token =
+          "BQC31ZN8WXP9dgI4rhOEkZncJNUDWWsYdh8eWFbQ5Sfrl6e9eFSyN4pWpzG5jz2pGB-IR3bJ9-ZfyXvVFUfjj5TRjBnw6aQbT2U02dskC3F5rQz9JWmxa0bGPtf4DbxxcvcWnBLmQYA3htyweVzJQngNNWCb7o-7ZjxlKX5kiDweG3GZewe3eRA";
+        const player = new Spotify.Player({
+          name: "Web Playback SDK Quick Start Player",
+          getOAuthToken: (cb) => {
+            cb(token);
+          },
+        });
+        player.connect().then((success) => {
+          if (success) {
+            player.addListener("ready", ({ device_id }) => {
+              if (action === "pause") {
+                fetch(
+                  `https://api.spotify.com/v1/me/player/pause?device_id=${device_id}`,
+                  {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`,
+                    },
+                  }
+                );
+                // player.pause();
+              } else {
+                fetch(
+                  `https://api.spotify.com/v1/me/player/play?device_id=${device_id}`,
+                  {
+                    method: "PUT",
+                    body: JSON.stringify({
+                      uris: [URI],
+                    }),
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`,
+                    },
+                  }
+                );
+              }
+            });
+          }
+        });
+      };
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

@@ -2,6 +2,9 @@ import React from "react";
 import Waveform from "../MusicPlayer/Waveform";
 
 export default function Banner(props) {
+  if (props.track) {
+    console.log(props.track[0]);
+  }
   return (
     <div className="home">
       <div className="container">

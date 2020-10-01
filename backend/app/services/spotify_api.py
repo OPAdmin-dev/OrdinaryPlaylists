@@ -35,7 +35,7 @@ def fetchPlaylistData():
                     if(track['track']['preview_url']):
                         track_name = track['track']['name']
                         track_artist = track['track']['artists'][0]['name']
-                        track_url = track['track']['external_urls']['spotify']
+                        track_url = track['track']['uri']
                         track_cover = track['track']['album']['images'][0]['url']
                         track_release = track['track']['album']['release_date']
                         track_preview = track['track']['preview_url']
