@@ -61,6 +61,7 @@ export default function Story_1(props) {
         name="description"
         defaultValue=""
         control={control}
+        rules={{ required: "This field is required" }}
         as={
           <Form.Item
             name="story"

@@ -47,7 +47,7 @@ export default function MasterForm(props) {
       message.loading({ content: "Processing...", key });
       setTimeout(() => {
         message.success({
-          content: `${type} created successfully!`,
+          content: `${type} submitted successfully!`,
           key,
           duration: 2,
         });
@@ -70,7 +70,7 @@ export default function MasterForm(props) {
           content:
             "Oops! Looks like you haven't filled out the form entirely! Please fill in all required fields!",
           key,
-          duration: 7,
+          duration: 4,
         });
       }, 1000);
     }
@@ -78,7 +78,7 @@ export default function MasterForm(props) {
 
   const handleOk = () => {
     if (choice === 1) {
-      if (prompt && name && location && title && email && story && tags) {
+      if (prompt && title && email && story && tags) {
         const selected_tags = tags
           .filter((tag) => {
             if (tag.click) {
@@ -90,13 +90,13 @@ export default function MasterForm(props) {
           });
         apiStories
           .post({
-            name: name.length > 0 ? name : "Anonymous",
+            name: name ? name : "Anon",
             story: story,
             prompt: prompt,
             tags: selected_tags,
             title: title,
             email: email,
-            location: location,
+            location: location ? location : "Undisclosed",
           })
           .then((res) => {
             formSubmitMessage(true, "Story");

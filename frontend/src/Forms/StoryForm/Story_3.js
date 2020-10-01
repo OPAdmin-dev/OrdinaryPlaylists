@@ -25,7 +25,6 @@ export default function Story_3(props) {
         name="pen"
         defaultValue=""
         control={control}
-        rules={{ required: "This field is required" }}
         as={
           <Form.Item
             name="pen"
@@ -34,7 +33,7 @@ export default function Story_3(props) {
           >
             <Input
               defaultValue={props.name}
-              placeholder="Pen name"
+              placeholder="Pen name (leave blank to submit anonymously)"
               name="pen"
               onChange={(pen) => handleNameChange(pen)}
             />
@@ -54,7 +53,7 @@ export default function Story_3(props) {
           >
             <Input
               defaultValue={props.location}
-              placeholder="When did this story unfold?"
+              placeholder="When did this story unfold? (leave blank if you dont remember or do not wish to disclose)"
               name="location"
               onChange={(location) => handleLocationChange(location)}
             />
