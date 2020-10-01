@@ -46,7 +46,6 @@ export default function Banner(props) {
           action={props.action}
           setAction={props.setAction}
           player={props.player}
-          trackIndex={props.trackIndex}
         />
       </div>
     </div>
