@@ -1,4 +1,4 @@
-html,
+    html,
 body {
     margin: 0;
     padding: 0;
@@ -949,8 +949,8 @@ ul li {
         cursor: pointer;
     }
     .mood {
-        width: 10vw;
-        height: 55px;
+        width: 153px;
+        height: 57px;
         border: 1px solid #ffff;
         border-radius: 10px;
         line-height: 109%;
@@ -961,12 +961,6 @@ ul li {
         font-weight: bold;
         font-size: 12px;
         justify-content: center;
-    }
-    @media screen and (max-width: 768px) {
-        .mood {
-            width: 20vw;
-            height: 50px;
-        }
     }
 }
 
@@ -1148,8 +1142,8 @@ ul li {
         cursor: pointer;
     }
     .mood {
-        width: 10vw;
-        height: 55px;
+        width: 15vw;
+        height: 57px;
         border: 1px solid #ffff;
         border-radius: 10px;
         line-height: 109%;
@@ -1159,304 +1153,286 @@ ul li {
         font-style: normal;
         font-weight: bold;
         font-size: 12px;
-        justify-content: center;
+        justify-content: space-between;
     }
-    @media screen and (max-width: 768px) {
-        .mood {
-            width: 20vw;
-            height: 50px;
-        }
-    }
-}
-
-.Music_4 {
-    width: 80vw;
-    #question {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 109%;
-        text-transform: uppercase;
-        color: #8a80d3;
-    }
-    #header {
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 45px;
-        line-height: 131%;
-        color: #f4f7f4;
-    }
-    #stageName,
-    #email,
-    #instagram {
+    .Music_4 {
         width: 80vw;
-        height: 55px;
-        background: transparent;
-        border: 1px solid #747474;
-        box-sizing: border-box;
-        color: white;
+        #question {
+            font-family: GT Cinetype Trial;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 109%;
+            text-transform: uppercase;
+            color: #8a80d3;
+        }
+        #header {
+            font-family: Roxborough CF;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 131%;
+            color: #f4f7f4;
+        }
+        #stageName,
+        #email,
+        #instagram {
+            width: 80vw;
+            height: 55px;
+            background: transparent;
+            border: 1px solid #747474;
+            box-sizing: border-box;
+            color: white;
+        }
+        #notes {
+            width: 80vw;
+            height: 150px;
+            border: 1px solid #747474;
+            background: transparent;
+            color: white;
+            text-align: top;
+        }
     }
-    #notes {
+    .mainForm {
         width: 80vw;
-        height: 150px;
-        border: 1px solid #747474;
-        background: transparent;
-        color: white;
-        text-align: top;
-    }
-}
-
-.mainForm {
-    width: 80vw;
-    #options {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    #Story {
-        height: 61px;
-        width: 195px;
-        background: transparent;
-        border: 1px solid #747474;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 109%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        text-transform: uppercase;
-        color: #f4f7f4;
-        position: relative;
-        cursor: pointer;
-        img {
-            position: absolute;
-            left: 45px;
+        #options {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #Story {
+            height: 61px;
+            width: 195px;
+            background: transparent;
+            border: 1px solid #747474;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 109%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            text-transform: uppercase;
+            color: #f4f7f4;
+            position: relative;
+            cursor: pointer;
+            img {
+                position: absolute;
+                left: 45px;
+            }
+        }
+        #Story:hover {
+            background: #8a80d3;
+        }
+        #Music {
+            height: 61px;
+            width: 195px;
+            background: transparent;
+            border: 1px solid #747474;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 109%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-transform: uppercase;
+            color: #f4f7f4;
+            cursor: pointer;
+            position: relative;
+            img {
+                position: absolute;
+                left: 45px;
+            }
+        }
+        #Music:hover {
+            background: #8a80d3;
+        }
+        #question {
+            font-family: GT Cinetype Trial;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 109%;
+            text-transform: uppercase;
+            color: #8a80d3;
+        }
+        #header {
+            font-family: Roxborough CF;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 131%;
+            color: #f4f7f4;
+            font-family: GT Cinetype Trial;
         }
     }
-    #Story:hover {
-        background: #8a80d3;
+    .ant-modal-close-x {
+        color: #ffffff;
     }
-    #Music {
-        height: 61px;
-        width: 195px;
-        background: transparent;
-        border: 1px solid #747474;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 109%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        text-transform: uppercase;
-        color: #f4f7f4;
-        cursor: pointer;
-        position: relative;
-        img {
-            position: absolute;
-            left: 45px;
-        }
+    .ant-modal-body {
+        padding: 0 !important;
+        border: 0 !important;
     }
-    #Music:hover {
-        background: #8a80d3;
-    }
-    #question {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 109%;
-        text-transform: uppercase;
-        color: #8a80d3;
-    }
-    #header {
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 45px;
-        line-height: 131%;
-        color: #f4f7f4;
-        font-family: GT Cinetype Trial;
-    }
-}
-
-.ant-modal-close-x {
-    color: #ffffff;
-}
-
-.ant-modal-body {
-    padding: 0 !important;
-    border: 0 !important;
-}
-
-.ant-model-body-webkit-scrollbar {
-    display: none;
-}
-
-.ant-modal-footer {
-    border: 0 !important;
-    padding: 0 !important;
-}
-
-.carousel {
-    background: #1f1f1f;
-    height: 800px;
-    padding: 5em;
-    h1 {
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 65px;
-        line-height: 131%;
-        text-align: center;
-        color: #8a80d3;
-    }
-    .heading {
-        font-size: 65px;
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        line-height: 131%;
-        color: #8a80d3;
-        text-align: center;
-    }
-    .item {
-        height: 20vw;
-        width: 20vw;
-    }
-    .playList {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        height: 100%;
-    }
-    .playList::-webkit-scrollbar {
+    .ant-model-body-webkit-scrollbar {
         display: none;
     }
-    .songList {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        height: 100%;
+    .ant-modal-footer {
+        border: 0 !important;
+        padding: 0 !important;
     }
-    .songList::-webkit-scrollbar {
-        display: none;
-    }
-    img {
-        padding-bottom: 10px;
-        height: 18vw;
-        width: 18vw;
-    }
-    #type {
-        font-family: GT Cinetype Trial;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 13px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #8a80d3;
-    }
-    #title {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 109%;
-        color: #f4f7f4;
-    }
-    #artist {
-        font-family: GT Cinetype Trial;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #f4f7f4;
-    }
-    #description {
-        font-family: GT Cinetype Trial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 140%;
-        color: #f4f7f4;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .carousel {
-        height: 80vh;
-        padding: 5vw;
+        background: #1f1f1f;
+        height: 800px;
+        padding: 5em;
+        h1 {
+            font-family: Roxborough CF;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 65px;
+            line-height: 131%;
+            text-align: center;
+            color: #8a80d3;
+        }
         .heading {
-            font-size: 35px;
+            font-size: 65px;
+            font-family: Roxborough CF;
+            font-style: italic;
             font-weight: 500;
             line-height: 131%;
+            color: #8a80d3;
+            text-align: center;
         }
         .item {
-            height: 100vw;
-            width: 35vw;
+            height: 20vw;
+            width: 20vw;
+        }
+        .playList {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 100%;
+        }
+        .playList::-webkit-scrollbar {
+            display: none;
+        }
+        .songList {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 100%;
+        }
+        .songList::-webkit-scrollbar {
+            display: none;
         }
         img {
-            height: 30vw;
-            width: 30vw;
+            padding-bottom: 10px;
+            height: 18vw;
+            width: 18vw;
         }
         #type {
-            font-size: 8px;
+            font-family: GT Cinetype Trial;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 13px;
+            letter-spacing: 0em;
             text-align: left;
             color: #8a80d3;
         }
         #title {
-            font-size: 12px;
+            font-family: GT Cinetype Trial;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 109%;
             color: #f4f7f4;
         }
         #artist {
-            font-size: 12px;
+            font-family: GT Cinetype Trial;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 0em;
+            text-align: left;
             color: #f4f7f4;
         }
         #description {
-            font-size: 10px;
+            font-family: GT Cinetype Trial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 140%;
             color: #f4f7f4;
         }
     }
-}
-
-#Mood {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1f1f1f;
-    height: 800px;
-    h1 {
-        font-family: Roxborough CF;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 65px;
-        line-height: 131%;
-        color: #8a80d3;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #Mood {
-        h1 {
-            font-size: 35px;
+    @media screen and (max-width: 768px) {
+        .carousel {
+            height: 80vh;
+            padding: 5vw;
+            .heading {
+                font-size: 35px;
+                font-weight: 500;
+                line-height: 131%;
+            }
+            .item {
+                height: 100vw;
+                width: 35vw;
+            }
+            img {
+                height: 30vw;
+                width: 30vw;
+            }
+            #type {
+                font-size: 8px;
+                text-align: left;
+                color: #8a80d3;
+            }
+            #title {
+                font-size: 12px;
+                color: #f4f7f4;
+            }
+            #artist {
+                font-size: 12px;
+                color: #f4f7f4;
+            }
+            #description {
+                font-size: 10px;
+                color: #f4f7f4;
+            }
         }
     }
-}
-
-.waveform {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    bottom: 15vh;
-    width: 80vw;
-}
+    #Mood {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #1f1f1f;
+        height: 800px;
+        h1 {
+            font-family: Roxborough CF;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 65px;
+            line-height: 131%;
+            color: #8a80d3;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        #Mood {
+            h1 {
+                font-size: 35px;
+            }
+        }
+    }
+    .waveform {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: 15vh;
+        width: 80vw;
+    }

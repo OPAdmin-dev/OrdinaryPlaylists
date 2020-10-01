@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Music_3(props) {
   //const [list, setList] = React.useState(collection);
@@ -15,16 +15,19 @@ export default function Music_3(props) {
     return count <= 5 ? updatedList : props.song_tags;
   };
   const size = useWindowSize();
-  var num = 6;
+  var Console = undefined;
   if (size.width < 768) {
-    num = 3;
+    Console = Mobile;
+  } else {
+    Console = Desktop;
   }
+
 
   return (
     <div className="Music_3">
       <p id="question">Q4</p>
       <p id="header">Set the #mood of your song*</p>
-      {chunk(props.song_tags, num).map((category, index) => (
+      {chunk(props.song_tags, {(Desktop)?6:3}).map((category, index) => (
         <div key={index} id="moodCollection">
           {category.map((mood) => (
             <div>

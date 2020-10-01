@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Music_3(props) {
   //const [list, setList] = React.useState(collection);
@@ -14,17 +14,12 @@ export default function Music_3(props) {
     let count = updatedList.reduce((a, c) => (c.click ? a + 1 : a), 0);
     return count <= 5 ? updatedList : props.song_tags;
   };
-  const size = useWindowSize();
-  var num = 6;
-  if (size.width < 768) {
-    num = 3;
-  }
 
   return (
     <div className="Music_3">
       <p id="question">Q4</p>
       <p id="header">Set the #mood of your song*</p>
-      {chunk(props.song_tags, num).map((category, index) => (
+      {chunk(props.song_tags, 6).map((category, index) => (
         <div key={index} id="moodCollection">
           {category.map((mood) => (
             <div>
@@ -45,33 +40,4 @@ export default function Music_3(props) {
       ))}
     </div>
   );
-}
-
-function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-  });
-
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-      });
-    }
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-
-  return windowSize;
 }

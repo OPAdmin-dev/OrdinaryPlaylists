@@ -949,8 +949,8 @@ ul li {
         cursor: pointer;
     }
     .mood {
-        width: 10vw;
-        height: 55px;
+        width: 153px;
+        height: 57px;
         border: 1px solid #ffff;
         border-radius: 10px;
         line-height: 109%;
@@ -961,12 +961,6 @@ ul li {
         font-weight: bold;
         font-size: 12px;
         justify-content: center;
-    }
-    @media screen and (max-width: 768px) {
-        .mood {
-            width: 20vw;
-            height: 50px;
-        }
     }
 }
 
@@ -1143,13 +1137,13 @@ ul li {
     }
     #moodCollection {
         display: flex;
-        justify-content: space-around;
-        padding-bottom: 10px;
+        justify-content: space-between;
+        padding: 10px;
         cursor: pointer;
     }
     .mood {
-        width: 10vw;
-        height: 55px;
+        width: 15vw;
+        height: 57px;
         border: 1px solid #ffff;
         border-radius: 10px;
         line-height: 109%;
@@ -1160,12 +1154,6 @@ ul li {
         font-weight: bold;
         font-size: 12px;
         justify-content: center;
-    }
-    @media screen and (max-width: 768px) {
-        .mood {
-            width: 20vw;
-            height: 50px;
-        }
     }
 }
 
