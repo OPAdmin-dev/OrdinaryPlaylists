@@ -54,12 +54,6 @@ export default function Hamburger() {
   const closeModal = () => {
     setAdd(false);
   };
-  const [add, setAdd] = useState(false);
-  const [loading, updateLoading] = useState(false);
-
-  const addStory = () => {
-    setAdd(true);
-  };
   return (
     <div className="NavBar">
       <header className="logo">

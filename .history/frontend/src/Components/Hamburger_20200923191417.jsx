@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Modal } from "antd";
-import MasterForm from "../Forms/StoryForm/MasterForm";
 
 export default function Hamburger() {
   const Desktop = [
@@ -51,15 +49,7 @@ export default function Hamburger() {
     Console = Desktop;
   }
   const [menuActive, setMenuState] = useState(false);
-  const closeModal = () => {
-    setAdd(false);
-  };
-  const [add, setAdd] = useState(false);
-  const [loading, updateLoading] = useState(false);
 
-  const addStory = () => {
-    setAdd(true);
-  };
   return (
     <div className="NavBar">
       <header className="logo">
@@ -152,22 +142,7 @@ export default function Hamburger() {
                 </li>
               );
             })}
-            <button onClick={addStory}>SUBMIT YOUR STORY</button>
-            <Modal
-              width="100%"
-              height="130%"
-              visible={add}
-              onCancel={closeModal}
-              footer={[]}
-              destroyOnClose={true}
-            >
-              <MasterForm
-                closeModal={closeModal}
-                add={add}
-                loading={loading}
-                updateLoading={updateLoading}
-              />
-            </Modal>
+            <button>SUBMIT YOUR STORY</button>
             <div className="Social">
               <h1 style={{ color: "white" }}>Connect with us</h1>
               <div id="social" className="socialDark">
