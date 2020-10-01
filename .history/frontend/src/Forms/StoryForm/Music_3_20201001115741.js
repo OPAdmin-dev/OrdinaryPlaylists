@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Music_3(props) {
   //const [list, setList] = React.useState(collection);
