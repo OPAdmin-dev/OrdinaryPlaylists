@@ -157,4 +157,3 @@ yarn-error.log*
 .vscode
 .history
 /ssl
-/core
