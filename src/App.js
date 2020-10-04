@@ -112,8 +112,8 @@ function App() {
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
-      <StoryViewer />
-      <Mood />
+      {/* <StoryViewer /> */}
+      {/* <Mood /> */}
       <StoryShared />
       <Story />
       <Footer />
