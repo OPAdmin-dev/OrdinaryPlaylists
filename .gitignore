@@ -157,3 +157,4 @@ yarn-error.log*
 .vscode
 .history
 /ssl
+appsecrets.py
