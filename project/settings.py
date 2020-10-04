@@ -178,20 +178,6 @@ MEDIA_URL = '/media/'
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS START ---------- ###
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST_USER = "admin@ordinaryplaylists.com"
-# EMAIL_HOST = 'smtp.office365.com'
-# DEFAULT_FROM_EMAIL = 'admin@ordinaryplaylists.com'
-# SERVER_EMAIL = 'admin@ordinaryplaylists.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# #EMAIL_SSL_CERTFILE = os.path.join(BASE_DIR, '/ssl/certificate.crt')
-# #EMAIL_SSL_KEYFILE = os.path.join(BASE_DIR, '/ssl/private.key')
-# EMAIL_HOST_PASSWORD = SMTP_PASSWORD
-# EMAIL_CONFIRMATION_PERIOD_DAYS = 1
-# SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(
-#     days=EMAIL_CONFIRMATION_PERIOD_DAYS)
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtpout.secureserver.net.'
 EMAIL_HOST_USER = 'admin@ordinaryplaylists.com'
