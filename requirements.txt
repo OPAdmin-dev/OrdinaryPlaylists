@@ -16,7 +16,6 @@ dnspython==1.16.0
 docutils==0.15.2
 entrypoints==0.3
 eventlet==0.25.1
-falcon==2.0.0
 filelock==3.0.12
 gast==0.3.3
 greenlet==0.4.15
