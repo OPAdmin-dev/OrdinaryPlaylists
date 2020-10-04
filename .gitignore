@@ -128,8 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#appsecrets.py
-#cache-41f8mvwz7buuc7brs3cdrtu4v
+appsecrets.py
+cache-41f8mvwz7buuc7brs3cdrtu4v
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -157,4 +157,4 @@ yarn-error.log*
 .vscode
 .history
 /ssl
-./appsecrets.py
+
