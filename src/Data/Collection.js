@@ -1,0 +1,27 @@
+export default [
+    { name: "anxious", color: "#D7CA47", click: false },
+    { name: "aroused", color: "#CC4883", click: false },
+    { name: "betrayed", color: "#DE4645", click: false },
+    { name: "bitter", color: "#7E7B4D", click: false },
+    { name: "depressed", color: "#315F89", click: false },
+    { name: "disappointed", color: "#9D7F58", click: false },
+    { name: "energetic", color: "#A3D451", click: false },
+    { name: "excluded", color: "#CFD2B8", click: false },
+    { name: "exhausted", color: "#8E5050", click: false },
+    { name: "grateful", color: "#EAAD52", click: false },
+    { name: "grief", color: "#C4C4C4", click: false },
+    { name: "hopeful", color: "#F57B54", click: false },
+    { name: "insecure", color: "#DCB1B1", click: false },
+    { name: "inspired", color: "#1EA0D8", click: false },
+    { name: "jealous", color: "#8D61EA", click: false },
+    { name: "loving", color: "#B880D3", click: false },
+    { name: "nostalgic", color: "#75959C", click: false },
+    { name: "numb", color: "#4D4AC4", click: false },
+    { name: "playful", color: "#FECC4F", click: false },
+    { name: "quirky", color: "#80D38D", click: false },
+    { name: "rejected", color: "#7A79A5", click: false },
+    { name: "remorse", color: "#646D87", click: false },
+    { name: "stressed", color: "#6C3633", click: false },
+    { name: "vulnerable", color: "#B0C7DC", click: false }
+  ];
+  
