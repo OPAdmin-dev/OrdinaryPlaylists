@@ -5,5 +5,5 @@
     "cSpell.words": [
         "faqs"
     ],
-    "python.pythonPath": "env/bin/python"
+    "python.pythonPath": "/usr/bin/python"
 }

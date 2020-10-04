@@ -11,6 +11,7 @@ export default function StoryShared() {
 
   useEffect(() => {
     apiStories.getAll().then((res) => {
+      console.log(res);
       setCount(res.data.length);
     });
   }, []);

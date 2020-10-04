@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from datetime import timedelta
-import appsecrets
+from appsecrets import APP_SECRET_KEY, SMTP_PASSWORD
+import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,13 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = appsecrets.APP_SECRET_KEY
+SECRET_KEY = APP_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'build'), os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,8 +84,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -93,7 +102,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -124,10 +132,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-)
-
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'project.utils.my_jwt_response_handler'
 }
@@ -150,21 +154,51 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# SSL SETTINGS - START #
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
+# SSL SETTINGS - END #
+
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS START ---------- ###
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST_USER = "admin@ordinaryplaylists.com"
+# EMAIL_HOST = 'smtp.office365.com'
+# DEFAULT_FROM_EMAIL = 'admin@ordinaryplaylists.com'
+# SERVER_EMAIL = 'admin@ordinaryplaylists.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# #EMAIL_SSL_CERTFILE = os.path.join(BASE_DIR, '/ssl/certificate.crt')
+# #EMAIL_SSL_KEYFILE = os.path.join(BASE_DIR, '/ssl/private.key')
+# EMAIL_HOST_PASSWORD = SMTP_PASSWORD
+# EMAIL_CONFIRMATION_PERIOD_DAYS = 1
+# SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(
+#     days=EMAIL_CONFIRMATION_PERIOD_DAYS)
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = "ordinaryplaylists@gmail.com"
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = appsecrets.SMTP_PASSWORD
-EMAIL_CONFIRMATION_PERIOD_DAYS = 1
-SIMPLE_EMAIL_CONFIRMATION_PERIOD = timedelta(
-    days=EMAIL_CONFIRMATION_PERIOD_DAYS)
+EMAIL_HOST = 'smtpout.secureserver.net.'
+EMAIL_HOST_USER = 'admin@ordinaryplaylists.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = 'admin@ordinaryplaylists.com'
+EMAIL_HOST_PASSWORD = SMTP_PASSWORD
+EMAIL_PORT = 80
+EMAIL_USE_TLS = False
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS END ---------- ###
+
+### Moved email templates to build dir ###
+
+django_heroku.settings(locals())
