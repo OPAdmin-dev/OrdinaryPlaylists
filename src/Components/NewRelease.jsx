@@ -40,7 +40,7 @@ export default function NewRelease(props) {
                 <p id="title">{t.track_name}</p>
                 <p id="artist">{t.track_artist}</p>
               </div>
-              <div style={{ padding: "100px" }}></div>
+              <div style={{ padding: "10px" }}></div>
             </div>
           ))
         )}
