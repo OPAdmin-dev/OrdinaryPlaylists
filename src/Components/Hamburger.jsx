@@ -174,14 +174,8 @@ export default function Hamburger() {
                 <a href="#">
                   <span className="fab fa-facebook"></span>
                 </a>
-                <a href="#">
-                  <span className="fab fa-twitter"></span>
-                </a>
-                <a href="#">
+                <a href="https://www.instagram.com/ordinaryplaylists/">
                   <span className="fab fa-instagram"></span>
-                </a>
-                <a href="#">
-                  <span className="fab fa-youtube"></span>
                 </a>
               </div>
             </div>
