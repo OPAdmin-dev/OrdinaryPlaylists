@@ -1,35 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Waveform from "../MusicPlayer/Waveform";
+import { useEffect } from "react";
 
 export default function Banner(props) {
+  const [featureTrack, setFeatureTrack] = useState();
+
+  useEffect(() => {
+    if (props.track) {
+      if (props.track[0].isSF) {
+        setFeatureTrack(props.track[0]);
+      }
+    }
+  }, [props.track]);
+
   return (
     <div className="home">
       <div className="container">
-        {props.track ? (
+        {featureTrack ? (
           <div>
-            <p id="title">
-              {props.playlistName ? props.playlistName : "NEW RELEASE"}
-            </p>
-            <h1>{props.track[0].name}</h1>
-            {props.track ? <p>By {props.track[0].singer}</p> : ""}
+            <p id="title">SEASON FEATURE</p>
+            <h1>{featureTrack.name}</h1>
+            {featureTrack ? <p>By {featureTrack.singer}</p> : ""}
           </div>
-        ) : (
-          <div>
-            <p id="title">
-              {props.playlistName ? props.playlistName : "NEW RELEASE"}
-            </p>
-            <h1>
-              {props.playlist[props.trackIndex]
-                ? props.playlist[props.trackIndex].name
-                : "Test Track"}
-            </h1>
-            {props.playlist[props.trackIndex] ? (
-              <p>By {props.playlist[props.trackIndex].singer}</p>
-            ) : (
-              "Test Artist"
-            )}
-          </div>
-        )}
+        ) : null}
       </div>
 
       <section id="section10">
@@ -38,15 +31,18 @@ export default function Banner(props) {
         </a>
       </section>
       <div className="waveform">
-        <Waveform
-          track={
-            props.track ? props.track[0] : props.playlist[props.trackIndex]
-          }
-          selectTrack={props.selectTrack}
-          action={props.action}
-          setAction={props.setAction}
-          player={props.player}
-        />
+        {featureTrack ? (
+          <Waveform
+            track={props.track[0]}
+            setTrack={props.setTrack}
+            player={props.player}
+            action={props.action}
+            setAction={props.setAction}
+            loadSeasonFeature={props.loadSeasonFeature}
+            SFselected={props.SFselected}
+            setSFSelected={props.setSFSelected}
+          />
+        ) : null}
       </div>
     </div>
   );
