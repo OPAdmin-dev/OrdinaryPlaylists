@@ -39,11 +39,8 @@ export default function NewRelease(props) {
                 <p id="type">TRACK</p>
                 <p id="title">{t.track_name}</p>
                 <p id="artist">{t.track_artist}</p>
-                <a href={t.track_url} target="_blank">
-                  <p>Click here to listen on Spotify!</p>
-                </a>
               </div>
-              <div style={{ padding: "100px" }}></div>
+              <div style={{ padding: "10px" }}></div>
             </div>
           ))
         )}

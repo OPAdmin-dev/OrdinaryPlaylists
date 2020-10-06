@@ -229,7 +229,7 @@ export default function MasterForm(props) {
         <div id="b">
           {level !== 0 ? (
             <a onClick={() => setLevel(level - 1)}>
-              <span className="bottom"></span>
+              <span className="top"></span>
             </a>
           ) : null}
         </div>
@@ -237,7 +237,7 @@ export default function MasterForm(props) {
           {level !== 0 &&
           ((level !== 3 && choice === 1) || (level !== 4 && choice === 2)) ? (
             <a onClick={() => setLevel(level + 1)}>
-              <span className="top"></span>
+              <span className="bottom"></span>
             </a>
           ) : level !== 0 ? (
             <button onClick={handleOk}>SUBMIT</button>

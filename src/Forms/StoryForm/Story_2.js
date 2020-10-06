@@ -16,7 +16,7 @@ export default function Story_2(props) {
   };
   const size = useWindowSize();
   var num = 6;
-  if (size.width < 768) {
+  if (size.width < 770) {
     num = 3;
   }
 

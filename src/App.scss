@@ -887,6 +887,7 @@ ul li {
 }
 
 .Story_1 {
+    width: 80vw;
     #question {
         font-family: GT Cinetype Trial;
         font-style: normal;
@@ -965,7 +966,7 @@ ul li {
     @media screen and (max-width: 768px) {
         .mood {
             width: 20vw;
-            height: 50px;
+            height: 35px;
         }
     }
 }
@@ -1304,7 +1305,7 @@ ul li {
 
 .carousel {
     background: #1f1f1f;
-    height: 100vh;
+    height: 80vh;
     padding: 5em;
     h1 {
         font-family: Roxborough CF;
@@ -1389,9 +1390,23 @@ ul li {
     }
 }
 
+@media screen and (max-width: 2400px) {
+    .carousel {
+        height: 40vw;
+        padding: 5vw;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .carousel {
+        height: 50vw;
+        padding: 5vw;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .carousel {
-        height: 60vh;
+        height: 70vw;
         padding: 5vw;
         .heading {
             font-size: 35px;
@@ -1423,6 +1438,13 @@ ul li {
             font-size: 10px;
             color: #f4f7f4;
         }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .carousel {
+        height: 80vw;
+        padding: 5vw;
     }
 }
 

@@ -29,7 +29,7 @@ export default function Music_1(props) {
       <p id="header">Which story is this song inspired by? </p>
       <AutoComplete
         style={{
-          width: 500,
+          width: "80vw",
         }}
         options={stories}
         placeholder="Search for story by title..."
