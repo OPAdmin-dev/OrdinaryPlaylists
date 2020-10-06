@@ -21,7 +21,7 @@ export default function Playlist(props) {
           <Spin />
         ) : (
           playlists.map((p, index) =>
-            p.name !== "New Releases" ? (
+            p.name !== "New Releases" && p.name !== "Season Feature" ? (
               <div>
                 <div className="item" key={index}>
                   <a onClick={() => props.selectPlaylist(p)}>

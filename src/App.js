@@ -13,6 +13,7 @@ import Story from "./Components/Story";
 import Footer from "./Components/Footer";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
+import { apiSpotify } from "./services/utilities/API";
 
 function App() {
   const [playlistMap, setPlaylistMap] = useState([]);
@@ -22,10 +23,40 @@ function App() {
   const [action, setAction] = useState("");
   const [player, setPlayer] = useState();
   const [trackIndex, setTrackIndex] = useState(0);
+  const [seasonFeature, setSeasonFeature] = useState();
+  const [SFselected, setSFSelected] = useState(true);
+  const [autoPlay, setAutoPlay] = useState(false);
+
+  useEffect(() => {
+    apiSpotify.getAll().then((res) => {
+      var filtered = res.data.filter((p) => {
+        if (p.name === "Season Feature") {
+          return p.tracks;
+        }
+      });
+      var feature = filtered[0].tracks[0];
+      setSeasonFeature([
+        {
+          name: feature.track_name,
+          musicSrc: feature.preview_url,
+          singer: feature.track_artist,
+          cover: feature.track_cover,
+          isSF: true,
+        },
+      ]);
+      setTrack(seasonFeature);
+    });
+  }, []);
+
+  const loadSeasonFeature = () => {
+    setTrack(seasonFeature);
+  };
 
   const selectPlaylist = (PL) => {
     setTrack(null);
     setTrackIndex(0);
+    setSFSelected(false);
+    setAutoPlay(true);
     var index = -1;
     var playlistMap = PL["tracks"].reduce(function (map, obj) {
       index = index + 1;
@@ -34,6 +65,7 @@ function App() {
         musicSrc: obj.preview_url,
         singer: obj.track_artist,
         cover: obj.track_cover,
+        isSF: false,
       };
       return map;
     }, {});
@@ -47,12 +79,14 @@ function App() {
   };
 
   const selectTrack = (T) => {
+    setSFSelected(false);
     setTrack([
       {
         name: T.track_name,
         musicSrc: T.preview_url,
         singer: T.track_artist,
         cover: T.track_cover,
+        isSF: false,
       },
     ]);
     setAction("play");
@@ -82,17 +116,17 @@ function App() {
     <div className="App">
       <Hamburger />
       <Banner
-        track={track}
-        playlist={playlistMap}
-        playlistName={playlistName}
+        track={seasonFeature}
+        setTrack={setTrack}
         action={action}
         setAction={setAction}
         player={player}
-        trackIndex={trackIndex}
-        setTrackIndex={setTrackIndex}
+        loadSeasonFeature={loadSeasonFeature}
+        SFselected={SFselected}
+        setSFSelected={setSFSelected}
       />
       <ReactJkMusicPlayer
-        audioLists={track || trackPlaylist}
+        audioLists={(SFselected ? seasonFeature : track) || trackPlaylist}
         defaultVolume={100}
         clearPriorAudioLists
         showDownload={false}
@@ -109,6 +143,7 @@ function App() {
         drag={false}
         responsive={true}
         getAudioInstance={(instance) => getPlayerInstance(instance)}
+        autoPlay={autoPlay}
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
