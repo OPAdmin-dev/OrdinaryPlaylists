@@ -41,6 +41,7 @@ function App() {
           musicSrc: feature.preview_url,
           singer: feature.track_artist,
           cover: feature.track_cover,
+          duration: feature.track_duration,
           isSF: true,
         },
       ]);
@@ -65,13 +66,14 @@ function App() {
         musicSrc: obj.preview_url,
         singer: obj.track_artist,
         cover: obj.track_cover,
+        duration: obj.track_duration,
         isSF: false,
       };
       return map;
     }, {});
     var temp_arr = [];
     for (const [key, val] of Object.entries(playlistMap)) {
-      temp_arr.push(playlistMap[key]);
+      temp_arr.push(val);
     }
     setPlaylistMap(playlistMap);
     setTrackPlaylist(temp_arr);
@@ -86,6 +88,7 @@ function App() {
         musicSrc: T.preview_url,
         singer: T.track_artist,
         cover: T.track_cover,
+        duration: T.track_duration,
         isSF: false,
       },
     ]);
@@ -108,8 +111,30 @@ function App() {
     setTrackIndex(index);
   };
 
+  const applyFade = (index, tracks, ctrack) => {
+    //getSoundAndFadeAudio(ctrack);
+  };
+
   const getPlayerInstance = (instance) => {
     setPlayer(instance);
+  };
+
+  const getSoundAndFadeAudio = (ctrack) => {
+    console.log(ctrack);
+    console.log("Fade function");
+    var fadePoint = ctrack.track_duration - 5 * 1000;
+    var fadeAudio = setInterval(function () {
+      // Only fade if past the fade out point or not at zero already
+      if (player.currentTime >= fadePoint && player.volume > 0.2) {
+        console.log("fading...");
+        player.volume -= 0.1;
+      }
+      // When volume at zero stop all the intervalling
+      if (player.volume < 0.2) {
+        console.log("Cleared fade!");
+        clearInterval(fadeAudio);
+      }
+    }, 500);
   };
 
   return (
@@ -143,7 +168,11 @@ function App() {
         drag={false}
         responsive={true}
         getAudioInstance={(instance) => getPlayerInstance(instance)}
+        onAudioPlayTrackChange={(index, tracks, ctrack) =>
+          applyFade(index, tracks, ctrack)
+        }
         autoPlay={autoPlay}
+        preload={true}
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
