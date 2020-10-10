@@ -16,14 +16,14 @@ import "react-jinke-music-player/assets/index.css";
 import { apiSpotify } from "./services/utilities/API";
 
 const FADE_OUT_POINT = 25;
-const FADE_IN_POINT = 5;
+const FADE_IN_POINT = 7;
 
 function App() {
   const [playlistMap, setPlaylistMap] = useState([]);
   const [trackPlaylist, setTrackPlaylist] = useState([]);
   const [playlistName, setPlaylistName] = useState(null);
   const [track, setTrack] = useState();
-  const [action, setAction] = useState("");
+  const [action, setAction] = useState("play");
   const [player, setPlayer] = useState();
   const [trackIndex, setTrackIndex] = useState(0);
   const [seasonFeature, setSeasonFeature] = useState();
@@ -115,9 +115,9 @@ function App() {
     player.volume = 0;
     var fadeAudioIn = setInterval(function () {
       if (player.currentTime <= FADE_IN_POINT) {
-        if (player.volume <= 0.7) {
-          player.volume += 0.1;
-          if (player.volume >= 0.7) {
+        if (player.volume <= 0.5) {
+          player.volume += 0.05;
+          if (player.volume >= 0.5) {
             clearInterval(fadeAudioIn);
             var fadeAudioOut = setInterval(function () {
               if (player.currentTime >= FADE_OUT_POINT) {
