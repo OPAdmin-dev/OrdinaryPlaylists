@@ -51,10 +51,10 @@ class Waveform extends Component {
     if (this.props.action === "play" && this.props.SFselected) {
       this.waveform.load(this.props.track.musicSrc);
       this.waveform.setVolume(0);
-      this.props.setAction("play");
       this.props.player.currentTime = 0;
       this.props.player.play();
       this.waveform.play();
+      this.props.setAction("resume");
     }
   };
 
@@ -64,8 +64,8 @@ class Waveform extends Component {
         {this.props.track ? (
           <PlayButton onClick={this.handlePlay}>
             {this.props.action === "play" && this.props.SFselected
-              ? "Replay"
-              : "Play"}
+              ? "Play"
+              : "Replay"}
           </PlayButton>
         ) : null}
         <Wave id="waveform" />
