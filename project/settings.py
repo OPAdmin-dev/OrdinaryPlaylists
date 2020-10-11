@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'app',
     'rest_framework',
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'whitenoise.runserver_nostatic'
 ]
 
 SITE_ID = 1
@@ -107,6 +108,9 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -157,6 +161,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
+WHITENOISE_USE_FINDERS = True
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -174,7 +180,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
