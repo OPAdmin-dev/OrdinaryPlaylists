@@ -21,14 +21,15 @@ from scripts.OPBot import runBot
 from rest_framework_jwt.views import obtain_jwt_token
 from django.views.generic import TemplateView
 from django.views.static import serve
+from django.views.decorators.cache import never_cache
+from app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('app.api.urls')),
     path('', include('app.urls')),
-    path('', TemplateView.as_view(template_name='index.html')),
-    re_path(r'^static/(?P<path>.*)$', serve,
-            {'document_root': settings.STATIC_ROOT}),
+    re_path('.*', index)
+    # path('', TemplateView.as_view(template_name='index.html')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
