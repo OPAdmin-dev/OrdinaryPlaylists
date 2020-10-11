@@ -26,9 +26,8 @@ from app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('app.api.urls')),
     path('service/', include('app.urls')),
-    path('', index)
+    path('/home', index)
     # path('', TemplateView.as_view(template_name='index.html')),
 ]
 
