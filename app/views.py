@@ -3,7 +3,11 @@ from app.services.spotify_api import fetchPlaylistData
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework import status
+from django.views.generic import TemplateView
+from django.views.decorators.cache import never_cache
 import json
+
+index = never_cache(TemplateView.as_view(template_name='index.html'))
 
 
 def SpotifyClient(request):

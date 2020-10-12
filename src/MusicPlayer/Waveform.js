@@ -5,6 +5,9 @@ import { WaveformContainer, Wave, PlayButton } from "./waveform.styled";
 class Waveform extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      replay: false,
+    };
   }
 
   componentDidMount() {
@@ -22,36 +25,36 @@ class Waveform extends Component {
       interact: false,
       normalize: true,
     });
+    this.waveform.load(this.props.track.musicSrc);
+    this.waveform.setVolume(0);
   }
 
-  componentDidUpdate(prevProps) {
-    const { track, action } = this.props;
-    if (track && JSON.stringify(track) !== JSON.stringify(prevProps.track)) {
-      this.waveform.load(track.musicSrc);
-      this.waveform.setVolume(0);
-      this.waveform.play();
-    } else {
+  componentDidUpdate() {
+    const { track, action, SFselected } = this.props;
+    if (track && SFselected) {
       if (action === "reload") {
         this.waveform.load(track.musicSrc);
         this.waveform.setVolume(0);
-      } else if (this.props.player.paused == true) {
+      } else if (action === "pause") {
         this.waveform.pause();
-      } else if (this.props.player.paused == false) {
+      } else if (action == "play") {
         this.waveform.play();
       }
+    } else {
+      this.waveform.load(track.musicSrc);
+      this.waveform.setVolume(0);
     }
   }
 
   handlePlay = () => {
-    if (this.props.action === "play") {
-      this.props.setAction("pause");
-      this.props.player.pause();
-      this.waveform.pause();
-    }
-    if (this.props.action === "pause") {
-      this.props.setAction("play");
+    this.props.setSFSelected(true);
+    if (this.props.action === "play" && this.props.SFselected) {
+      this.waveform.load(this.props.track.musicSrc);
+      this.waveform.setVolume(0);
+      this.props.player.currentTime = 0;
       this.props.player.play();
       this.waveform.play();
+      this.props.setAction("resume");
     }
   };
 
@@ -60,7 +63,9 @@ class Waveform extends Component {
       <WaveformContainer>
         {this.props.track ? (
           <PlayButton onClick={this.handlePlay}>
-            {this.props.action === "play" ? "Pause" : "Play"}
+            {this.props.action === "play" && this.props.SFselected
+              ? "Play"
+              : "Replay"}
           </PlayButton>
         ) : null}
         <Wave id="waveform" />

@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = APP_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'app',
     'rest_framework',
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'whitenoise.runserver_nostatic'
 ]
 
 SITE_ID = 1
@@ -72,7 +73,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build'), os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'build'), os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'staticfiles')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,6 +107,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -155,6 +159,10 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+DEBUG_PROPAGATE_EXCEPTIONS = True
+
+WHITENOISE_USE_FINDERS = True
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -168,6 +176,7 @@ SECURE_SSL_REDIRECT = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static'),
+    os.path.join(BASE_DIR, 'build')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
