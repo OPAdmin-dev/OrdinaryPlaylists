@@ -18,9 +18,16 @@ body {
 //Hamburger
 .NavBar {
     button {
+        font-family: GT Cinetype Trial;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 13px;
+        letter-spacing: 0em;
+        text-align: center;
         height: 60px;
         width: 198px;
-        background: rgba(31, 31, 31, 0.25);
+        background: rgba(31, 31, 31, 0.50);
         color: #f4f7f4;
         border: none;
     }
@@ -30,8 +37,11 @@ body {
     ul,
     li {
         font-family: GT Cinetype Trial;
+        font-size: 12px;
         font-style: normal;
-        font-weight: bold;
+        font-weight: 700;
+        line-height: 13px;
+        letter-spacing: 0em;
     }
 }
 
@@ -1482,4 +1492,53 @@ ul li {
     bottom: 15vh;
     width: 80vw;
     z-index: 0;
+}
+
+.NotFound {
+    height: 100vh;
+    background: linear-gradient(#8A80D3, #1f1f1f);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        font-family: Roxborough CF;
+        font-size: 65px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 85px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #F4F7F4;
+    }
+    p {
+        font-family: GT Cinetype Trial;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #F4F7F4;
+    }
+    button {
+        font-family: GT Cinetype Trial;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 13px;
+        letter-spacing: 0em;
+        text-align: center;
+        height: 61px;
+        width: 261px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+        background: rgba(31, 31, 31, 0.5);
+        color: #ffffff;
+        border: none;
+    }
+    c {
+        display: flex;
+    }
 }

@@ -14,7 +14,6 @@ import Footer from "./Components/Footer";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 import { apiSpotify } from "./services/utilities/API";
-
 const FADE_OUT_POINT = 25;
 const FADE_IN_POINT = 7;
 
@@ -175,9 +174,9 @@ function App() {
         preload={true}
       />
       <NewRelease selectTrack={selectTrack} />
-      <Playlist selectPlaylist={selectPlaylist} />
-      {/* <StoryViewer /> */}
-      {/* <Mood /> */}
+      <Playlist selectPlaylist={selectPlaylist} /> 
+      <StoryViewer />
+       <Mood /> 
       <StoryShared />
       <Story />
       <Footer />
