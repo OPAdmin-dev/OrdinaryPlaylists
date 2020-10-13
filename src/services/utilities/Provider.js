@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://ordinaryplaylists.herokuapp.com/dev-only";
+const BASE_URL = "https://ordinaryplaylists.herokuapp.com/api";
 
 const getAll = (resource) => {
   return axios.get(`${BASE_URL}/${resource}`);
