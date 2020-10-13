@@ -23,14 +23,15 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 from django.views.decorators.cache import never_cache
 from app.views import index
-
-react_routes = getattr(settings, 'REACT_ROUTES', [])
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
     path('', include('app.urls')),
-    re_path('.*/', index)
+    path('', index),
+    url(r'^(?:.*)/?$', index)
+    # path('', TemplateView.as_view(template_name='index.html')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
