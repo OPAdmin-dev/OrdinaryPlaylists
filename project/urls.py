@@ -23,12 +23,14 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 from django.views.decorators.cache import never_cache
 from app.views import index
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
     path('', include('app.urls')),
-    path('', index)
+    url(r'^$', index),
+    url(r'^(?:.*)/?$', index)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
