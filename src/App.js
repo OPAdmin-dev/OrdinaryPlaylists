@@ -8,7 +8,7 @@ import BaseRouter from "./routes";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="https://www.ordinaryplaylists.com/">
         <BaseRouter />
       </Router>
     </div>
