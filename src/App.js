@@ -8,7 +8,7 @@ import BaseRouter from "./routes";
 function App() {
   return (
     <div className="App">
-      <Router basename="https://www.ordinaryplaylists.com/">
+      <Router basename="/React">
         <BaseRouter />
       </Router>
     </div>
