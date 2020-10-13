@@ -27,9 +27,9 @@ from app.views import SpotifyClient
 
 urlpatterns = [
     path('', include('app.urls')),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
-    path('/home', TemplateView.as_view(template_name='index.html')),
     url(r'^.*/', TemplateView.as_view(template_name="index.html")),
 ]
 
