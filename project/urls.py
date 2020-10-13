@@ -22,13 +22,14 @@ from rest_framework_jwt.views import obtain_jwt_token
 from django.views.generic import TemplateView
 from django.views.static import serve
 from django.views.decorators.cache import never_cache
-from app.views import index
 from django.conf.urls import url
+from app.views import SpotifyClient
 
 urlpatterns = [
+    path('', include('app.urls')),
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
-    path('', include('app.urls')),
+    path('dev-only/spotify/', SpotifyClient, name='spotify'),
     path(r'^.*/$', TemplateView.as_view(template_name='index.html')),
 ]
 
