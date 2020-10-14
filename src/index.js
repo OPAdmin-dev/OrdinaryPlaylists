@@ -9,9 +9,9 @@ import { HashRouter, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      <Route path="/home/" component={App}>
-        <Route path="*" component={PageNotFound} />
+    <HashRouter basename="/home">
+      <Route path="/" component={App}>
+        <Route path="/*" component={PageNotFound} />
       </Route>
     </HashRouter>
   </React.StrictMode>,
