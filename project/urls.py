@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
     path('', include('app.urls')),
-    re_path(r'^/', TemplateView.as_view(template_name="index.html")),
+    path('*', TemplateView.as_view(template_name="index.html")),
     # path('.*',  TemplateView.as_view(template_name="index.html")),
 ]
 
