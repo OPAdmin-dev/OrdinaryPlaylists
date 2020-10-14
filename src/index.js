@@ -12,8 +12,8 @@ import { HashRouter as Router, Route } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <Router basename="/">
-      <Route exact path="/" component={App} />
       <Route component={PageNotFound} />
+      <Route exact path="/" component={App} />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
