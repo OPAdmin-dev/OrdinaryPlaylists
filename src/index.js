@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Route path="/" component={App}>
-        <Route path=".*" component={PageNotFound} />
+        {/* <Route path="/*" component={App} /> */}
       </Route>
     </Router>
   </React.StrictMode>,
