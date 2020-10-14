@@ -18,7 +18,7 @@ import { apiSpotify } from "../services/utilities/API";
 const FADE_OUT_POINT = 25;
 const FADE_IN_POINT = 7;
 
-function App() {
+function App(props) {
   const [playlistMap, setPlaylistMap] = useState([]);
   const [trackPlaylist, setTrackPlaylist] = useState([]);
   const [playlistName, setPlaylistName] = useState(null);
@@ -181,6 +181,7 @@ function App() {
       <StoryShared />
       <Story />
       <Footer />
+      {props.children}
     </div>
   );
 }
