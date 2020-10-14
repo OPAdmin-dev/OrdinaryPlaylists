@@ -5,15 +5,15 @@ import App from "./Containers/Main";
 import PageNotFound from "./Components/NotFound404";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.less";
-import { Router, Route } from "react-router";
+import { HashRouter, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Route path="/" component={App}>
         <Route component={PageNotFound} />
       </Route>
-    </Router>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
