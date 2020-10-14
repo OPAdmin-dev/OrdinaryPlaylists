@@ -7,7 +7,7 @@ const BaseRouter = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Main} />
-      <Route component={PageNotFound} />
+      <Route exact path="/damn" component={PageNotFound} />
     </Switch>
   </div>
 );
