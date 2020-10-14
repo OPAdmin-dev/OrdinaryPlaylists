@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./Containers/Main";
 import PageNotFound from "./Components/NotFound404";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.less";
