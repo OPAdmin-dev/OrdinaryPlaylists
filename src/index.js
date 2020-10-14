@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router basename="/">
       <App />
-      <Route path="/test" component={PageNotFound} />
+      <Route path="/*" component={PageNotFound} />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
