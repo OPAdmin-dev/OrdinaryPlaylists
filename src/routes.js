@@ -6,8 +6,8 @@ import PageNotFound from "./Components/NotFound404";
 const BaseRouter = () => (
   <div>
     <Switch>
-      <Route exact path="/" component={Main} />
-      <Route exact path="/damn" component={PageNotFound} />
+      <Route exact path="" component={Main} />
+      <Route exact path="*" component={PageNotFound} />
     </Switch>
   </div>
 );

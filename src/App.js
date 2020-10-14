@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import "./App.less";
 
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import BaseRouter from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/">
         <BaseRouter />
       </Router>
     </div>
