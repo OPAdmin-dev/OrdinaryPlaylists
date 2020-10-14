@@ -13,6 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router basename="/">
       <App />
+      <Route path="/test" component={PageNotFound} />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
