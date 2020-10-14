@@ -14,7 +14,7 @@ ReactDOM.render(
     <Router basename="/">
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/*" component={PageNotFound} />
+        <Route component={PageNotFound} />
       </Switch>
     </Router>
   </React.StrictMode>,
