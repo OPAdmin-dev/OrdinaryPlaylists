@@ -5,13 +5,14 @@ import App from "./App";
 import PageNotFound from "./Components/NotFound404";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.less";
-import { Router, Route, Link, IndexRoute } from "react-router";
+import { Router, Route } from "react-router";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route path="/" component={App} />
-      <Route component={PageNotFound} />
+      <Route path="/" component={App}>
+        <Route component={PageNotFound} />
+      </Route>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
