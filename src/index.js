@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route path="/" component={App}>
+      <Route path="/home" component={App}>
         <Route path="/*" component={PageNotFound} />
       </Route>
     </Router>
