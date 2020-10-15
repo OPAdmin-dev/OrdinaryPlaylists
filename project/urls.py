@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from django.conf.urls import url
 from django.conf.urls.static import static
 from project import settings
 from scripts.OPBot import runBot
@@ -23,13 +22,17 @@ from rest_framework_jwt.views import obtain_jwt_token
 from django.views.generic import TemplateView
 from django.views.static import serve
 from django.views.decorators.cache import never_cache
-from app.views import index
+from django.conf.urls import url
+from app.views import SpotifyClient
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dev-only/', include('app.api.urls')),
     path('', include('app.urls')),
-    url(r'^', index)
+    path('', TemplateView.as_view(template_name="index.html")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Handle error p
+handler404 = 'app.views.handler404'
