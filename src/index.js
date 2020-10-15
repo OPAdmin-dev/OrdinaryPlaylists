@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="../build/static">
+    <Router>
       <Switch>
         <Route exact path="/" component={App} />
         <Route component={PageNotFound} />
