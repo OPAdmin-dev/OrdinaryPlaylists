@@ -10,8 +10,8 @@ import json
 from django.http.response import HttpResponseRedirect
 
 
-def handler404(request, *args, **kwargs):
-    return HttpResponseRedirect('/')
+# def handler404(request, *args, **kwargs):
+#     return HttpResponseRedirect('/')
 
 
 def SpotifyClient(request):
