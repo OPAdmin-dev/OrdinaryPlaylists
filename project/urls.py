@@ -34,5 +34,5 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# Handle error
+# Handle error p
 handler404 = 'app.views.handler404'
