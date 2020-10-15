@@ -5,13 +5,13 @@ import App from "./Containers/Main";
 import PageNotFound from "./Components/NotFound404";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.less";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Lastest attempt
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/React">
+    <Router basename="../build/static">
       <Switch>
         <Route exact path="/" component={App} />
         <Route component={PageNotFound} />
