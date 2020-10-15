@@ -7,6 +7,12 @@ from django.views.generic import TemplateView
 from django.views.decorators.cache import never_cache
 import json
 
+from django.http.response import HttpResponseRedirect
+
+
+def handler404(request, *args, **kwargs):
+    return HttpResponseRedirect('/')
+
 
 def SpotifyClient(request):
     try:
