@@ -5,7 +5,7 @@ import App from "./Containers/Main";
 import PageNotFound from "./Components/NotFound404";
 import * as serviceWorker from "./serviceWorker";
 import "antd/dist/antd.less";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // Lastest attempt
 
