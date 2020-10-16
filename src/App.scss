@@ -1542,3 +1542,149 @@ ul li {
         display: flex;
     }
 }
+
+.rc-switch-checked {
+    border: 1px solid #8a80d3;
+    background-color: #8a80d3
+}
+
+.react-jinke-music-player-main .loading svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-mobile-play-model-tip {
+    background-color: #8a80d3;
+}
+
+.react-jinke-music-player-mobile-progress .rc-slider-handle,
+.react-jinke-music-player-mobile-progress .rc-slider-track {
+    background-color: #8a80d3
+}
+
+.react-jinke-music-player-mobile-progress .rc-slider-handle:active {
+    box-shadow: 0 0 2px #8a80d3
+}
+
+.audio-lists-panel-drag-line {
+    border: 1px solid #8a80d3!important
+}
+
+.audio-lists-panel-content .audio-item.playing,
+.audio-lists-panel-content .audio-item.playing svg {
+    color: #8a80d3
+}
+
+.audio-lists-panel-content .audio-item:active .group:not([class=".player-delete"]) svg,
+.audio-lists-panel-content .audio-item:hover .group:not([class=".player-delete"]) svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main ::-webkit-scrollbar-thumb {
+    background-color: #8a80d3;
+}
+
+.react-jinke-music-player-main .lyric-btn-active,
+.react-jinke-music-player-main .lyric-btn-active svg {
+    color: #8a80d3!important
+}
+
+.react-jinke-music-player-main .music-player-lyric {
+    color: #8a80d3;
+}
+
+.react-jinke-music-player-main svg:active,
+.react-jinke-music-player-main svg:hover {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle,
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-track {
+    background-color: #8a80d3
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle:active {
+    box-shadow: 0 0 2px #8a80d3
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .progress-bar-content .progress-bar .progress {
+    background-color: #8a80d3
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content>.group>i {
+    color: #8a80d3;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .loop-btn.active {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .audio-lists-btn>.group:hover,
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .audio-lists-btn>.group:hover>svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme svg:active,
+.react-jinke-music-player-main.light-theme svg:hover {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme .rc-switch-checked {
+    background-color: #8a80d3!important;
+    border: 1px solid #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing,
+.react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing svg {
+    color: #8a80d3!important
+}
+
+@media screen and (max-width:767px) {
+    .react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing,
+    .react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing svg {
+        color: #8a80d3!important
+    }
+}
+
+.react-jinke-music-player-main.light-theme .audio-item:active svg,
+.react-jinke-music-player-main.light-theme .audio-item:hover svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme .audio-item.playing svg {
+    color: #8a80d3
+}
+
+.react-jinke-music-player-main.light-theme .audio-item.playing .player-singer {
+    color: #8a80d3!important
+}
+
+.react-jinke-music-player .music-player-controller {
+    color: #8a80d3;
+}
+
+.react-jinke-music-player .audio-circle-process-bar circle[class=stroke] {
+    stroke: #8a80d3
+}
+
+.audio-lists-panel-header-title {
+    color: white;
+}
+
+.ant-message-notice-content {
+    padding: 2vw !important;
+    background: #1f1f1f !important;
+    color: white !important;
+}
+
+.ant-message-custom-content {
+    text-align: center !important;
+}
+
+.ant-message-warning {
+    width: 300px !important;
+    height: 100px !important;
+}

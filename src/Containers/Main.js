@@ -176,7 +176,7 @@ function App(props) {
       />
       <NewRelease selectTrack={selectTrack} />
       <Playlist selectPlaylist={selectPlaylist} />
-      <StoryViewer />
+      {/* <StoryViewer /> */}
       {/* <Mood /> */}
       <StoryShared />
       <Story />
