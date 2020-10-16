@@ -300,7 +300,7 @@ body {
         font-weight: bold;
         font-size: 12px;
         line-height: 109%;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     h1 {
         font-family: Roxborough CF;
@@ -342,7 +342,7 @@ body {
         font-weight: 500;
         font-size: 65px;
         line-height: 131%;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
 }
 
@@ -372,7 +372,7 @@ body {
         bottom: 20px;
     }
     .fa-info-circle {
-        color: #8a80d3 !important;
+        color: #8a80d3 !important !important;
     }
     #serial {
         font-family: GT Cinetype Trial;
@@ -549,7 +549,7 @@ body {
         font-style: italic;
         font-weight: 500;
         font-size: 35px;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #Count {
         font-family: GT Cinetype Trial;
@@ -644,7 +644,7 @@ body {
 }
 
 .purple {
-    background: linear-gradient( 180deg, rgba(138, 128, 211, 0.1) 0%, #8a80d3 300%);
+    background: linear-gradient( 180deg, rgba(138, 128, 211, 0.1) 0%, #8a80d3 !important 300%);
 }
 
 @media screen and (max-width: 768px) {
@@ -876,7 +876,7 @@ ul li {
     button {
         height: 61px;
         width: 261px;
-        background: #8a80d3;
+        background: #8a80d3 !important;
         font-family: GT Cinetype Trial;
         font-style: normal;
         font-weight: bold;
@@ -905,7 +905,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -943,7 +943,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -990,7 +990,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1044,7 +1044,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1083,7 +1083,7 @@ ul li {
             font-weight: normal;
             font-size: 14px;
             line-height: 140%;
-            color: #8a80d3;
+            color: #8a80d3 !important;
         }
     }
 }
@@ -1097,7 +1097,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1142,7 +1142,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1189,7 +1189,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1248,7 +1248,7 @@ ul li {
         }
     }
     #Story:hover {
-        background: #8a80d3;
+        background: #8a80d3 !important;
     }
     #Music {
         height: 61px;
@@ -1273,7 +1273,7 @@ ul li {
         }
     }
     #Music:hover {
-        background: #8a80d3;
+        background: #8a80d3 !important;
     }
     #question {
         font-family: GT Cinetype Trial;
@@ -1282,7 +1282,7 @@ ul li {
         font-size: 14px;
         line-height: 109%;
         text-transform: uppercase;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #header {
         font-family: Roxborough CF;
@@ -1324,7 +1324,7 @@ ul li {
         font-size: 65px;
         line-height: 131%;
         text-align: center;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     .heading {
         font-size: 65px;
@@ -1332,7 +1332,7 @@ ul li {
         font-style: italic;
         font-weight: 500;
         line-height: 131%;
-        color: #8a80d3;
+        color: #8a80d3 !important;
         text-align: center;
     }
     .item {
@@ -1370,7 +1370,7 @@ ul li {
         line-height: 13px;
         letter-spacing: 0em;
         text-align: left;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
     #title {
         font-family: GT Cinetype Trial;
@@ -1434,7 +1434,7 @@ ul li {
         #type {
             font-size: 8px;
             text-align: left;
-            color: #8a80d3;
+            color: #8a80d3 !important;
         }
         #title {
             font-size: 12px;
@@ -1470,7 +1470,7 @@ ul li {
         font-weight: 500;
         font-size: 65px;
         line-height: 131%;
-        color: #8a80d3;
+        color: #8a80d3 !important;
     }
 }
 
@@ -1496,7 +1496,7 @@ ul li {
 
 .NotFound {
     height: 100vh;
-    background: linear-gradient(#8A80D3, #1f1f1f);
+    background: linear-gradient(#8a80d3 !important, #1f1f1f);
     text-align: center;
     display: flex;
     align-items: center;
@@ -1541,4 +1541,150 @@ ul li {
     c {
         display: flex;
     }
+}
+
+.rc-switch-checked {
+    border: 1px solid #8a80d3 !important;
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .loading svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-mobile-play-model-tip {
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-mobile-progress .rc-slider-handle,
+.react-jinke-music-player-mobile-progress .rc-slider-track {
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-mobile-progress .rc-slider-handle:active {
+    box-shadow: 0 0 2px #8a80d3 !important;
+}
+
+.audio-lists-panel-drag-line {
+    border: 1px solid #8a80d3 !important;
+}
+
+.audio-lists-panel-content .audio-item.playing,
+.audio-lists-panel-content .audio-item.playing svg {
+    color: #8a80d3 !important;
+}
+
+.audio-lists-panel-content .audio-item:active .group:not([class=".player-delete"]) svg,
+.audio-lists-panel-content .audio-item:hover .group:not([class=".player-delete"]) svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main ::-webkit-scrollbar-thumb {
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .lyric-btn-active,
+.react-jinke-music-player-main .lyric-btn-active svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-lyric {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main svg:active,
+.react-jinke-music-player-main svg:hover {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle,
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-track {
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle:active {
+    box-shadow: 0 0 2px #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .progress-bar-content .progress-bar .progress {
+    background-color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content>.group>i {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .loop-btn.active {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .audio-lists-btn>.group:hover,
+.react-jinke-music-player-main .music-player-panel .panel-content .player-content .audio-lists-btn>.group:hover>svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme svg:active,
+.react-jinke-music-player-main.light-theme svg:hover {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme .rc-switch-checked {
+    background-color: #8a80d3 !important;
+    border: 1px solid #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing,
+.react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing svg {
+    color: #8a80d3 !important;
+}
+
+@media screen and (max-width:767px) {
+    .react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing,
+    .react-jinke-music-player-main.light-theme .audio-lists-panel .audio-item.playing svg {
+        color: #8a80d3 !important;
+    }
+}
+
+.react-jinke-music-player-main.light-theme .audio-item:active svg,
+.react-jinke-music-player-main.light-theme .audio-item:hover svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme .audio-item.playing svg {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player-main.light-theme .audio-item.playing .player-singer {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player .music-player-controller {
+    color: #8a80d3 !important;
+}
+
+.react-jinke-music-player .audio-circle-process-bar circle[class=stroke] {
+    stroke: #8a80d3 !important;
+}
+
+.audio-lists-panel-header-title {
+    color: white;
+}
+
+.ant-message-notice-content {
+    padding: 2vw !important;
+    background: #1f1f1f !important;
+    color: white !important;
+}
+
+.ant-message-custom-content {
+    text-align: center !important;
+}
+
+.ant-message-warning {
+    width: 300px !important;
+    height: 100px !important;
 }

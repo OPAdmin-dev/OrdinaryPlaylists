@@ -70,7 +70,7 @@ export default function MasterForm(props) {
           content:
             "Oops! Looks like you haven't filled out the form entirely! Please fill in all required fields!",
           key,
-          duration: 4,
+          duration: 2,
         });
       }, 1000);
     }
