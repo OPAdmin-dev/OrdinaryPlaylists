@@ -18,7 +18,7 @@ export default function Playlist(props) {
       <p className="heading">Concept Playlists</p>
       <div className="playList">
         {loading ? (
-          <Spin />
+          <span class="loadingSpinner"/>
         ) : (
           playlists.map((p, index) =>
             p.name !== "New Releases" && p.name !== "Season Feature" ? (
