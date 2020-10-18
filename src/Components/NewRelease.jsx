@@ -28,7 +28,7 @@ export default function NewRelease(props) {
       <p className="heading">New Releases</p>
       <div className="songList">
         {loading ? (
-          <Spin />
+          <span class="loadingSpinner"/>
         ) : (
           newTrackReleases[0].map((t, index) => (
             <div>

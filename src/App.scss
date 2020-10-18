@@ -1496,7 +1496,7 @@ ul li {
 
 .NotFound {
     height: 100vh;
-    background: linear-gradient(#8a80d3 !important, #1f1f1f);
+    background: linear-gradient(#8a80d3, #1f1f1f);
     text-align: center;
     display: flex;
     align-items: center;
@@ -1538,9 +1538,7 @@ ul li {
         color: #ffffff;
         border: none;
     }
-    c {
-        display: flex;
-    }
+    display: flex;
 }
 
 .rc-switch-checked {
@@ -1687,4 +1685,31 @@ ul li {
 .ant-message-warning {
     width: 300px !important;
     height: 100px !important;
+}
+
+// Feel free to use the code below <3
+// Add border top/right/left/bottom colors for more variations.
+.loadingSpinner {
+    pointer-events: none;
+    width: 2.5em;
+    height: 2.5em;
+    border: 0.4em solid transparent;
+    border-color: #eee;
+    border-top-color: #8a80d3;
+    border-radius: 50%;
+    animation: loadingspin 1s linear infinite;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@keyframes loadingspin {
+    100% {
+        transform: rotate(360deg)
+    }
 }
