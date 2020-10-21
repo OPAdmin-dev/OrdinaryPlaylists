@@ -53,8 +53,9 @@ export default function MasterForm(props) {
           duration: 2,
         });
         setSubmission(submission + 1);
-        props.closeModal();
-      }, 1000);
+        props.setShowSubmission(true);
+        //props.closeModal();
+      }, 2000);
     } else if (status === false) {
       message.loading({ content: "Processing...", key });
       setTimeout(() => {
@@ -63,7 +64,7 @@ export default function MasterForm(props) {
           key,
           duration: 2,
         });
-      }, 1000);
+      }, 2000);
     } else {
       message.loading({ content: "Processing...", key });
       setTimeout(() => {
@@ -73,7 +74,7 @@ export default function MasterForm(props) {
           key,
           duration: 2,
         });
-      }, 1000);
+      }, 2000);
     }
   };
 

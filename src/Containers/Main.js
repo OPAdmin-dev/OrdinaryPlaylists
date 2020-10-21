@@ -142,7 +142,7 @@ function App(props) {
   return (
     <div className="App">
       <Hamburger />
-      <Banner
+      {/* <Banner
         track={seasonFeature}
         setTrack={setTrack}
         action={action}
@@ -151,7 +151,7 @@ function App(props) {
         loadSeasonFeature={loadSeasonFeature}
         SFselected={SFselected}
         setSFSelected={setSFSelected}
-      />
+      /> */}
       <ReactJkMusicPlayer
         audioLists={(SFselected ? seasonFeature : track) || trackPlaylist}
         defaultVolume={100}

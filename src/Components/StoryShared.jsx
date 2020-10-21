@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import MasterForm from "../Forms/StoryForm/MasterForm";
+import SubmissionPage from "./SubmissionPage";
 import CountUp from "react-countup";
 import { apiStories } from "../services/utilities/API";
 
@@ -8,6 +9,7 @@ export default function StoryShared() {
   const [add, setAdd] = useState(false);
   const [loading, updateLoading] = useState(false);
   const [count, setCount] = useState(0);
+  const [showSubmission, setShowSubmission] = useState(false);
 
   useEffect(() => {
     apiStories.getAll().then((res) => {
@@ -21,6 +23,7 @@ export default function StoryShared() {
   };
 
   const closeModal = () => {
+    setShowSubmission(false);
     setAdd(false);
   };
 
@@ -45,12 +48,17 @@ export default function StoryShared() {
         footer={[]}
         destroyOnClose={true}
       >
-        <MasterForm
-          closeModal={closeModal}
-          add={add}
-          loading={loading}
-          updateLoading={updateLoading}
-        />
+        {showSubmission ? (
+          <SubmissionPage />
+        ) : (
+          <MasterForm
+            closeModal={closeModal}
+            add={add}
+            loading={loading}
+            updateLoading={updateLoading}
+            setShowSubmission={setShowSubmission}
+          />
+        )}
       </Modal>
     </div>
   );

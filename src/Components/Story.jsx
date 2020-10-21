@@ -13,6 +13,7 @@ export default function Story() {
   };
 
   const closeModal = () => {
+    setShowSubmission(false);
     setAdd(false);
   };
 
@@ -56,14 +57,18 @@ export default function Story() {
           footer={[]}
           destroyOnClose={true}
         >
-          <MasterForm
-            closeModal={closeModal}
-            add={add}
-            loading={loading}
-            updateLoading={updateLoading}
-          />
+          {showSubmission ? (
+            <SubmissionPage />
+          ) : (
+            <MasterForm
+              closeModal={closeModal}
+              add={add}
+              loading={loading}
+              updateLoading={updateLoading}
+              setShowSubmission={setShowSubmission}
+            />
+          )}
         </Modal>
-        {showSubmission ? <SubmissionPage /> : null}
       </div>
     </div>
   );

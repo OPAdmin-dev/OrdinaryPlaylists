@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import MasterForm from "../Forms/StoryForm/MasterForm";
+import SubmissionPage from "./SubmissionPage";
 
 export default function Hamburger() {
   const Desktop = [
@@ -43,6 +44,7 @@ export default function Hamburger() {
       cName: "nav-links",
     },
   ];
+
   const size = useWindowSize();
   var Console = undefined;
   if (size.width < 768) {
@@ -50,16 +52,21 @@ export default function Hamburger() {
   } else {
     Console = Desktop;
   }
+
+  const [showSubmission, setShowSubmission] = useState(false);
   const [menuActive, setMenuState] = useState(false);
-  const closeModal = () => {
-    setAdd(false);
-  };
   const [add, setAdd] = useState(false);
   const [loading, updateLoading] = useState(false);
 
   const addStory = () => {
     setAdd(true);
   };
+
+  const closeModal = () => {
+    setShowSubmission(false);
+    setAdd(false);
+  };
+
   return (
     <div className="NavBar">
       <header className="logo">
@@ -161,12 +168,17 @@ export default function Hamburger() {
               footer={[]}
               destroyOnClose={true}
             >
-              <MasterForm
-                closeModal={closeModal}
-                add={add}
-                loading={loading}
-                updateLoading={updateLoading}
-              />
+              {showSubmission ? (
+                <SubmissionPage />
+              ) : (
+                <MasterForm
+                  closeModal={closeModal}
+                  add={add}
+                  loading={loading}
+                  updateLoading={updateLoading}
+                  setShowSubmission={setShowSubmission}
+                />
+              )}
             </Modal>
             <div className="Social">
               <h1 style={{ color: "white" }}>Connect with us</h1>
