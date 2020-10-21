@@ -54,7 +54,6 @@ export default function MasterForm(props) {
         });
         setSubmission(submission + 1);
         props.setShowSubmission(true);
-        //props.closeModal();
       }, 2000);
     } else if (status === false) {
       message.loading({ content: "Processing...", key });
