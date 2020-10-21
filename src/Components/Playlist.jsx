@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { apiSpotify } from "../services/utilities/API";
-import { Spin } from "antd";
 
 export default function Playlist(props) {
   const [playlists, setPlaylists] = useState([]);
@@ -18,7 +17,7 @@ export default function Playlist(props) {
       <p className="heading">Concept Playlists</p>
       <div className="playList">
         {loading ? (
-          <span class="loadingSpinner"/>
+          <span class="loadingSpinner" />
         ) : (
           playlists.map((p, index) =>
             p.name !== "New Releases" && p.name !== "Season Feature" ? (
