@@ -178,9 +178,9 @@ function App(props) {
       <Playlist selectPlaylist={selectPlaylist} />
       {/* <StoryViewer /> */}
       {/* <Mood /> */}
-      {/* <StoryShared />*/}
+      <StoryShared />
       <Story />
-      <Footer /> 
+      <Footer />
       {props.children}
     </div>
   );
