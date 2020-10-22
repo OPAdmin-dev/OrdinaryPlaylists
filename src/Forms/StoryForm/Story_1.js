@@ -36,7 +36,7 @@ export default function Story_1(props) {
       <p id="question">Q2</p>
       <p id="header">Pick one prompt you feel for most.</p>
       <Controller
-        name="title"
+        name="prompt"
         defaultValue=""
         control={control}
         rules={{ required: "This field is required" }}
