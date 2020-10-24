@@ -11,7 +11,7 @@ export default function SubmissionPage() {
         <p>Thank you for sharing.</p>
       </div>
       <div className="ContainerBottom">
-        <div style={{ padding: "50px" }}>
+        <div >
           <p id="a">we are</p>
           <p id="b">Dropping Soon</p>
           <div className="center">
@@ -32,6 +32,7 @@ export default function SubmissionPage() {
                 Meanwhile, keep your eyes (and ears) peeled for the playlists
                 inspired by your lives.
               </p>
+              <div id="l">
               <img src={album} />
               <br />
               <p id="f">PLAYLIST</p>
@@ -40,6 +41,7 @@ export default function SubmissionPage() {
                 A playlist featuring our pioneering musicians: Amanda Ong, KHAi,
                 Yap Joon Siong etc.
               </p>
+              </div>
               <button id="i">
                 <i class="fab fa-spotify"></i> EXPERIENCE ON SPOTIFY
               </button>

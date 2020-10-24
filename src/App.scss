@@ -823,7 +823,7 @@
                 border-radius: 50%;
                 margin-right: 0.75em;
             }
-            #b {
+            #bu {
                 padding-right: 1em;
             }
             .top:after {
@@ -1746,6 +1746,7 @@
                 line-height: 13px;
                 letter-spacing: 0em;
                 color: #F4F7F4;
+                padding-top: 10px;
             }
             #b {
                 font-family: Roxborough CF;
@@ -1811,6 +1812,7 @@
                 line-height: 13px;
                 letter-spacing: 0em;
                 color: #747474;
+                padding-top: 20px;
             }
             #f {
                 font-family: GT Cinetype Trial;
@@ -1821,6 +1823,7 @@
                 letter-spacing: 0em;
                 text-align: left;
                 color: #8A80D3;
+                padding-top: 8px;
             }
             #g {
                 font-family: GT Cinetype Trial;
@@ -1901,6 +1904,22 @@
             background: linear-gradient(#8a80d3, #1f1f1f 80%);
             height: 1200px;
         }
+        .containerLeft {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .containerRight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        #l {
+            width: 237px;
+        }
         #a {
             font-family: GT Cinetype Trial;
             font-size: 14px;
@@ -1910,6 +1929,7 @@
             letter-spacing: 0em;
             text-align: center;
             color: #F4F7F4;
+            padding-top: 10px;
         }
         #b {
             font-family: Roxborough CF;
@@ -1955,6 +1975,7 @@
             letter-spacing: 0em;
             text-align: center;
             color: #747474;
+            padding-top: 20px;
         }
         #f {
             font-family: GT Cinetype Trial;
@@ -1964,6 +1985,7 @@
             line-height: 13px;
             letter-spacing: 0em;
             text-align: left;
+            padding-top: 5px;
             color: #8A80D3;
         }
         #g {
@@ -1986,4 +2008,8 @@
             text-align: left;
             color: #F4F7F4;
         }
+    }
+    
+    .ant-modal-close {
+        width: 50px !important;
     }
