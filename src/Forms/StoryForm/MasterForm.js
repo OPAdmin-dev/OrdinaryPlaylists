@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { message } from "antd";
+import { message, notification } from "antd";
 import Collection from "../../Data/Collection";
+import { CheckOutlined, ExclamationOutlined } from "@ant-design/icons";
 
 import Story_1 from "./Story_1";
 import Story_2 from "./Story_2";
@@ -45,35 +46,56 @@ export default function MasterForm(props) {
 
   const formSubmitMessage = (status, type) => {
     if (status === true) {
-      message.loading({ content: "Processing...", key });
-      setTimeout(() => {
-        message.success({
-          content: `${type} submitted successfully!`,
-          key,
-          duration: 2,
-        });
-        setSubmission(submission + 1);
-        props.setShowSubmission(true);
-      }, 2000);
+      const args = {
+        message: `${type} submitted successfully!`,
+        icon: <CheckOutlined style={{ color: "black" }} />,
+        description:
+          "Thanks for your submission! We've sent you an email confirming your submission",
+      };
+      notification.open(args);
+      // message.loading({ content: "Processing...", key });
+      // setTimeout(() => {
+      //   message.success({
+      //     content: `${type} submitted successfully!`,
+      //     key,
+      //     duration: 2,
+      //   });
+      setSubmission(submission + 1);
+      props.setShowSubmission(true);
+      // }, 2000);
     } else if (status === false) {
-      message.loading({ content: "Processing...", key });
-      setTimeout(() => {
-        message.error({
-          content: "Oops! An error occured! Please try again!",
-          key,
-          duration: 2,
-        });
-      }, 2000);
+      // message.loading({ content: "Processing...", key });
+      // setTimeout(() => {
+      //   message.error({
+      //     content: "Oops! An error occured! Please try again!",
+      //     key,
+      //     duration: 2,
+      //   });
+      // }, 2000);
+      const args = {
+        message: "Oops! An error occured!",
+        icon: <ExclamationOutlined style={{ color: "black" }} />,
+        description:
+          "Something went wrong while trying to submit your story! Please try again!",
+      };
+      notification.open(args);
     } else {
-      message.loading({ content: "Processing...", key });
-      setTimeout(() => {
-        message.warning({
-          content:
-            "Oops! Looks like you haven't filled out the form entirely! Please fill in all required fields!",
-          key,
-          duration: 2,
-        });
-      }, 2000);
+      // message.loading({ content: "Processing...", key });
+      // setTimeout(() => {
+      //   message.warning({
+      //     content:
+      //       "Oops! Looks like you haven't filled out the form entirely! Please fill in all required fields!",
+      //     key,
+      //     duration: 2,
+      //   });
+      // }, 2000);
+      const args = {
+        message: "Not quite there yet!",
+        icon: <ExclamationOutlined style={{ color: "black" }} />,
+        description:
+          "Oops! Looks like you haven't filled out the form entirely! Please fill in all required fields!",
+      };
+      notification.open(args);
     }
   };
 
