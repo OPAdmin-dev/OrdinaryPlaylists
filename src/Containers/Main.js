@@ -175,7 +175,7 @@ function App(props) {
         preload={true}
       />
       <NewRelease selectTrack={selectTrack} />
-      <Playlist selectTrack={selectTrack}/>
+      <Playlist selectPlaylist={selectPlaylist} />
       {/* <StoryViewer /> */}
       {/* <Mood /> */}
       <StoryShared />
