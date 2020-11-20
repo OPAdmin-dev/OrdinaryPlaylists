@@ -1,2 +1,2 @@
 # OrdinaryPlaylists
-This is mad !!
+My first take on freelancing! I built this platform with my mate Gilbert Zhuo for our client in Singapore. This application is a "content-discovery" platform where aspiring artists (such as writers, musicians, graphic art designers etc) can contribute their work to get recognition on my client's social media platforms. Moderators of the platform primarly uses this platform to put together work from different artists into a single piece of "art".
