@@ -188,9 +188,9 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtpout.secureserver.net.'
-EMAIL_HOST_USER = 'admin@ordinaryplaylists.com'
+EMAIL_HOST_USER = 'ordinaryplaylists@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-SERVER_EMAIL = 'admin@ordinaryplaylists.com'
+SERVER_EMAIL = 'ordinaryplaylists@gmail.com'
 EMAIL_HOST_PASSWORD = SMTP_PASSWORD
 EMAIL_PORT = 80
 EMAIL_USE_TLS = False
