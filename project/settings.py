@@ -186,14 +186,21 @@ MEDIA_URL = '/media/'
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS START ---------- ###
 
+# The commented out settings are for compliance with GoDaddy's Microsoft
+# SMTP server which the client was using at one point. The current settings
+# use the GMail SMTP instead (which is insecure)
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtpout.secureserver.net.'
+#EMAIL_HOST = 'smtpout.secureserver.net.'
+EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ordinaryplaylists@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = 'ordinaryplaylists@gmail.com'
 EMAIL_HOST_PASSWORD = SMTP_PASSWORD
-EMAIL_PORT = 80
-EMAIL_USE_TLS = False
+#EMAIL_PORT = 80
+EMAIL_PORT = 587
 
 ### ---------- DISPATCH VERIFICATION EMAIL SETTINGS END ---------- ###
 
