@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from project import settings
-from scripts.OPBot import runBot
 from rest_framework_jwt.views import obtain_jwt_token
 from django.views.generic import TemplateView
 from django.views.static import serve
